@@ -1,0 +1,18 @@
+nav{
+    background-color: #657265;
+}
+
+.navbar-logo{
+    display: inline-block;
+    height: 40px;
+    width: 70px;
+}
+
+.navbar-logo img{
+    width: 100%;
+    height: auto;
+}
+
+.nav-item{
+    color: white;
+}

@@ -1,0 +1,21 @@
+*{
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    background-image: url(../img/fondoPerrysFondoBlanco.png);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    background:rgba(40,45,40,0.8);
+    margin: 0 10% 0 10%;
+    height: auto;
+    min-height: calc(100vh - 110px);
+    overflow: hidden;
+}

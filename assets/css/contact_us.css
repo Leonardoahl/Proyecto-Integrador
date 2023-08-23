@@ -10,7 +10,7 @@ form{
 }
 
 #titulo-contacto{
-    padding-top: 20px;
+    padding-top: 10px;
 }
 h1{
     margin-left: auto;
@@ -31,8 +31,8 @@ h1{
     padding: 200px auto;
 }
 
-/* *{
+*{
     border: 2px solid red;
     display: block;
     
-} */
+}

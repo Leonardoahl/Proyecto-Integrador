@@ -58,6 +58,8 @@ function sendEmail (userData){
     emailjs.sendForm('contact_service', 'contact_form', contactForm)
                     .then(function() {
                         console.log('SUCCESS!');
+                        alert("Ya enviamos tu correo :) ");
+                        contactForm.reset();
                     }, function(error) {
                         console.log('FAILED...', error);
                     });

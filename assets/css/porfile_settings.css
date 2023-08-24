@@ -1,3 +1,38 @@
 @import "./footer.css";
 @import "./navbar.css";
 @import "./styles.css";
+
+main{
+    font-size: 19px;
+}
+
+#avatar{
+    border-radius: 50%;
+    height: 50%;
+    width: 50%;
+}
+
+#containerPrincipal{
+    width: 60%;
+}
+
+#element{
+    padding-top: 5px;
+    border-top: dotted;
+    border-top-color: #FED766;
+    border-top-width: 2px;
+}
+
+#cancel,
+#add{
+    width: auto;
+    background-color: #FED766;
+    border-radius: 10px;
+    font-size: 15px;
+    color: black;
+    box-shadow: none;
+}
+
+#cancel{
+    background-color: #6b1b1b;
+}

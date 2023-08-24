@@ -1,0 +1,12 @@
+@import "./footer.css";
+@import "./navbar.css";
+@import "./styles.css";
+
+
+
+/* *{
+    border: 2px solid red;
+} */
+.custom-collapse{
+    background-color: rgba(40,45,40,0)!important;
+}

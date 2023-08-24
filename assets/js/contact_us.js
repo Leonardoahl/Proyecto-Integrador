@@ -50,13 +50,22 @@ function printAlerts (userData){
 };
 
 function sendEmail (userData){
-    
+
+
     if (validateName(userData) && validateNumber(userData) ){
     console.log("xdd");
+    emailjs.init('_AIRxlmq1luT-s4JJ');
+    emailjs.sendForm('contact_service', 'contact_form', contactForm)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
 
 
 }else{
     printAlerts(userData);
 }
+
 
 }

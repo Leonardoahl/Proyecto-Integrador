@@ -15,8 +15,14 @@
 .custom-collapse{
     background-color: rgba(40,45,40,0)!important;
 }
-.centered-buttons {
-    text-align: center;
-    font-size: 25px !important;
-
+.btn{
+    font-size: 23px !important;
+}
+.card{
+    font-size: 21px !important; 
+}
+@media screen and (max-width:700px){
+    .card{
+        font-size: 12px !important;
+    }
 }

@@ -7,6 +7,16 @@
 /* *{
     border: 2px solid red;
 } */
+*{
+    color: #fff;
+    font-family: 'Quicksand', sans-serif !important;
+    /* font-size: 25px !important; */
+}
 .custom-collapse{
     background-color: rgba(40,45,40,0)!important;
+}
+.centered-buttons {
+    text-align: center;
+    font-size: 25px !important;
+
 }

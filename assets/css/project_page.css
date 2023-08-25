@@ -3,31 +3,31 @@
 @import "./styles.css";
 
 
-
-main *{ 
+/* 
+ main *{ 
     border: 2px solid red;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} 
-
-#userName{
+}  */
+ 
+#user{
     font-size: 20px;
 }
-#postContent{
+#content{
     font-size: 21;
 }
-#postImgs{
+/* #postImgs{
 
-}
-#postDate{
+} */
+#date{
     font-size: 12px;
 }
-#postInteractions{
+/* #postInteractions{
 
-}
+} */
 
-#userName img{
+#user img{
     width: 60px;
     height: 60px;
 }
@@ -37,4 +37,98 @@ main *{
 
 .colortest{
     border: 2px solid red;
+}
+
+
+/* .boxing{
+    width: 60px;
+    height: 60px;
+    border: 3px solid blue   ;
+} */
+
+#img img {
+    width: 300px;
+    height: 160px;
+}
+
+#icons img {
+    width: 25px;
+    height: 25px;
+    margin-left: 4px;
+    margin-top: 2px;
+}
+
+#icons button {
+    background-color: black;
+    color: white;
+    width: 80px;
+    padding: 4px;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+#date{
+    margin: auto;
+    border-top: 2px dotted orange;
+    border-bottom: 2px dotted orange;
+}
+
+
+@media screen and (max-width:1284px){
+    #user label{
+        font-size: 16px;
+        width: 16px;
+    }
+    #user img{
+        width: 40px;
+        height: 40px;
+    }
+    #hashtag{
+        display: none;
+    }
+    #img{
+        text-align: center;
+    }
+    #img img{
+        width: 230px;
+        height: 135px;
+    }
+}
+
+@media screen and (max-width:990px){
+    #user label{
+        font-size: 16px;
+        width: 16px;
+    }
+    #user img{
+        width: 40px;
+        height: 40px;
+    }
+    #hashtag{
+        display: none;
+    }
+    #img{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:560px){
+    #user label{
+        font-size: 12px;
+    }
+    #user img{
+        width: 40px;
+        height: 40px;
+    }
+    #hashtag{
+        display: none;
+    }
+    #img img{
+        width: 200px;
+        height: 120px;
+
+    }
+    #content{
+        font-size: 12px;
+    }
 }

@@ -2,3 +2,39 @@
 @import "./navbar.css";
 @import "./styles.css";
 
+
+
+main *{ 
+    border: 2px solid red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+#userName{
+    font-size: 20px;
+}
+#postContent{
+    font-size: 21;
+}
+#postImgs{
+
+}
+#postDate{
+    font-size: 12px;
+}
+#postInteractions{
+
+}
+
+#userName img{
+    width: 60px;
+    height: 60px;
+}
+#post{
+    padding: 45px;
+}
+
+.colortest{
+    border: 2px solid red;
+}

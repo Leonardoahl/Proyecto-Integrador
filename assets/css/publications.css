@@ -1,0 +1,8 @@
+@import "./footer.css";
+@import "./navbar.css";
+@import "./styles.css";
+
+
+#trendingData{
+    background: rgba(83,67,49,0.8);
+}

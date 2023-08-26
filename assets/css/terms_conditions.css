@@ -38,6 +38,7 @@
     width: 300px!important;
     height: 300px!important;
     transform: scaleX(-1);
+    margin-top: 40px;
 }
 .main-title{
     text-align: center;

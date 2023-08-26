@@ -3,17 +3,17 @@
 @import "./styles.css";
 
 main{
-    font-size: 19px;
+    font-size: 21px;
 }
 
 #avatar{
     border-radius: 50%;
-    height: 50%;
-    width: 50%;
+    height: 35%;
+    width: 35%;
 }
 
 #containerPrincipal{
-    width: 60%;
+    width: 70%;
 }
 
 #element{
@@ -24,7 +24,9 @@ main{
 }
 
 #cancel,
-#add{
+#accept,
+#addHard,
+#addSoft{
     width: auto;
     background-color: #FED766;
     border-radius: 10px;

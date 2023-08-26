@@ -13,7 +13,7 @@ body{
 }
 
 main{
-    background:rgba(40,45,40,0.8);
+    background:rgba(40,45,40,0.9);
     margin: 0 10% 0 10%;
     height: auto;
     min-height: calc(100vh - 110px);

@@ -23,6 +23,13 @@
 }
 @media screen and (max-width:700px){
     .card{
-        font-size: 12px !important;
+        font-size: 13px !important;
     }
+    .btn{
+        font-size: 15px !important;
+    }
+}
+.drop-arrow{
+    width: 25px!important;
+    height: 25px!important;
 }

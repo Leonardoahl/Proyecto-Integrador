@@ -6,4 +6,15 @@ img {
     width: 100px;
     height: 100px;
 }
+
+#title {
+    border: 1px;
+    border-bottom-style: dotted;
+    border-color: #d4aa7d;
+    font-size: 30px;
+}
  
+.subtitle {
+    font-size: 20px;
+    border-bottom: 4px color(#fed766);
+}

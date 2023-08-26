@@ -1,0 +1,5 @@
+.carousel .carousel-inner .carousel-item img{
+	
+	justify-content: center; /* horizontal centering */
+	align-items: center; /* vertical centering */
+  }

@@ -23,19 +23,7 @@ main{
     border-top-width: 2px;
 }
 
-#cancel,
-#accept,
-#addHard,
-#addSoft{
-    width: auto;
-    background-color: #FED766;
-    border-radius: 10px;
-    font-size: 15px;
-    color: black;
-    box-shadow: none;
-}
-
 #cancel{
-    background-color: #6b1b1b;
-    color: #ffff;
+    background-color: #6b1b1b!important;
+    color: #ffff!important;
 }

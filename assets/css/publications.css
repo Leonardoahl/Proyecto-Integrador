@@ -1,11 +1,8 @@
 @import "./footer.css";
 @import "./navbar.css";
 @import "./styles.css";
-@import "./carousel.css";
 
 
-#mision,
-#sobre,
-#vision{
+#trendingData{
     background: rgba(83,67,49,0.8);
 }

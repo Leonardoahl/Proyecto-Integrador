@@ -1,0 +1,167 @@
+@import "./footer.css";
+@import "./navbar.css";
+@import "./styles.css";
+
+
+/* 
+ main *{ 
+    border: 2px solid red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  */
+ 
+#user{
+    font-size: 20px;
+}
+#content{
+    font-size: 21;
+}
+/* #postImgs{
+
+} */
+#date{
+    font-size: 12px;
+}
+/* #postInteractions{
+
+} */
+
+#post{
+    padding: 30px;
+}
+
+.colortest{
+    border: 2px solid red;
+}
+
+
+/* .boxing{
+    width: 60px;
+    height: 60px;
+    border: 3px solid blue   ;
+} */
+
+#img img {
+    width: 300px;
+    height: 160px;
+}
+
+.iconImgs{
+    width: 25px;
+    height: 25px;
+    margin-left: 4px;
+    margin-top: 2px;
+}
+
+.interactionButtons{
+    background-color: black;
+    color: white;
+    width: 80px;
+    padding: 4px;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+#date{
+    margin: auto;
+    border-top: 2px dotted orange;
+    border-bottom: 2px dotted orange;
+}
+
+.userIcon{
+    width: 60px;
+    height: 60px;
+}
+
+
+
+/* #replys *{
+    border: 2px solid red;
+} */
+#replys{
+    padding: 0px 30px;
+}
+#replys label{
+   padding-top: 16px;
+}
+
+
+.yellowButton{
+    width: 100px !important;
+    margin-top: 16px ;
+    font-weight: bold;
+}
+
+#reply{
+    margin: 30px 0;
+}
+
+
+@media screen and (max-width:1284px){
+    #user label{
+        font-size: 16px;
+        width: 16px;
+    }
+    userIcon{
+        width: 40px;
+        height: 40px;
+    }
+    /* #hashtag{
+        display: none;
+    } */
+    #img{
+        text-align: center;
+    }
+    #img img{
+        width: 230px;
+        height: 135px;
+    }
+    
+}
+
+@media screen and (max-width:990px){
+    #user label{
+        font-size: 16px;
+        width: 16px;
+    }
+   /*  #hashtag{
+        display: none;
+    } */
+    #img{
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width:560px){
+    #user label{
+        font-size: 12px;
+    }
+    .userIcon{
+        width: 40px;
+        height: 40px;
+    }
+    #hashtag{
+        display: none;
+    }
+    #img img{
+        width: 200px;
+        height: 120px;
+
+    }
+    #content{
+        font-size: 12px;
+    }
+
+    .yellowButton{
+        width: 50px !important;
+        margin-top: 16px ;
+        font-weight: bold;
+    }
+    #replys label{
+        font-size: 16px;
+        width: 100px;
+    }
+
+}

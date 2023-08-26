@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/porfile_settings.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Quicksand:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Sobre Nosotros</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg py-1">
+            <div class="container">
+                <a class="navbar-logo" href="#">
+                    <img src="../img/logo blanco blanco pequeño.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-search"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-house-fill"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-people-fill"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-person-circle"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- <a href="">Regresar</a> -->
+        <div class="container py-1" id="containerPrincipal">
+            <h1 class="text-center">Configuración de usuario</h1>
+            <div class="row justify-content-center my-3" id="element">
+                <p>Foto de perfil</p>
+                <img src="../img/porfile-image.jpg" alt="perryAvatar" id="avatar">
+            </div>
+            <form action="">
+                <div class="row my-3" id="element">
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="name" class="form-label">Nombre(s)</label>
+                        <input type="text" id="name" class="form-control">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="lastName" class="form-label">Apellido(s)</label>
+                        <input type="text" id="lastName" class="form-control">
+                    </div>
+                </div>
+                <div class="row my-3" id="element">
+                    <label for="user" class="form-label">Usuario</label>
+                    <input type="text" id="user" class="form-control" placeholder="@nombreApellido00">
+                </div>
+                <div class="row my-3" id="element">
+                    <label for="hardSkill">Habilidades técnicas</label>
+                    <div class="col-6 text-center">
+                        <input type="text" id="skill" class="form-control my-2" name="skill"
+                            placeholder="Ingresar habilidad">
+                        <button type="button" id="addHard" class="btn yellowButton">Agregar</button>
+                    </div>
+                </div>
+                <div class="row my-3" id="element">
+                    <label for="softSkill">Habilidades blandas</label>
+                    <div class="col-6 text-center">
+                        <input type="text" id="softSkill" class="form-control my-2" name="skill"
+                            placeholder="Ingresar habilidad">
+                        <button type="button" id="addSoft" class="btn yellowButton">Agregar</button>
+                    </div>
+                </div>
+                <div class="row my-3" id="element">
+                    <label for="description" class="form-label">Descripción</label>
+                    <textarea type="text" id="description" class="form-control" name="description"
+                        placeholder="Agrega una breve descripción"></textarea>
+                </div>
+                <div class="row my-3" id="element">
+                    <label for="email" class="form-label">Correo</label>
+                    <input type="text" id="email" class="form-control" placeholder="nombre@gmail.com">
+                </div>
+                <div class="row my-3" id="element">
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" id="password" class="form-control">
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="passwordConfirm" class="form-label">Confirmar contraseña</label>
+                        <input type="password" id="passwordConfirm" class="form-control">
+                    </div>
+                </div>
+                <div class="row my-3 text-center justify-content-center align-items-center" id="element">
+                    <button type="button" id="accept" class="btn m-3 yellowButton">Guardar</button>
+                    <button type="button" id="cancel" class="btn m-3 yellowButton">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="foot">
+        <div class="groupOne">
+            <div class="box justify-content-center align-items-center mx-4">
+                <div class="row">Sobre Nostros
+                </div>
+                <div class="row">Política de privacidad
+                </div>
+                <div class="row">Términos y condiciones</div>
+            </div>
+            <div class="box text-center">
+                <small>&copy; 2023 <b>PERING</b> - Todos los Derechos Reservados.</small>
+            </div>
+            <div class="socialMedia text-center justify-content-center align-items-center">
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="github"><i class="bi bi-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

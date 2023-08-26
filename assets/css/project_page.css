@@ -27,12 +27,8 @@
 
 } */
 
-#user img{
-    width: 60px;
-    height: 60px;
-}
 #post{
-    padding: 45px;
+    padding: 30px;
 }
 
 .colortest{
@@ -51,14 +47,14 @@
     height: 160px;
 }
 
-#icons img {
+.iconImgs{
     width: 25px;
     height: 25px;
     margin-left: 4px;
     margin-top: 2px;
 }
 
-#icons button {
+.interactionButtons{
     background-color: black;
     color: white;
     width: 80px;
@@ -73,19 +69,47 @@
     border-bottom: 2px dotted orange;
 }
 
+.userIcon{
+    width: 60px;
+    height: 60px;
+}
+
+
+
+/* #replys *{
+    border: 2px solid red;
+} */
+#replys{
+    padding: 0px 30px;
+}
+#replys label{
+   padding-top: 16px;
+}
+
+
+.yellowButton{
+    width: 100px !important;
+    margin-top: 16px ;
+    font-weight: bold;
+}
+
+#reply{
+    margin: 30px 0;
+}
+
 
 @media screen and (max-width:1284px){
     #user label{
         font-size: 16px;
         width: 16px;
     }
-    #user img{
+    userIcon{
         width: 40px;
         height: 40px;
     }
-    #hashtag{
+    /* #hashtag{
         display: none;
-    }
+    } */
     #img{
         text-align: center;
     }
@@ -93,6 +117,7 @@
         width: 230px;
         height: 135px;
     }
+    
 }
 
 @media screen and (max-width:990px){
@@ -100,23 +125,20 @@
         font-size: 16px;
         width: 16px;
     }
-    #user img{
-        width: 40px;
-        height: 40px;
-    }
-    #hashtag{
+   /*  #hashtag{
         display: none;
-    }
+    } */
     #img{
         text-align: center;
     }
+
 }
 
 @media screen and (max-width:560px){
     #user label{
         font-size: 12px;
     }
-    #user img{
+    .userIcon{
         width: 40px;
         height: 40px;
     }
@@ -131,4 +153,15 @@
     #content{
         font-size: 12px;
     }
+
+    .yellowButton{
+        width: 50px !important;
+        margin-top: 16px ;
+        font-weight: bold;
+    }
+    #replys label{
+        font-size: 16px;
+        width: 100px;
+    }
+
 }

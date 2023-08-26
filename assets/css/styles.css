@@ -19,3 +19,12 @@ main{
     min-height: calc(100vh - 110px);
     overflow: hidden;
 }
+
+.yellowButton{
+    width: auto!important;
+    background-color: #FED766!important;
+    border-radius: 7rem!important;
+    font-size: 15px!important;
+    color: black!important;
+    box-shadow: none!important;
+}

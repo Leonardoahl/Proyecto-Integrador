@@ -1,0 +1,34 @@
+@import "./footer.css";
+@import "./navbar.css";
+@import "./styles.css";
+
+form{
+    background-color: rgba(40,45,40,0.8);
+    margin: auto;
+    padding: 50px 25px 50px 25px;
+
+}
+
+#titulo-contacto{
+    padding-top: 10px;
+}
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 2px dotted #FED766;
+    width: auto;
+    text-align: center;
+    
+}
+#container-form{
+    margin:auto;
+}
+    
+
+.btn{
+    background-color: #FED766;
+}
+.container{
+    padding: 200px auto;
+}
+

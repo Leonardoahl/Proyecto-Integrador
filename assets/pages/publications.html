@@ -69,40 +69,214 @@
       </nav>
     </header>
 
-    <main>
-      <!-- title lines -->
-      <div class="container">
-        <div class="row justify-content-around" id="titles">
-          <div class="col">Trending</div>
-          <div class="col">Proyectos</div>
-        </div>
-        <!-- decoration lines (should be added in this row )-->
-        <div class="row justify-content-around" id="decoration_lines">
-          <div class="col">---------------------------------------</div>
-          <div class="col">----------------------------------------</div>
-        </div>
+    <main class="container">
+      <div class="row justify-content-aroud" id="content">
+        <section class="col-sm-4" id="trending">
+          <h1 class="text-center">Trending
+              <!--  Vertical line -->
+          <div class="v_line"></div>
+          </h1>
+       
+          <ol class="text-center" id="trendsList">
+            <li>#Python</li>
+            <li>#Java</li>
+            <li>#Javascript</li>
+            <li>#C++</li>
+            <li>#RUST</li>
+            <li>#C</li>
+            <li>#COBOL</li>
+          </ol>
+        </section>
 
-        <!-- data info section row -->
-        <div class="row justify-content-around" id="data">
-          <div class="col text-center" id="trendingData">
-            Trending
+        <section class="col-sm-8 align-self-end" id="projects">
+          <h1 class="row" id="title">Proyectos
+             <!--  Vertical line -->
+          <div class="v_line"></div>
+          </h1>
+         
+          <div id="post" class="row">
+            <div class="row" id="user">
+              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
+                <img
+                  class="img-thumbnail rounded float-start"
+                  src="../img/perryXd.png"
+                  alt="user profile thumbnail"
+                  width="90"
+                />
+              </div>
+              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
+                <h2 class="row" id="userId">
+                  <strong>@Mentirosilla</strong>
+                </h2>
+                <div class="row" id="hashtag">
+                  <label>#HTML,#JAVASCRIPT,#CSS</label>
+                </div>
+              </div>
+            </div>
+            <div class="row" id="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                dolor harum tempora repellat provident eum voluptatem, adipisci
+                quod beatae animi hic. Temporibus blanditiis et itaque libero
+                quisquam laborum? Et, asperiores.
+              </p>
+            </div>
+            <div class="row" id="info">
+              <div id="interactios">
+                <button class="btn btn-secondary">
+                  99+ <img src="../img/corazon.png" width="30" />
+                </button>
 
-            <ul>
-              <li>Neil Armstrong</li>
-              <li>Alan Bean</li>
-              <li>Peter Conrad</li>
-              <li>Edgar Mitchell</li>
-              <li>Alan Shepard</li>
-            </ul>
+                <button class="btn btn-secondary">
+                  99+
+                  <img
+                    class="img-fluid"
+                    src="../img/comentarios.png"
+                    width="30"
+                  />
+                </button>
+              </div>
+            </div>
           </div>
-          <!-- Publication section row -->
-          <div class="col text-center" id="projectPublications">
-            Proyectos
-        
-        </div>
-        </div>
-        <!--  -->
+          <!-- FIN DE DIV DE POST -->
+          <div id="post" class="row">
+            <div class="row" id="user">
+              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
+                <img
+                  class="img-thumbnail rounded float-start"
+                  src="../img/perryXd.png"
+                  alt="user profile thumbnail"
+                  width="90"
+                />
+              </div>
+              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
+                <h2 class="row" id="userId">
+                  <strong>@Mentirosilla</strong>
+                </h2>
+                <div class="row" id="hashtag">
+                  <label>#HTML,#JAVASCRIPT,#CSS</label>
+                </div>
+              </div>
+            </div>
+            <div class="row" id="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                dolor harum tempora repellat provident eum voluptatem, adipisci
+                quod beatae animi hic. Temporibus blanditiis et itaque libero
+                quisquam laborum? Et, asperiores.
+              </p>
+            </div>
+            <div class="row" id="info">
+              <div id="interactios">
+                <button class="btn btn-secondary">
+                  99+ <img src="../img/corazon.png" width="30" />
+                </button>
+
+                <button class="btn btn-secondary">
+                  99+
+                  <img
+                    class="img-fluid"
+                    src="../img/comentarios.png"
+                    width="30"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- FIN DE DIV DE POST -->
+          <div id="post" class="row">
+            <div class="row" id="user">
+              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
+                <img
+                  class="img-thumbnail rounded float-start"
+                  src="../img/perryXd.png"
+                  alt="user profile thumbnail"
+                  width="90"
+                />
+              </div>
+              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
+                <h2 class="row" id="userId">
+                  <strong>@Mentirosilla</strong>
+                </h2>
+                <div class="row" id="hashtag">
+                  <label>#HTML,#JAVASCRIPT,#CSS</label>
+                </div>
+              </div>
+            </div>
+            <div class="row" id="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                dolor harum tempora repellat provident eum voluptatem, adipisci
+                quod beatae animi hic. Temporibus blanditiis et itaque libero
+                quisquam laborum? Et, asperiores.
+              </p>
+            </div>
+            <div class="row" id="info">
+              <div id="interactios">
+                <button class="btn btn-secondary">
+                  99+ <img src="../img/corazon.png" width="30" />
+                </button>
+
+                <button class="btn btn-secondary">
+                  99+
+                  <img
+                    class="img-fluid"
+                    src="../img/comentarios.png"
+                    width="30"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- FIN DE DIV DE POST -->
+          <div id="post" class="row">
+            <div class="row" id="user">
+              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
+                <img
+                  class="img-thumbnail rounded float-start"
+                  src="../img/perryXd.png"
+                  alt="user profile thumbnail"
+                  width="90"
+                />
+              </div>
+              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
+                <h2 class="row" id="userId">
+                  <strong>@Mentirosilla</strong>
+                </h2>
+                <div class="row" id="hashtag">
+                  <label>#HTML,#JAVASCRIPT,#CSS</label>
+                </div>
+              </div>
+            </div>
+            <div class="row" id="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                dolor harum tempora repellat provident eum voluptatem, adipisci
+                quod beatae animi hic. Temporibus blanditiis et itaque libero
+                quisquam laborum? Et, asperiores.
+              </p>
+            </div>
+            <div class="row" id="info">
+              <div id="interactios">
+                <button class="btn btn-secondary">
+                  99+ <img src="../img/corazon.png" width="30" />
+                </button>
+
+                <button class="btn btn-secondary">
+                  99+
+                  <img
+                    class="img-fluid"
+                    src="../img/comentarios.png"
+                    width="30"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- FIN DE DIV DE POST -->
+        </section>
       </div>
+      <!-- FIN DIV DE CONTENIDO -->
     </main>
 
     <footer class="foot">

@@ -1,0 +1,46 @@
+@import "./footer.css";
+@import "./navbar.css";
+@import "./styles.css";
+
+
+
+/* *{
+    border: 2px solid red;
+} */
+*{
+    color: #fff;
+    font-family: 'Quicksand', sans-serif !important;
+    /* font-size: 25px !important; */
+}
+.custom-collapse{
+    background-color: rgba(40,45,40,0)!important;
+}
+.btn{
+    font-size: 23px !important;
+}
+.card{
+    font-size: 21px !important; 
+}
+@media screen and (max-width:700px){
+    .card{
+        font-size: 13px !important;
+    }
+    .btn{
+        font-size: 15px !important;
+    }
+}
+.drop-arrow{
+    width: 25px!important;
+    height: 25px!important;
+}
+.img-perry{
+
+    width: 300px!important;
+    height: 300px!important;
+    transform: scaleX(-1);
+    margin-top: 40px;
+}
+.main-title{
+    text-align: center;
+    padding: 45px;
+}

@@ -1,0 +1,17 @@
+@import "./footer.css";
+@import "./navbar.css";
+@import "./styles.css";
+
+
+#trendsList{
+    background: rgba(83,67,49,0.8);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+.v_line {
+    border-bottom: 5px solid rgb(212, 170, 125);
+    width: 300px;
+    margin: auto;
+}

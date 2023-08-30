@@ -1,7 +1,7 @@
 const post1 = {
     id: 1,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -11,7 +11,7 @@ const post1 = {
 const post2 = {
     id: 2,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -21,7 +21,7 @@ const post2 = {
 const post3 = {
     id: 3,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -31,7 +31,7 @@ const post3 = {
 const post4 = {
     id: 4,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -41,7 +41,7 @@ const post4 = {
 const post5 = {
     id: 5,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -51,7 +51,7 @@ const post5 = {
 const post6 = {
     id: 6,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -61,7 +61,7 @@ const post6 = {
 const post7 = {
     id: 7,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -71,7 +71,7 @@ const post7 = {
 const post8 = {
     id: 8,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -81,7 +81,7 @@ const post8 = {
 const post9 = {
     id: 9,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -91,7 +91,7 @@ const post9 = {
 const post10 = {
     id: 10,
     name: "ana",
-    img: "/assets/img/perryXd.png",
+    img: "../assets/img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",

@@ -90,8 +90,8 @@ postManager.deletePost(4);
 // Create Post Handler
 const form = document.getElementById("myForm");
 
-form.addEventListener("submit", function (event) {
-  //event.preventDefault();
+form.addEventListener("submit", event => {
+  event.preventDefault();
   console.log("evento detectado");
    // Get the textarea element by its id
    const textarea = document.getElementById("projectDescription");
@@ -114,4 +114,6 @@ form.addEventListener("submit", function (event) {
     trend: "#PatronaSubemeElSueldo"
   }
   postManager.addPost(newPost);
+  projects.innerHTML = addPostSection(postManager);
+  console.log(postManager);
 });

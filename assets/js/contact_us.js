@@ -1,4 +1,9 @@
-console.log("xd");
+/**
+ * @author Perry Code
+ * @version 0.0.1
+ * 
+ */
+
 
 const contactForm = document.forms["contactForm"];
 console.log(contactForm);

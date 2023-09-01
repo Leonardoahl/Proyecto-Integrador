@@ -51,56 +51,18 @@ function addPostSection(post) {
 }
 
 const postManager = new PostsController();
-// postManager.addPost(post1);
-// postManager.addPost(post2);
-// postManager.addPost(post3);
-// postManager.addPost(post4);
-// postManager.addPost(post5);
-// postManager.addPost(post6);
-// postManager.addPost(post7);
-// postManager.addPost(post8);
-// postManager.addPost(post9);
-// postManager.addPost(post10);
-// projects.innerHTML = addPostSection(postManager);
-// postManager.deletePost(4);
-// postManager.updatePost(6,"jajaxd");
-// projects.innerHTML = addPostSection(postManager);
 
-/* const postManager = new PostsController();
-if(localStorage.getItem("postData") !== "[]"){
-    postManager.loadFromLocalStorage();
-    projects.innerHTML = addPostSection(postManager);
-}else{
-    postManager.addPost(post1);
-    postManager.addPost(post2);
-    postManager.addPost(post3);
-    postManager.addPost(post4);
-    postManager.addPost(post5);
-    postManager.addPost(post6);
-    postManager.addPost(post7);
-    postManager.addPost(post8);
-    postManager.addPost(post9);
-    postManager.addPost(post10);
-    projects.innerHTML = addPostSection(postManager);
-}
-postManager.deletePost(4);
- */
-
-// Edcet Code
 // Create Post Handler
 const form = document.getElementById("myForm");
 
 form.addEventListener("submit", event => {
   event.preventDefault();
-  console.log("evento detectado");
+  
    // Get the textarea element by its id
    const textarea = document.getElementById("projectDescription");
 
    // Retrieve the data from the textarea using the value property
    const textData = textarea.value;
-
-   // Display the retrieved data (you can also do other operations with it)
-  // console.log("Data from textarea: " + textData);
 
   // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
   const newPost={
@@ -113,7 +75,9 @@ form.addEventListener("submit", event => {
     postImgs: ["/assets/img/placeholder.png","/assets/img/placeholder.png"],
     trend: "#PatronaSubemeElSueldo"
   }
+
   postManager.addPost(newPost);
   projects.innerHTML = addPostSection(postManager);
   console.log(postManager);
+  
 });

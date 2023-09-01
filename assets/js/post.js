@@ -1,9 +1,9 @@
 const projects = document.getElementById("post");
 
-function addPostSection(post){
-    let text = "";
-    for(let i= 0; i < post.post.length; i++){
-        text+= `
+function addPostSection(post) {
+  let text = "";
+  for (let i = 0; i < post.post.length; i++) {
+    text += `
         <div class="row" id="user">
               <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
                 <img
@@ -44,29 +44,27 @@ function addPostSection(post){
               </div>
             </div>
           </div>
-        `
-    }
-    localStorage.setItem("postData", JSON.stringify(post.post));
-    return text;
+        `;
+  }
+  localStorage.setItem("postData", JSON.stringify(post.post));
+  return text;
 }
 
-
 const postManager = new PostsController();
-postManager.addPost(post1);
-postManager.addPost(post2);
-postManager.addPost(post3);
-postManager.addPost(post4);
-postManager.addPost(post5);
-postManager.addPost(post6);
-postManager.addPost(post7);
-postManager.addPost(post8);
-postManager.addPost(post9);
-postManager.addPost(post10);
-projects.innerHTML = addPostSection(postManager);
-postManager.deletePost(4);
-postManager.updatePost(6,"jajaxd");
-projects.innerHTML = addPostSection(postManager);
-
+// postManager.addPost(post1);
+// postManager.addPost(post2);
+// postManager.addPost(post3);
+// postManager.addPost(post4);
+// postManager.addPost(post5);
+// postManager.addPost(post6);
+// postManager.addPost(post7);
+// postManager.addPost(post8);
+// postManager.addPost(post9);
+// postManager.addPost(post10);
+// projects.innerHTML = addPostSection(postManager);
+// postManager.deletePost(4);
+// postManager.updatePost(6,"jajaxd");
+// projects.innerHTML = addPostSection(postManager);
 
 /* const postManager = new PostsController();
 if(localStorage.getItem("postData") !== "[]"){
@@ -87,3 +85,33 @@ if(localStorage.getItem("postData") !== "[]"){
 }
 postManager.deletePost(4);
  */
+
+// Edcet Code
+// Create Post Handler
+const form = document.getElementById("myForm");
+
+form.addEventListener("submit", function (event) {
+  //event.preventDefault();
+  console.log("evento detectado");
+   // Get the textarea element by its id
+   const textarea = document.getElementById("projectDescription");
+
+   // Retrieve the data from the textarea using the value property
+   const textData = textarea.value;
+
+   // Display the retrieved data (you can also do other operations with it)
+  // console.log("Data from textarea: " + textData);
+
+  // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
+  const newPost={
+    id: postManager.getCurrentId()+1,
+    name: "ana",
+    img: "/assets/img/perryXd.png",
+    noLike: 0,
+    noComments: 0,
+    postContent:textData,
+    postImgs: ["/assets/img/placeholder.png","/assets/img/placeholder.png"],
+    trend: "#PatronaSubemeElSueldo"
+  }
+  postManager.addPost(newPost);
+});

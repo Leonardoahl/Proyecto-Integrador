@@ -105,6 +105,10 @@ class PostsController {
         this.currentId = 0
     }
 
+    getCurrentId(){
+        return this.currentId;
+    }
+
     addPost(post) {
         this.post.push(post);
         this.currentId++;

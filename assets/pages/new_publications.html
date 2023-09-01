@@ -23,7 +23,6 @@
     <script defer src="../js/PostsController.js"></script>
     <script defer src="../js/post.js"></script>
     <title>Publicaciones</title>
-
   </head>
 
   <body>
@@ -74,12 +73,14 @@
 
     <main class="container">
       <div class="row justify-content-aroud" id="content">
+        <!-- Trending List -->
         <section class="col-sm-4" id="trending">
-          <h1 class="text-center">Trending
-              <!--  Vertical line -->
-          <div class="v_line"></div>
+          <h1 class="text-center">
+            Trending
+            <!--  Vertical line -->
+            <div class="v_line"></div>
           </h1>
-       
+
           <ol class="text-center" id="trendsList">
             <li>#Python</li>
             <li>#Java</li>
@@ -91,88 +92,69 @@
           </ol>
         </section>
 
-       
-
         <section class="col-sm-8 align-self-end" id="projects">
-          <h1 class="row" id="title">Proyectos
-             <!--  Vertical line -->
-          <div class="v_line"></div>
+          <h1 class="row" id="title">
+            Proyectos
+            <div class="v_line"></div>
+            <!--  Vertical line -->
           </h1>
-          
+
           <!--post comments-->
           <div>
-            <form >
+            <form id="myForm">
               <div class="mb-3">
                 <label for="validationTextarea" class="form-label">POST</label>
-                <textarea class="form-control" id="validationTextarea" placeholder="Shared your thoughts" required></textarea>
+                <textarea
+                  class="form-control"
+                  id="projectDescription"
+                  placeholder="Shared your thoughts"
+                  required
+                ></textarea>
               </div>
               <div class="mb-3">
                 <div class="input-group">
-                  <span class="input-group-text" id="basic-addon3">URL images</span>
-                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                  <span class="input-group-text" id="basic-addon3"
+                    >URL images</span
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="basic-url"
+                    aria-describedby="basic-addon3 basic-addon4"
+                  />
                 </div>
               </div>
               <div class="mb-3">
-                <button class="btn btn-primary" type="submit" disabled>Enviar</button>
+                <button class="btn btn-primary" type="submit">
+                  Enviar
+                </button>
               </div>
             </form>
           </div>
-         
-          <div id="post" class="row">
-            <!-- <div class="row" id="user">
-              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
-                <img
-                  class="img-thumbnail rounded float-start"
-                  src="../img/perryXd.png"
-                  alt="user profile thumbnail"
-                  width="90"
-                />
-              </div>
-              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
-                <h2 class="row" id="userId">
-                  <strong>@Mentirosilla</strong>
-                </h2>
-                <div class="row" id="hashtag">
-                  <label>#HTML,#JAVASCRIPT,#CSS</label>
-                </div>
-              </div>
-            </div>
-            <div class="row" id="content">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                dolor harum tempora repellat provident eum voluptatem, adipisci
-                quod beatae animi hic. Temporibus blanditiis et itaque libero
-                quisquam laborum? Et, asperiores.
-              </p>
-            </div>
-            <div class="row" id="info">
-              <div id="interactios">
-                <button class="btn btn-secondary">
-                  99+ <img src="../img/corazon.png" width="30" />
-                </button>
-
-                <button class="btn btn-secondary">
-                  99+
-                  <img
-                    class="img-fluid"
-                    src="../img/comentarios.png"
-                    width="30"
-                  />
-                </button>
-              </div>
-            </div>
-          </div> -->
-          <!-- FIN DE DIV DE POST -->
-         
+          <!-- Post Section -->
+          <section class="row" id="post"></section>
+        </section>
+      </div>
     </main>
 
     <footer class="foot">
       <div class="groupOne">
         <div class="box justify-content-center align-items-center mx-4">
-          <div class="row"><a href="../pages/about_us.html" class="link-light">Sobre Nosotros</a>
+          <div class="row">
+            <a href="../pages/about_us.html" class="link-light"
+              >Sobre Nosotros</a
+            >
           </div>
-          <div class="row"><a href="../pages/privacy_policy.html"  class="link-light">Política de privacidad</a></div>
-          <div class="row"><a href="../pages/terms_conditions.html"  class="link-light">Términos y condiciones</a></div>
+          <div class="row">
+            <a href="../pages/privacy_policy.html" class="link-light"
+              >Política de privacidad</a
+            >
+          </div>
+          <div class="row">
+            <a href="../pages/terms_conditions.html" class="link-light"
+              >Términos y condiciones</a
+            >
+          </div>
         </div>
         <div class="box text-center">
           <small

@@ -1,9 +1,17 @@
-const projects = document.getElementById("post");
+/**
+ * @author Perry Code
+ * @version 0.0.1
+ * 
+ */
 
-function addPostSection(post){
-    let text = "";
-    for(let i= 0; i < post.post.length; i++){
-        text+= `
+
+const projects = document.getElementById("post");
+const inputID ="myForm";
+
+function addPostSection(post) {
+  let text = "";
+  for (let i = 0; i < post.post.length; i++) {
+    text += `
         <div class="row" id="user">
               <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
                 <img
@@ -44,46 +52,57 @@ function addPostSection(post){
               </div>
             </div>
           </div>
-        `
-    }
-    localStorage.setItem("postData", JSON.stringify(post.post));
-    return text;
+        `;
+  }
+  localStorage.setItem("postData", JSON.stringify(post.post));
+  return text;
 }
-
 
 const postManager = new PostsController();
-postManager.addPost(post1);
-postManager.addPost(post2);
-postManager.addPost(post3);
-postManager.addPost(post4);
-postManager.addPost(post5);
-postManager.addPost(post6);
-postManager.addPost(post7);
-postManager.addPost(post8);
-postManager.addPost(post9);
-postManager.addPost(post10);
-projects.innerHTML = addPostSection(postManager);
-postManager.deletePost(4);
-postManager.updatePost(6,"jajaxd");
-projects.innerHTML = addPostSection(postManager);
+
+// Create Post Handler
+const form = document.getElementById(inputID);
+
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  
+   // Get the textarea element by its id
+   const textarea = document.getElementById("projectDescription");
+
+   // Retrieve the data from the textarea using the value property
+   const textData = textarea.value;
+  // validamos el post 
+ // validatePost("textarea");
+  // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
+  const newPost={
+    id: postManager.getCurrentId()+1,
+    name: "ana",
+    img: "/assets/img/perryXd.png",
+    noLike: 0,
+    noComments: 0,
+    postContent:textData,
+    postImgs: ["/assets/img/placeholder.png","/assets/img/placeholder.png"],
+    trend: "#PatronaSubemeElSueldo"
+  }
+
+  postManager.addPost(newPost);
+  projects.innerHTML = addPostSection(postManager);
+  
+ // console.log(postManager);
+  
+});
 
 
-/* const postManager = new PostsController();
-if(localStorage.getItem("postData") !== "[]"){
-    postManager.loadFromLocalStorage();
-    projects.innerHTML = addPostSection(postManager);
-}else{
-    postManager.addPost(post1);
-    postManager.addPost(post2);
-    postManager.addPost(post3);
-    postManager.addPost(post4);
-    postManager.addPost(post5);
-    postManager.addPost(post6);
-    postManager.addPost(post7);
-    postManager.addPost(post8);
-    postManager.addPost(post9);
-    postManager.addPost(post10);
-    projects.innerHTML = addPostSection(postManager);
+function validatePost(inputID) {
+  const input = document.getElementById(inputID);
+  const validityState = input.validity;
+
+  if (validityState.valueMissing) {
+    console.log(" mensaje demasiado cort")
+   // input.setCustomValidity("You gotta fill this out, yo!");
+  }else{
+    console.log("otro estado de validad")
+  }
+
+  //input.reportValidity();
 }
-postManager.deletePost(4);
- */

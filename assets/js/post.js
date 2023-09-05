@@ -1,12 +1,11 @@
 /**
  * @author Perry Code
  * @version 0.0.1
- * 
+ *
  */
 
-
 const projects = document.getElementById("post");
-const inputID ="myForm";
+const inputID = "myForm";
 
 function addPostSection(post) {
   let text = "";
@@ -63,46 +62,56 @@ const postManager = new PostsController();
 // Create Post Handler
 const form = document.getElementById(inputID);
 
-form.addEventListener("submit", event => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
-  
-   // Get the textarea element by its id
-   const textarea = document.getElementById("projectDescription");
 
-   // Retrieve the data from the textarea using the value property
-   const textData = textarea.value;
-  // validamos el post 
- // validatePost("textarea");
-  // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
-  const newPost={
-    id: postManager.getCurrentId()+1,
-    name: "ana",
-    img: "/assets/img/perryXd.png",
-    noLike: 0,
-    noComments: 0,
-    postContent:textData,
-    postImgs: ["/assets/img/placeholder.png","/assets/img/placeholder.png"],
-    trend: "#PatronaSubemeElSueldo"
+  // Get the textarea element by its id
+  const textarea = document.getElementById("projectDescription");
+
+  // Retrieve the data from the textarea using the value property
+  const textData = textarea.value;
+
+  // validamos que hayan hashtags en el post
+  if (validateHashtagsPost(textData)) {
+    // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
+    const newPost = {
+      id: postManager.getCurrentId() + 1,
+      name: "ana",
+      img: "/assets/img/perryXd.png",
+      noLike: 0,
+      noComments: 0,
+      postContent: textData,
+      postImgs: ["/assets/img/placeholder.png", "/assets/img/placeholder.png"],
+      trend: "#PatronaSubemeElSueldo",
+    };
+
+    postManager.addPost(newPost);
+    projects.innerHTML = addPostSection(postManager);
   }
-
-  postManager.addPost(newPost);
-  projects.innerHTML = addPostSection(postManager);
-  
- // console.log(postManager);
-  
 });
 
+/**
+ *
+ * Funcion que recibe el texto del proyecto y analiza los hashtag , si no encuentra uno
+ * emite una advertencia
+ *
+ * */
 
-function validatePost(inputID) {
-  const input = document.getElementById(inputID);
-  const validityState = input.validity;
-
-  if (validityState.valueMissing) {
-    console.log(" mensaje demasiado cort")
-   // input.setCustomValidity("You gotta fill this out, yo!");
-  }else{
-    console.log("otro estado de validad")
+function validateHashtagsPost(data) {
+  // busqueda global con expresion regular de hashtags y se guardan en un string
+  coincidence = data.match(/#[a-z]+/gi);
+  //si es un string vacio , significa que no tiene hashtags y necesita agregarlos
+  if (coincidence == null) {
+    projects.innerHTML = `
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <em>Faltan hastags!</em> debes agregar al menos un hasthag de lenguaje para publicar
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+`;
+    return false;
+  } else {
+    return true;
   }
-
-  //input.reportValidity();
 }

@@ -1,9 +1,16 @@
-const projects = document.getElementById("post");
+/**
+ * @author Perry Code
+ * @version 0.0.1
+ *
+ */
 
-function addPostSection(post){
-    let text = "";
-    for(let i= 0; i < post.post.length; i++){
-        text+= `
+const projects = document.getElementById("post");
+const inputID = "myForm";
+
+function addPostSection(post) {
+  let text = "";
+  for (let i = 0; i < post.post.length; i++) {
+    text += `
         <div class="row" id="user">
               <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
                 <img
@@ -44,46 +51,67 @@ function addPostSection(post){
               </div>
             </div>
           </div>
-        `
-    }
-    localStorage.setItem("postData", JSON.stringify(post.post));
-    return text;
+        `;
+  }
+  localStorage.setItem("postData", JSON.stringify(post.post));
+  return text;
 }
-
 
 const postManager = new PostsController();
-postManager.addPost(post1);
-postManager.addPost(post2);
-postManager.addPost(post3);
-postManager.addPost(post4);
-postManager.addPost(post5);
-postManager.addPost(post6);
-postManager.addPost(post7);
-postManager.addPost(post8);
-postManager.addPost(post9);
-postManager.addPost(post10);
-projects.innerHTML = addPostSection(postManager);
-postManager.deletePost(4);
-postManager.updatePost(6,"jajaxd");
-projects.innerHTML = addPostSection(postManager);
 
+// Create Post Handler
+const form = document.getElementById(inputID);
 
-/* const postManager = new PostsController();
-if(localStorage.getItem("postData") !== "[]"){
-    postManager.loadFromLocalStorage();
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  // Get the textarea element by its id
+  const textarea = document.getElementById("projectDescription");
+
+  // Retrieve the data from the textarea using the value property
+  const textData = textarea.value;
+
+  // validamos que hayan hashtags en el post
+  if (validateHashtagsPost(textData)) {
+    // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
+    const newPost = {
+      id: postManager.getCurrentId() + 1,
+      name: "ana",
+      img: "/assets/img/perryXd.png",
+      noLike: 0,
+      noComments: 0,
+      postContent: textData,
+      postImgs: ["/assets/img/placeholder.png", "/assets/img/placeholder.png"],
+      trend: "#PatronaSubemeElSueldo",
+    };
+
+    postManager.addPost(newPost);
     projects.innerHTML = addPostSection(postManager);
-}else{
-    postManager.addPost(post1);
-    postManager.addPost(post2);
-    postManager.addPost(post3);
-    postManager.addPost(post4);
-    postManager.addPost(post5);
-    postManager.addPost(post6);
-    postManager.addPost(post7);
-    postManager.addPost(post8);
-    postManager.addPost(post9);
-    postManager.addPost(post10);
-    projects.innerHTML = addPostSection(postManager);
+  }
+});
+
+/**
+ *
+ * Funcion que recibe el texto del proyecto y analiza los hashtag , si no encuentra uno
+ * emite una advertencia
+ *
+ * */
+
+function validateHashtagsPost(data) {
+  // busqueda global con expresion regular de hashtags y se guardan en un string
+  coincidence = data.match(/#[a-z]+/gi);
+  //si es un string vacio , significa que no tiene hashtags y necesita agregarlos
+  if (coincidence == null) {
+    projects.innerHTML = `
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <em>Faltan hastags!</em> debes agregar al menos un hasthag de lenguaje para publicar
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+`;
+    return false;
+  } else {
+    return true;
+  }
 }
-postManager.deletePost(4);
- */

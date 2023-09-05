@@ -20,6 +20,8 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Quicksand:wght@300&display=swap"
       rel="stylesheet"
     />
+    <script defer src="../js/PostsController.js"></script>
+    <script defer src="../js/post.js"></script>
     <title>Publicaciones</title>
   </head>
 
@@ -49,17 +51,19 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i class="bi bi-house-fill"></i>
+                <a class="nav-link" href="/assets/pages/publications.html"><span class="badge bg-info">4</span>
+                  <i class="bi bi-house-fill">
+                  </i>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <!-- use of badges  -->
+                <a class="nav-link" href="conections.html"><span class="badge bg-info">4</span>
                   <i class="bi bi-people-fill"></i>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="user_profile.html">
                   <i class="bi bi-person-circle"></i>
                 </a>
               </li>
@@ -71,12 +75,14 @@
 
     <main class="container">
       <div class="row justify-content-aroud" id="content">
+        <!-- Trending List -->
         <section class="col-sm-4" id="trending">
-          <h1 class="text-center">Trending
-              <!--  Vertical line -->
-          <div class="v_line"></div>
+          <h1 class="text-center">
+            Trending
+            <!--  Vertical line -->
+            <div class="v_line"></div>
           </h1>
-       
+
           <ol class="text-center" id="trendsList">
             <li>#Python</li>
             <li>#Java</li>
@@ -88,203 +94,68 @@
           </ol>
         </section>
 
-        <section class="col-sm-8 align-self-end" id="projects">
-          <h1 class="row" id="title">Proyectos
-             <!--  Vertical line -->
-          <div class="v_line"></div>
+        <section class="col-sm-8" id="projects">
+          <h1 class="row" id="title">
+            Proyectos
+            <div class="v_line"></div>
+            <!--  Vertical line -->
           </h1>
-         
-          <div id="post" class="row">
-            <div class="row" id="user">
-              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
-                <img
-                  class="img-thumbnail rounded float-start"
-                  src="../img/perryXd.png"
-                  alt="user profile thumbnail"
-                  width="90"
-                />
-              </div>
-              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
-                <h2 class="row" id="userId">
-                  <strong>@Mentirosilla</strong>
-                </h2>
-                <div class="row" id="hashtag">
-                  <label>#HTML,#JAVASCRIPT,#CSS</label>
-                </div>
-              </div>
-            </div>
-            <div class="row" id="content">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                dolor harum tempora repellat provident eum voluptatem, adipisci
-                quod beatae animi hic. Temporibus blanditiis et itaque libero
-                quisquam laborum? Et, asperiores.
-              </p>
-            </div>
-            <div class="row" id="info">
-              <div id="interactios">
-                <button class="btn btn-secondary">
-                  99+ <img src="../img/corazon.png" width="30" />
-                </button>
 
-                <button class="btn btn-secondary">
-                  99+
-                  <img
-                    class="img-fluid"
-                    src="../img/comentarios.png"
-                    width="30"
-                  />
+          <!--post form structure -->
+          <form id="myForm"  >
+            <!-- i need a centered so i add a row and center the label of the POST-->
+            <div class="row justify-content-center">
+              <label for="validationTextarea" class="col-sm-2 col-form-label"
+                >POST</label
+              >
+            </div>
+            <!-- Agregue una columna que abarque el textarea y botones y lograr un fondo uniforme para todos esos elementos -->
+            <div class="col p-3" id="postCreator">
+              <textarea
+                class="form-control"
+                id="projectDescription"
+                placeholder="Shared your thoughts"
+                required
+                minlength="10"
+              ></textarea>
+              <!-- use of new functions to manage buttons position (bootstrap 5 new functions) -->
+              <!-- d-grid es una funcion nueva para los btones  -->
+              <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+                <button class="btn btn-warning me-md-2" type="submit">
+                  Enviar
                 </button>
+                <button class="btn btn-warning" type="button">other</button>
               </div>
             </div>
-          </div>
-          <!-- FIN DE DIV DE POST -->
-          <div id="post" class="row">
-            <div class="row" id="user">
-              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
-                <img
-                  class="img-thumbnail rounded float-start"
-                  src="../img/perryXd.png"
-                  alt="user profile thumbnail"
-                  width="90"
-                />
-              </div>
-              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
-                <h2 class="row" id="userId">
-                  <strong>@Mentirosilla</strong>
-                </h2>
-                <div class="row" id="hashtag">
-                  <label>#HTML,#JAVASCRIPT,#CSS</label>
-                </div>
-              </div>
-            </div>
-            <div class="row" id="content">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                dolor harum tempora repellat provident eum voluptatem, adipisci
-                quod beatae animi hic. Temporibus blanditiis et itaque libero
-                quisquam laborum? Et, asperiores.
-              </p>
-            </div>
-            <div class="row" id="info">
-              <div id="interactios">
-                <button class="btn btn-secondary">
-                  99+ <img src="../img/corazon.png" width="30" />
-                </button>
+          </form>
+          <!--post form end structure -->
 
-                <button class="btn btn-secondary">
-                  99+
-                  <img
-                    class="img-fluid"
-                    src="../img/comentarios.png"
-                    width="30"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- FIN DE DIV DE POST -->
-          <div id="post" class="row">
-            <div class="row" id="user">
-              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
-                <img
-                  class="img-thumbnail rounded float-start"
-                  src="../img/perryXd.png"
-                  alt="user profile thumbnail"
-                  width="90"
-                />
-              </div>
-              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
-                <h2 class="row" id="userId">
-                  <strong>@Mentirosilla</strong>
-                </h2>
-                <div class="row" id="hashtag">
-                  <label>#HTML,#JAVASCRIPT,#CSS</label>
-                </div>
-              </div>
-            </div>
-            <div class="row" id="content">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                dolor harum tempora repellat provident eum voluptatem, adipisci
-                quod beatae animi hic. Temporibus blanditiis et itaque libero
-                quisquam laborum? Et, asperiores.
-              </p>
-            </div>
-            <div class="row" id="info">
-              <div id="interactios">
-                <button class="btn btn-secondary">
-                  99+ <img src="../img/corazon.png" width="30" />
-                </button>
-
-                <button class="btn btn-secondary">
-                  99+
-                  <img
-                    class="img-fluid"
-                    src="../img/comentarios.png"
-                    width="30"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- FIN DE DIV DE POST -->
-          <div id="post" class="row">
-            <div class="row" id="user">
-              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
-                <img
-                  class="img-thumbnail rounded float-start"
-                  src="../img/perryXd.png"
-                  alt="user profile thumbnail"
-                  width="90"
-                />
-              </div>
-              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
-                <h2 class="row" id="userId">
-                  <strong>@Mentirosilla</strong>
-                </h2>
-                <div class="row" id="hashtag">
-                  <label>#HTML,#JAVASCRIPT,#CSS</label>
-                </div>
-              </div>
-            </div>
-            <div class="row" id="content">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                dolor harum tempora repellat provident eum voluptatem, adipisci
-                quod beatae animi hic. Temporibus blanditiis et itaque libero
-                quisquam laborum? Et, asperiores.
-              </p>
-            </div>
-            <div class="row" id="info">
-              <div id="interactios">
-                <button class="btn btn-secondary">
-                  99+ <img src="../img/corazon.png" width="30" />
-                </button>
-
-                <button class="btn btn-secondary">
-                  99+
-                  <img
-                    class="img-fluid"
-                    src="../img/comentarios.png"
-                    width="30"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- FIN DE DIV DE POST -->
+          <!-- Post display Section -->
+          <section class="row" id="post">
+            
+          </section>
         </section>
       </div>
-      <!-- FIN DIV DE CONTENIDO -->
     </main>
 
     <footer class="foot">
       <div class="groupOne">
         <div class="box justify-content-center align-items-center mx-4">
-          <div class="row">Sobre Nostros</div>
-          <div class="row">Política de privacidad</div>
-          <div class="row">Términos y condiciones</div>
+          <div class="row">
+            <a href="../pages/about_us.html" class="link-light"
+              >Sobre Nosotros</a
+            >
+          </div>
+          <div class="row">
+            <a href="../pages/privacy_policy.html" class="link-light"
+              >Política de privacidad</a
+            >
+          </div>
+          <div class="row">
+            <a href="../pages/terms_conditions.html" class="link-light"
+              >Términos y condiciones</a
+            >
+          </div>
         </div>
         <div class="box text-center">
           <small

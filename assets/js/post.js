@@ -34,7 +34,7 @@ function addPostSection(post) {
           </div>
         </div>
       </div>
-      <div class="row" id="content">
+      <div class="row">
         <p>${post.post[i].postContent}</p>
       </div>
     </div>
@@ -66,6 +66,9 @@ function addPostSection(post) {
   localStorage.setItem("postData", JSON.stringify(post.post));
   return text;
 }
+const content = document.getElementById("post");
+
+
 
 const postManager = new PostsController();
 
@@ -125,3 +128,7 @@ function validateHashtagsPost(data) {
     return true;
   }
 }
+
+content.addEventListener("click", ()=>{
+  window.location = "project_page.html"
+} );

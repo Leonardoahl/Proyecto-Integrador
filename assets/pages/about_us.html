@@ -14,46 +14,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Quicksand:wght@300&display=swap"
     rel="stylesheet" />
   <title>Sobre Nosotros</title>
+  <script src="../js/include.js"></script>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg py-1">
-      <div class="container">
-        <a class="navbar-logo" href="./publications.html">
-          <img src="../img/logo blanco blanco pequeño.png" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="bi bi-search"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./publications.html">
-                <i class="bi bi-house-fill"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./conections.html">
-                <i class="bi bi-people-fill"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./user_profile.html">
-                <i class="bi bi-person-circle"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <header include-html="navbar.html"></header>
   <main>
     <!-- <div class="container"> -->
       <div class="row text-center">
@@ -72,7 +37,7 @@
           </p>
         </div>
         <div class="col-lg-4 mb-2 text-center" id="sobre">
-          <h2>Place Holder</h2>
+          <h2>¿Quiénes somos?</h2>
           <!-- Ahi luego lo vemos -->
           <p class="content">
             En un mundo en constante evolución, donde la tecnología juega un papel vital, surge la necesidad de unir
@@ -106,38 +71,100 @@
             aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxh4FbWWGHKPgszoWhgRmplN_3tGcj_knQYQ&usqp=CAU"
-              class="img-fluid" />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Fulanito</h5>
+              src="../img/ana.png"
+              class="img-fluid"
+              style="width: 140px;" />
+            <div class="carousel-caption  d-md-block col-9">
+              <h5>Ana Victoria Santoyo Robles</h5>
               <p>
-                Some representative placeholder content for the first slide.
+                Ana es nuestra líder y gestora de proyectos. 
+                Su habilidad para mantenernos organizados y enfocados en los objetivos es inestimable.
               </p>
             </div>
           </div>
           <div class="carousel-item" data-bs-interval="2000">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQecpS1cPe5aEAjQBtgfZ6ajJ7Jq0yQyEQ7lA&usqp=CAU"
-              class="img-fluid" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>fulanito 2</h5>
+              src="../img/fernanda (2).png"
+              class="img-fluid"
+              style="width: 140px;" />
+            <div class="carousel-caption  d-md-block">
+              <h5>María Fernanda Gomez Tella </h5>
               <p>
-                Some representative placeholder content for the second slide.
+                Fer es nuestra mente creativa. 
+                Siempre aportando ideas innovadoras y soluciones frescas a los desafíos de programación. 
               </p>
             </div>
           </div>
           <div class="carousel-item">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxh4FbWWGHKPgszoWhgRmplN_3tGcj_knQYQ&usqp=CAU"
-              class="img-fluid"" />
-              <div class=" carousel-caption d-none d-md-block">
-            <h5>fulanito 3</h5>
+              src="../img/jimena.png"
+              class="img-fluid""
+              style="width: 140px;" />
+              <div class=" carousel-caption d-md-block">
+            <h5>Jimena Barranco Medina</h5>
             <p>
-              Some representative placeholder content for the third slide.
+              Jime es la experta en la optimización del código. 
+              Su habilidad para encontrar la eficiencia en medio del caos es insuperable. 
+            </p>
+          </div>
+        </div>
+          <div class="carousel-item">
+            <img
+              src="../img/ale.png"
+              class="img-fluid""
+              style="width: 140px;"/>
+              <div class=" carousel-caption  d-md-block">
+            <h5>Alejandro Díaz Salmeron</h5>
+            <p>
+              Ale es nuestro amante de las pruebas y el aseguramiento de la calidad. Nada pasa desapercibido para el, 
+              asegurando que cada línea de código esté libre de errores. 
+            </p>
+          </div>
+        </div>
+          <div class="carousel-item">
+            <img
+              src="../img/ed.png"
+              class="img-fluid"" 
+              style="width: 140px;"/>
+              <div class=" carousel-caption  d-md-block">
+            <h5>Edwin Orlando Cetina Chi</h5>
+            <p>
+              Ed es nuestro gurú del front-end. 
+              Transforma las ideas en interfaces de usuario atractivas y funcionales. 
+            </p>
+          </div>
+        </div>
+          <div class="carousel-item">
+            <img
+              src="../img/bryan.png"
+              class="img-fluid"" 
+              style="width: 140px;"/>
+              <div class=" carousel-caption  d-md-block">
+            <h5>Bryan Axel Palacios Amador</h5>
+            <p>
+              Bryan es el experto en back-end. 
+              Su capacidad para desarrollar sistemas sólidos y escalables es fundamental para la funcionalidad de nuestras aplicaciones. 
+            </p>
+          </div>
+        </div>
+          <div class="carousel-item">
+            <img
+              src="../img/leo.png"
+              class="img-fluid"" 
+              style="width: 140px;"/>
+              <div class=" carousel-caption d-md-block">
+            <h5>Leonardo Andrés Hernández López </h5>
+            <p>
+              Leo es un apasionado de las bases de datos y la gestión de datos. Su habilidad para organizar y 
+              acceder a la información de manera eficiente es esencial para el éxito de nuestros proyectos.
             </p>
           </div>
         </div>
@@ -155,29 +182,15 @@
     <!-- carousel end -->
   </main>
 
-  <footer class="foot">
-    <div class="groupOne">
-      <div class="box justify-content-center align-items-center mx-4">
-        <div class="row"><a href="./about_us.html" class="links">Sobre Nostros</a></div>
-        <div class="row"><a href="./privacy_policy.html" class="links">Política de privacidad</a></div>
-        <div class="row"><a href="./terms_conditions.html" class="links">Términos y condiciones</a></div>
-      </div>
-      <div class="box text-center">
-        <small>&copy; 2023 <b>PERING</b> - Todos los Derechos Reservados.</small>
-      </div>
-      <div class="socialMedia text-center justify-content-center align-items-center">
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="github"><i class="bi bi-github"></i></a>
-      </div>
-    </div>
-  </footer>
+  <footer class="foot" include-html="footer.html"></footer>
   <!-- Bootstrap script -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-
+    <script>
+      includeHTML();
+    </script>
 </body>
 
 </html>

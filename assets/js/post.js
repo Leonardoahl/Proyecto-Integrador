@@ -11,36 +11,46 @@ function addPostSection(post) {
   let text = "";
   for (let i = 0; i < post.post.length; i++) {
     text += `
-        <div class="row" id="user">
-              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
-                <img
-                  class="img-thumbnail rounded float-start"
-                  src='${post.post[i].img}'
-                  alt="user profile thumbnail"
-                  width="90"
-                />
-              </div>
-              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
-                <h2 class="row" id="userId">
-                  <strong>@${post.post[i].name}</strong>
-                </h2>
-                <div class="row" id="hashtag">
-                  <label>${post.post[i].trend}</label>
-                </div>
-              </div>
-            </div>
-            <div class="row" id="content">
-              <p>
-                ${post.post[i].postContent}
-              </p>
-            </div>
-            <div class="row" id="info">
+
+  
+    <div class="container">
+    <div id="post" class="row">
+      <div class="row" id="user">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          <img
+            class="userIcon"
+            src='${post.post[i].img}'
+            alt="user profile thumbnail"
+            width="90"
+            style="margin-right: 2px;"
+          />
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+          <div class="row" id="userId" style="margin-top: 10px;"> 
+            <label>@${post.post[i].name}</label>
+          </div>
+          <div class="row" id="hashtag" style="margin-top: 10px;"> 
+            <label>${post.post[i].trend}</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p>${post.post[i].postContent}</p>
+      </div>
+    </div>
+  </div>
+  
+
+  
+
+
+            <div class="row" id="info" style="margin-bottom: 20px;">
               <div id="interactios">
-                <button class="btn btn-secondary">
+                <button class="btn btn-secondary btn-xs btn-custom-transparent">
                     ${post.post[i].noLike} <img src="../img/corazon.png" width="30" />
                 </button>
 
-                <button class="btn btn-secondary">
+                <button class="btn btn-secondary btn-xs btn-custom-transparent">
                     ${post.post[i].noComments}
                   <img
                     class="img-fluid"
@@ -56,6 +66,9 @@ function addPostSection(post) {
   localStorage.setItem("postData", JSON.stringify(post.post));
   return text;
 }
+const content = document.getElementById("post");
+
+
 
 const postManager = new PostsController();
 
@@ -115,3 +128,7 @@ function validateHashtagsPost(data) {
     return true;
   }
 }
+
+content.addEventListener("click", ()=>{
+  window.location = "project_page.html"
+} );

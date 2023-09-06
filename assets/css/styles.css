@@ -18,6 +18,7 @@ main{
     height: auto;
     min-height: calc(100vh - 110px);
     overflow: hidden;
+    font-size: calc(0.5em + 0.7vw);
 }
 
 .yellowButton{

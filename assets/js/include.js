@@ -1,4 +1,5 @@
 function includeHTML() {
+    console.log("hola mundo");
     let z, i, elmnt, file, xhttp;
     /* Loop through a collection of all HTML elements: */
     z = document.getElementsByTagName("*");

@@ -46,11 +46,11 @@ function addPostSection(post) {
 
             <div class="row" id="info" style="margin-bottom: 20px;">
               <div id="interactios">
-                <button class="btn btn-secondary btn-xs">
+                <button class="btn btn-secondary btn-xs btn-custom-transparent">
                     ${post.post[i].noLike} <img src="../img/corazon.png" width="30" />
                 </button>
 
-                <button class="btn btn-secondary btn-xs">
+                <button class="btn btn-secondary btn-xs btn-custom-transparent">
                     ${post.post[i].noComments}
                   <img
                     class="img-fluid"

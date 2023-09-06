@@ -34,7 +34,7 @@ function addPostSection(post) {
           </div>
         </div>
       </div>
-      <div class="row" id="content">
+      <div class="row">
         <p>${post.post[i].postContent}</p>
       </div>
     </div>
@@ -46,11 +46,11 @@ function addPostSection(post) {
 
             <div class="row" id="info" style="margin-bottom: 20px;">
               <div id="interactios">
-                <button class="btn btn-secondary btn-xs">
+                <button class="btn btn-secondary btn-xs btn-custom-transparent">
                     ${post.post[i].noLike} <img src="../img/corazon.png" width="30" />
                 </button>
 
-                <button class="btn btn-secondary btn-xs">
+                <button class="btn btn-secondary btn-xs btn-custom-transparent">
                     ${post.post[i].noComments}
                   <img
                     class="img-fluid"
@@ -66,6 +66,9 @@ function addPostSection(post) {
   localStorage.setItem("postData", JSON.stringify(post.post));
   return text;
 }
+const content = document.getElementById("post");
+
+
 
 const postManager = new PostsController();
 
@@ -87,7 +90,7 @@ form.addEventListener("submit", (event) => {
     const newPost = {
       id: postManager.getCurrentId() + 1,
       name: "ana",
-      img: "/assets/img/perryXd.png",
+      img: "../img/perryXd.png",
       noLike: 0,
       noComments: 0,
       postContent: textData,
@@ -125,3 +128,7 @@ function validateHashtagsPost(data) {
     return true;
   }
 }
+
+content.addEventListener("click", ()=>{
+  window.location = "project_page.html"
+} );

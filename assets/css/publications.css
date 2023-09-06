@@ -15,3 +15,9 @@
     width: 300px;
     margin: auto;
 }
+/* Estilos para botones personalizados transparentes */
+.btn-custom-transparent {
+    background-color: transparent!important; /* Fondo transparente */
+    border: none!important; /* Sin borde */
+   
+  }

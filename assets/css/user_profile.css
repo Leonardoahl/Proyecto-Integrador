@@ -8,21 +8,31 @@
 }
 
 .porfileImage{
-    height: 90%;
-    width: 90%;
+    height: 60%;
+    width: 60%;
+}
+
+.title{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.row{
+    justify-content: center;
+    align-items: center;
 }
 
 ul{
     list-style-type: none;
-}
-li {
-    float: left;
     text-align: center;
-    width: 7em;
-  }
+}
+.li {
+    display: inline;
+    margin-right: 30px;
+}
 
 .aboutMe{
+    background-color:  rgba(83,67,49,0.5);
     padding: 3%;
     margin: 0 10% 3% 10% ;
-    border-bottom: 2px dotted #FED766;
 }

@@ -90,7 +90,7 @@ form.addEventListener("submit", (event) => {
     const newPost = {
       id: postManager.getCurrentId() + 1,
       name: "ana",
-      img: "/assets/img/perryXd.png",
+      img: "../img/perryXd.png",
       noLike: 0,
       noComments: 0,
       postContent: textData,

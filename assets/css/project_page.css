@@ -21,7 +21,7 @@
 
 } */
 #date{
-    font-size: 12px;
+    font-size: 16px;
 }
 /* #postInteractions{
 
@@ -59,14 +59,16 @@
     border: none!important; /* Sin borde */
    
   }
-.interactionButtons{
+
+/* Estilo de botones con fondo negro, a decidir cuál se ve mejor */
+/* .interactionButtons{
     background-color: black;
     color: white;
     width: 80px;
     padding: 4px;
     text-align: center;
     border-radius: 1rem;
-}
+} */
 
 #date{
     margin: auto;

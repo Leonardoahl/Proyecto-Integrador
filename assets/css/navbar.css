@@ -1,3 +1,7 @@
+header{
+    position: sticky;
+    top: 0;
+}
 nav{
     background-color: #657265;
 }
@@ -16,3 +20,4 @@ nav{
 .nav-item{
     color: white;
 }
+

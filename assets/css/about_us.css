@@ -3,9 +3,9 @@
 @import "./styles.css";
 @import "./carousel.css";
 
-
-#mision,
-#sobre,
-#vision{
+h2,
+.content{
     background: rgba(83,67,49,0.8);
+    padding: 2px;
+    margin: 2px;
 }

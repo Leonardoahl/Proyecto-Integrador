@@ -2,10 +2,6 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-main{
-    font-size: 21px;
-}
-
 #avatar{
     border-radius: 50%;
     height: 35%;

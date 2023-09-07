@@ -1,4 +1,7 @@
-
+export function loadFooter(){
+    const footerElement = document.getElementById("footer");
+    footerElement.innerHTML = `
+  
     <div class="groupOne">
       <div class="box justify-content-center align-items-center mx-4">
         <div class="row">
@@ -30,3 +33,7 @@
         <a href="#" class="github"><i class="bi bi-github"></i></a>
       </div>
     </div>  
+
+    
+    `;
+}

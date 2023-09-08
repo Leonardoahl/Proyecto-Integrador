@@ -1,5 +1,7 @@
 console.log("xd");
 
+const users =[];
+
 const registerForm = document.forms["registerForm"];
 console.log(registerForm);
 
@@ -28,6 +30,19 @@ function validateRegistration(userData) {
         confirmPassword(userData) && 
         validateEmail(userData)) {
         // Hacer lo del JJJJJJSSSSSOOOOOONNNNNNNNNNNN
+        const userDataJSON = {
+            id: 1,
+            name:userData.name,
+            lastName:userData.lastName,
+            user:userData.user,
+            password:userData.password,
+            email:userData.email,
+
+        };
+        users.push(JSON.stringify(userDataJSON));
+
+        console.log(users);
+
         console.log("Registro exitoso");
         //registerForm.classList.add('was-validated');
         registerForm.reset();

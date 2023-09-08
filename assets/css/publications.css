@@ -2,7 +2,6 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-
 #trendsList{
     background: rgba(83,67,49,0.8);
     padding-top: 5rem;
@@ -10,9 +9,24 @@
     margin-top: 5rem;
 }
 
-.v_line {
-    border-bottom: 5px solid rgb(212, 170, 125);
-    width: 300px;
+#trendingTitle{
+    text-align: right;
+}
+
+#trending {
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  #projects {
+    margin-left: 25%;
+  }
+
+.title{
+    border-bottom: 2px dotted rgb(212, 170, 125);
+    width: 90%;
     margin: auto;
 }
 /* Estilos para botones personalizados transparentes */

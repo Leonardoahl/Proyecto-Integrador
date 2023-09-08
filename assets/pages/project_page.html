@@ -14,11 +14,12 @@
         rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <title>place holder</title>
-    <script src="../js/include.js"></script>
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/footer.js"></script>
 </head>
 
 <body>
-    <header include-html="navbar.html"></header>
+    <header id="navbar"></header>
     <main>
         <div class="container">
             <div id="post" class="row">
@@ -48,9 +49,9 @@
                         <label>24/08/2023</label>
                     </div>
                     <div id="icons">
-                        <button class="interactionButtons">99+ <img class="iconImgs" src="../img/corazon.png"></button  >
+                        <button class="btn btn-secondary btn-xs btn-custom-transparent">99+ <img class="iconImgs" src="../img/corazon.png"></button  >
                         
-                        <button class="interactionButtons">99+ <img class="iconImgs" src="../img/comentarios.png"></button  >
+                        <button class="btn btn-secondary btn-xs btn-custom-transparent">99+ <img class="iconImgs" src="../img/comentarios.png"></button  >
                     </div>
                 </div>
             </div>
@@ -84,9 +85,9 @@
                     </div>
                     <div class="row">
                         <div>
-                            <button class="interactionButtons">99+ <img class="iconImgs" src="../img/corazon.png"></button  >
+                            <button class="btn btn-secondary btn-xs btn-custom-transparent">99+ <img class="iconImgs" src="../img/corazon.png"></button  >
                             
-                            <button class="interactionButtons">99+ <img class="iconImgs" src="../img/comentarios.png"></button  >
+                            <button class="btn btn-secondary btn-xs btn-custom-transparent">99+ <img class="iconImgs" src="../img/comentarios.png"></button  >
                         </div>
                     </div>
 
@@ -107,9 +108,9 @@
                     </div>
                     <div class="row">
                         <div>
-                            <button class="interactionButtons">99+ <img class="iconImgs" src="../img/corazon.png"></button  >
+                            <button class="btn btn-secondary btn-xs btn-custom-transparent">99+ <img class="iconImgs" src="../img/corazon.png"></button  >
                             
-                            <button class="interactionButtons">99+ <img class="iconImgs" src="../img/comentarios.png"></button  >
+                            <button class="btn btn-secondary btn-xs btn-custom-transparent">99+ <img class="iconImgs" src="../img/comentarios.png"></button  >
                         </div>
                     </div>
 
@@ -130,9 +131,9 @@
                     </div>
                     <div class="row">
                         <div>
-                            <button class="interactionButtons">99+ <img class="iconImgs" src="../img/corazon.png"></button  >
+                            <button class="btn btn-secondary btn-xs btn-custom-transparent">99+ <img class="iconImgs" src="../img/corazon.png"></button  >
                             
-                            <button class="interactionButtons">99+ <img class="iconImgs" src="../img/comentarios.png"></button  >
+                            <button class="btn btn-secondary btn-xs btn-custom-transparent">99+ <img class="iconImgs" src="../img/comentarios.png"></button  >
                         </div>
                     </div>
                 </div>
@@ -140,9 +141,12 @@
 
         </div>
     </main>
-    <footer class="foot" include-html="footer.html"></footer>
-    <script>
-        includeHTML();
+    <footer class="foot" id="footer"></footer>
+    <script type="module">
+        import{loadNavbar} from "../js/navbar.js";
+        import{loadFooter} from "../js/footer.js";
+        loadNavbar();
+        loadFooter();
     </script>
 </body>
 </html>

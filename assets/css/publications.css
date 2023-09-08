@@ -2,17 +2,31 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-
 #trendsList{
     background: rgba(83,67,49,0.8);
     padding-top: 5rem;
     padding-bottom: 5rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
-.v_line {
-    border-bottom: 5px solid rgb(212, 170, 125);
-    width: 300px;
+#trendingTitle{
+    text-align: right;
+}
+
+#trending {
+    position: fixed;
+    width: 20%;
+    height: auto;
+    overflow-y: auto;
+  }
+  
+  #projects {
+    margin-left: 25%;
+  }
+
+.title{
+    border-bottom: 2px dotted rgb(212, 170, 125);
+    width: 90%;
     margin: auto;
 }
 /* Estilos para botones personalizados transparentes */
@@ -21,3 +35,23 @@
     border: none!important; /* Sin borde */
    
   }
+
+  @media (max-width: 750px) {
+    /* Estilos para pantallas pequeñas (menos de 768px) */
+
+    #trending {
+        position: relative;
+        width: 90%;
+        height: auto;
+        overflow-y: 0;
+        margin-left: 5%;
+        margin-right:5%;
+        margin-top: 0;
+      }
+      
+      #projects {
+        margin-left: 5%;
+        margin-right:5%;
+        width: 90%;
+      }
+  } 

@@ -14,7 +14,7 @@ function addPostSection(post) {
 
   
     <div class="container">
-    <div id="post" class="row">
+    <div id="a" class="row">
       <div class="row" id="user">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
           <img
@@ -129,6 +129,7 @@ function validateHashtagsPost(data) {
   }
 }
 
-content.addEventListener("click", ()=>{
+content.style.cursor = 'pointer';
+content.onclick = ()=>{
   window.location = "project_page.html"
-} );
+};

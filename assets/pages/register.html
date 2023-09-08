@@ -13,11 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Quicksand:wght@300&display=swap"
         rel="stylesheet">
     <title>¡Registrate!</title>
-    <script src="../js/include.js"></script>
+    <script type="module" src="navbar"></script>
+    <script type="module" src="footer"></script>
 </head>
 
 <body>
-    <header include-html="navbar.html"></header>
+    <header id="navbar"></header>
     
     <main class="container" style="padding-top: 25px; padding-bottom: 25px;">
       <div class="col-md-6 offset-md-3">
@@ -99,11 +100,13 @@
       </div>
   </main>
 
-    <footer class="foot" include-html="footer.html"></footer>
-    <script>
-        includeHTML();
+    <footer class="foot" id="footer"></footer>
+    <script type="module">
+      import {loadNavbar} from "../js/navbar.js";
+      import {loadFooter} from "../js/footer.js";
+      loadNavbar();
+      loadFooter();
     </script>
-    <script src="../js/register.js"></script>
 
 </body>
 

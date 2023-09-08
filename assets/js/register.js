@@ -39,7 +39,7 @@ function validateRegistration(userData) {
             email:userData.email,
 
         };
-        users.push(JSON.stringify(userDataJSON));
+     /*    users.push(JSON.stringify(userDataJSON)); */
 
         console.log(users);
 

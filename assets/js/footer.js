@@ -10,6 +10,11 @@ export function loadFooter(){
           >
         </div>
         <div class="row">
+          <a href="../pages/contact_us.html" class="link-light"
+            >Contáctanos</a
+          >
+        </div>
+        <div class="row">
           <a href="../pages/privacy_policy.html" class="link-light"
             >Política de privacidad</a
           >

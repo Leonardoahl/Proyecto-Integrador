@@ -42,13 +42,13 @@ function validateName ({name}){
       
       if (patronMatch) {
         isValid = true;
-        // Campo válido, así que eliminamos la clase 'is-invalid' si está presente.
+        // Campo válido, se elimina la clase 'is-invalid'
         const nameInput = document.getElementById("inputFirstName");
         nameInput.classList.remove("is-invalid");
         return isValid;
       } else {
         console.log("No validó");
-        // Campo no válido, agregamos la clase 'is-invalid'.
+        // Campo no válido, se adiciona la clase 'is-invalid'.
         const nameInput = document.getElementById("inputFirstName");
         nameInput.classList.add("is-invalid");
       };
@@ -60,27 +60,48 @@ function validateName ({name}){
       const patronMatch = lastName.match(patron);
       let isValid = false;
       
-      if(patronMatch){isValid = true;
+      if (patronMatch) {
+        isValid = true;
+        const lastNameInput = document.getElementById("inputLastName");
+        lastNameInput.classList.remove("is-invalid");
+      } else {
+        console.log("No validó Apellido");
+        const lastNameInput = document.getElementById("inputLastName");
+        lastNameInput.classList.add("is-invalid");
+      }
+    
       return isValid;
-  }
-      else { console.log("No validó Apellido")};
   
   };
 
 function validatePassword({password}){
     console.log("entrando a validar pass");
     let isValid = false;
-    if ((password.length >=8)){ isValid = true;
-        return isValid;
-    }
+    if (password.length >= 8) {
+        isValid = true;
+        const passwordInput = document.getElementById("password");
+        passwordInput.classList.remove("is-invalid");
+      } else {
+        const passwordInput = document.getElementById("password");
+        passwordInput.classList.add("is-invalid");
+      }
+    
+      return isValid;
      
 }
 function confirmPassword({password,confirmedPassword}){
     console.log("entrando a validar pass y pass 2");
     let isValid = false;
-    if(password === confirmedPassword){isValid = true;
-        return isValid;
-    }
+    if (password === confirmedPassword) {
+        isValid = true;
+        const confirmedPasswordInput = document.getElementById("confirmedPassword");
+        confirmedPasswordInput.classList.remove("is-invalid");
+      } else {
+        const confirmedPasswordInput = document.getElementById("confirmedPassword");
+        confirmedPasswordInput.classList.add("is-invalid");
+      }
+    
+      return isValid;
     
 }
 
@@ -88,7 +109,17 @@ function validateEmail({email}){
     console.log("entrando a validar email");
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const emailMatch = email.match(emailPattern);
-    return emailMatch !== null;
+    let isValid = emailMatch !== null;
+
+    if (isValid) {
+      const emailInput = document.getElementById("email");
+      emailInput.classList.remove("is-invalid");
+    } else {
+      const emailInput = document.getElementById("email");
+      emailInput.classList.add("is-invalid");
+    }
+  
+    return isValid;
 }
 
 

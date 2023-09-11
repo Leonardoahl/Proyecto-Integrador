@@ -1,7 +1,7 @@
 console.log("xd");
 
 const users = [];
-let i = 0;
+let i = 1;
 
 const registerForm = document.forms["registerForm"];
 console.log(registerForm);

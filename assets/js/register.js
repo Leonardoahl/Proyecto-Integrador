@@ -92,12 +92,10 @@ function validateName({ name }) {
     nameInput.classList.remove("is-invalid");
     return isValid;
   } else {
-    /*
     console.log("No validó");
     // Campo no válido, se adiciona la clase 'is-invalid'.
     const nameInput = document.getElementById("inputFirstName");
     nameInput.classList.add("is-invalid");
-  */
  };
 };
 

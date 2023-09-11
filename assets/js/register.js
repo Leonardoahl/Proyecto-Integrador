@@ -44,11 +44,12 @@ function validateRegistration(userData) {
       registerForm.reset();
     } else {
       const existingUsers = JSON.parse(existingData);
+      // validación del correo, que no este repetido
       const emailExists = existingUsers.some(user => user.email === userData.email);
 
       if (validateExistingEmail(emailExists)) {
         const newUser = {
-          id: existingUsers.length + 1,
+          id: existingUsers.length,
           name: userData.name,
           lastName: userData.lastName,
           user: userData.user,

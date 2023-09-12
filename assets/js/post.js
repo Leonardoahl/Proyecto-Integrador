@@ -4,6 +4,7 @@
  *
  */
 
+
 const projects = document.getElementById("post");
 const inputID = "myForm";
 
@@ -85,7 +86,7 @@ form.addEventListener("submit", (event) => {
   const textData = textarea.value;
 
   // validamos que hayan hashtags en el post
-  if (validateHashtagsPost(textData)) {
+  //if (validateHashtagsPost(textData)) {
     // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
     const newPost = {
       id: postManager.getCurrentId() + 1,
@@ -100,7 +101,7 @@ form.addEventListener("submit", (event) => {
 
     postManager.addPost(newPost);
     projects.innerHTML = addPostSection(postManager);
-  }
+//}
 });
 
 /**

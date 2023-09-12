@@ -1,5 +1,49 @@
-.carousel .carousel-inner .carousel-item img{
-	
+.carousel{
+	padding-left: 10px;
+	padding-right: 10px;
+	max-width: 170;
 	justify-content: center; /* horizontal centering */
 	align-items: center; /* vertical centering */
   }
+
+.carousel-inner{
+	margin-right: 20px;
+	justify-content: center; 
+	align-items: center;
+}  
+
+.carousel-item img{
+	justify-content: center; 
+	align-items: center;
+	width: 25%;
+	height: auto; 
+}
+
+@media(max-width: 768px){
+	.carousel-inner{
+		margin-right: 0;
+	}
+	.carousel{
+		padding-left: 10px;
+		padding-right: 10px;
+
+	}
+}
+#myCarousel{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.carousel-caption{
+	text-align: right;
+	right: 0;
+}
+
+#nosotros{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.carousel-caption p {
+	min-height: calc(1.1em * 2);
+	text-align:end;
+}

@@ -29,6 +29,9 @@
     width: 90%;
     margin: auto;
 }
+.yellowButton{
+  width: 70px !important;
+}
 /* Estilos para botones personalizados transparentes */
 .btn-custom-transparent {
     background-color: transparent!important; /* Fondo transparente */

@@ -43,24 +43,111 @@ function testUsersDatabase() {
   localStorage.setItem(3, JSON.stringify(user2));
 }
 
+/**
+ * valiudamos si algun campo del formulario esta vacio
+ * @param {object} datosDelFormulario string que contiene el user o el passwd para buscar
+ * @return {}
+ */
+function validacionDeCamposVacios(datosDelFormulario) {
+  if (datosDelFormulario.user=="") {
+    mostrarAlerta("usuario vacio");
+  }
+  if ((datosDelFormulario.password=="")) {
+    mostrarAlerta("password vacio");
+  }
+}
 
+/**
+ * Encuentra si el usuario introducido existe en la base de datos y devuelve el key asociado en el local storage
+ * @param {object} datosDelFormulario string que contiene el user o el passwd para buscar
+ * @return {key} retorna el key del usuario si se encontro en el localStorage
+ */
+function encuentraUsuario(datosDelFormulario) {
+  let id = false;
+  // recorre cada key del local storage
+  Object.keys(localStorage).forEach((key) => {
+    if (
+      validacionDeUsuario(
+        datosDelFormulario.user,
+        JSON.parse(localStorage.getItem(key)).user
+      )
+    ) {
+      // verifica usuario con usuario en local storage
+      id = key;
+    }
+  });
+  return id;
+}
 
+/**
+ * Valida al usuario ingresado con el usuario almacenado en el localStorage
+ * @param {string} nombreDeinputDelFormulario usuario ingresado en el formulario
+ * @param {string} nombreDeUsuariodeRegistrado usuario de la base de datos o lcoal storage
+ * @returns {boolean} devuelve false si no detecta coincidencia
+ */
 
+function validacionDeUsuario(
+  nombreDeinputDelFormulario,
+  nombreDeUsuariodeRegistrado
+) {
+  return nombreDeinputDelFormulario === nombreDeUsuariodeRegistrado;
+}
+
+/**
+ * valida que contraseña sea correcta con los que estan en local storage
+ * @param {string} passwordDeFormulario
+ * @param {string} PasswordRegistrado
+ * @returns {boolean} devuelve el boolean de la comparacion de datos
+ */
+
+function validacionDePassword(passwordDeFormulario, PasswordRegistrado) {
+  return passwordDeFormulario === PasswordRegistrado;
+}
+
+/**
+ * Selecciona que tipo de mensaje y alerta sera mostrado y solo hay 3 casos
+ * @param {string} alerta que representara 3 casos posible donde el usuario sea invalido o password o todo sea correcto
+ * @returns {string} devulve el segmento de codigo que se selecciono para inyectar al HTML
+ */
+
+function mostrarAlerta(alerta) {
+  switch (alerta.valueOf()) {
+    case "usuario invalido":
+      //loginAlert.innerHTML ={} ;
+      console.log("Mostrar ALERTA usuario invalido");
+      break;
+    case "password invalido":
+      //loginAlert.innerHTML ={} ;
+      console.log("Mostrar ALERTA password invalido");
+      break;
+    case "exito de conexion":
+      //loginAlert.innerHTML ={} ;
+      console.log("Mostrar ALERTA de login exitoso");
+      break;
+    case "usuario vacio":
+      //loginAlert.innerHTML ={} ;
+      console.log("Mostrar ALERTA de usuario vacio");
+      break;
+    case "password vacio":
+      //loginAlert.innerHTML ={} ;
+      console.log("Mostrar password vacio");
+      break;
+    default:
+      console.log("Caso no considerado");
+  }
+}
 
 ////////////////////CODIGO PRINCIPAL/////////////////////////////////////////////////////
 testUsersDatabase(); // metemos usuarios de prueba en el LocalStorage
 const registerForm = document.forms["loginForm"]; // obtenemos el objeto de Formulario
 
-
-registerForm.addEventListener("submit", (event) => {//Funcion para ejecutar las validaciones en el evento de presionar un boton
-  event.preventDefault(); // Evita que el formulario se envíe por defecto
-
+registerForm.addEventListener("submit", (event) => {
+  event.preventDefault();
   const infoFormulario = {
-    // Creo un objeto con atributos de usuario inbtroducido
     user: registerForm.elements["inputName"].value,
     password: registerForm.elements["inputPassword"].value,
   };
-  validacionDeDatos(infoFormulario); // realizamos todas las validaciones para poder desplegar las alertas de incio de sesion
+  validacionDeDatos(infoFormulario);
 });
 
 /**
@@ -81,71 +168,9 @@ function validacionDeDatos(inputDelFormulario) {
     if (validacionDePassword(inputDelFormulario.password,JSON.parse(localStorage.getItem(key)))) {
       mostrarAlerta("exito de conexion"); // usuario y contraseña validos
     } else {
+      validacionDeCamposVacios(inputDelFormulario);
       mostrarAlerta("password invalido"); // pass invalido
-    };
-  };
-};
-////////////////////FIN CODIGO PRINCIPAL/////////////////////////////////////////////////////
-
-/**
- * Encuentra si el usuario introducido existe en la base de datos y devuelve el key asociado en el local storage
- * @param {object} datosDelFormulario string que contiene el user o el passwd para buscar
- * @return {key} retorna el key del usuario si se encontro en el localStorage
- */
-function encuentraUsuario(datosDelFormulario) {
-  let id = false;
-  // recorre cada key del local storage
-  Object.keys(localStorage).forEach((key) => {    
-    if (validacionDeUsuario(datosDelFormulario.user,JSON.parse(localStorage.getItem(key)).user)) { // verifica usuario con usuario en local storage
-      id = key;
-    };
-  });
-  return id;
+    }
+  }
 };
 
-/**
- * Valida al usuario ingresado con el usuario almacenado en el localStorage
- * @param {string} nombreDeinputDelFormulario usuario ingresado en el formulario
- * @param {string} nombreDeUsuariodeRegistrado usuario de la base de datos o lcoal storage
- * @returns {boolean} devuelve false si no detecta coincidencia
- */
-
-function validacionDeUsuario(nombreDeinputDelFormulario, nombreDeUsuariodeRegistrado) {
-  return nombreDeinputDelFormulario === nombreDeUsuariodeRegistrado;
-};
-
-/**
- * valida que contraseña sea correcta con los que estan en local storage
- * @param {string} passwordDeFormulario 
- * @param {string} PasswordRegistrado
- * @returns {boolean} devuelve el boolean de la comparacion de datos
- */
-
-function validacionDePassword(passwordDeFormulario,PasswordRegistrado) {
-  return passwordDeFormulario === PasswordRegistrado;
-};
-
-/**
- * Selecciona que tipo de mensaje y alerta sera mostrado y solo hay 3 casos
- * @param {string} alerta que representara 3 casos posible donde el usuario sea invalido o password o todo sea correcto
- * @returns {string} devulve el segmento de codigo que se selecciono para inyectar al HTML
- */
-
-function mostrarAlerta(alerta) {
-  switch (alerta.valueOf()) {
-    case "usuario invalido": 
-    //loginAlert.innerHTML ={} ;
-      console.log("Mostrar ALERTA usuario invalido");
-      break;
-    case "password invalido": 
-    //loginAlert.innerHTML ={} ;
-      console.log("Mostrar ALERTA password invalido");
-      break;
-    case "exito de conexion": 
-    //loginAlert.innerHTML ={} ;
-      console.log("Mostrar ALERTA de login exitoso");
-      break;
-    default:
-      console.log("Caso no considerado");
-  };
-};

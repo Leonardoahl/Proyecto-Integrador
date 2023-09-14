@@ -42,6 +42,7 @@ function validateRegistration(userData) {
       const users = [userDataJSON];
       localStorage.setItem("users", JSON.stringify(users));
       registerForm.reset();
+      showSuccessAlert();
     } else {
       const existingUsers = JSON.parse(existingData);
       // validación del correo, que no este repetido
@@ -59,9 +60,19 @@ function validateRegistration(userData) {
         existingUsers.push(newUser);
         localStorage.setItem("users", JSON.stringify(existingUsers));
         registerForm.reset();
+        showSuccessAlert();
       }
     }
   }
+
+  function showSuccessAlert() {
+    const successAlert = document.getElementById("successAlert");
+    successAlert.style.display = "block";
+    setTimeout(() => {
+    successAlert.style.display = "none";
+   }, 5000); // Ocultar la alerta después de 5 segundos
+  }
+
 }
 
 function validateExistingEmail(emailExists) {

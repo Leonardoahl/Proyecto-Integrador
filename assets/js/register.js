@@ -18,17 +18,30 @@ registerForm.addEventListener("submit", (event) => {
     email: registerForm.elements["email"].value,
 
   };
-  console.log(userData);
-  validateRegistration(userData);
+  
+  const isNameValid = validateName(userData);
+  const isLastNameValid = validateLastName(userData);
+  const isPasswordValid = validatePassword(userData);
+  const isConfirmedPasswordValid = confirmPassword(userData);
+  const isEmailValid = validateEmail(userData);
 
+  if (
+    isNameValid &&
+    isLastNameValid &&
+    isPasswordValid &&
+    isConfirmedPasswordValid &&
+    isEmailValid
+  ) {
+  //console.log(userData);
+  validateRegistration(userData);
+  }
 
 });
 
 
 function validateRegistration(userData) {
   const existingData = localStorage.getItem("users");
-  if (validateName(userData) && validateLastName(userData) && validatePassword(userData) &&
-    confirmPassword(userData) && validateEmail(userData)) {
+  
     if (!existingData) {
       const userDataJSON = {
         id: i++,
@@ -73,7 +86,7 @@ function validateRegistration(userData) {
    }, 5000); // Ocultar la alerta después de 5 segundos
   }
 
-}
+
 
 function validateExistingEmail(emailExists) {
   if (!emailExists) {

@@ -43,24 +43,34 @@ function testUsersDatabase() {
   localStorage.setItem(3, JSON.stringify(user2));
 }
 
+
+
+// objeto con las distintas alertas para seleccionar
+
+const ALERTAS_MESSAGES={
+  exito:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Usuario identificado correctamente</div>`,
+  usuarioInvalido:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Usuario no Valido</div>`,
+  usuarioVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Te faltò introducir usuario</div>`,
+  passwordVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Te faltò el password</div>`,
+  passwordErroneo:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Password Erroneo</div>`
+};
+ ////////////
+
+
+
 /**
- * valiudamos si algun campo del formulario esta vacio
- * @param {object} datosDelFormulario string que contiene el user o el passwd para buscar
- * @return {}
+ * valiudamos si el algun dato del formulario es vacio
+ * @param {object} datoDelFormulario string que contiene el user o el passwd para buscar
+ * @return {bool} retorna valor booleano de la comparacion
  */
-function validacionDeCamposVacios(datosDelFormulario) {
-  if (datosDelFormulario.user=="") {
-    mostrarAlerta("usuario vacio");
-  }
-  if ((datosDelFormulario.password=="")) {
-    mostrarAlerta("password vacio");
-  }
+function validacionDeCamposVacios(datoDelFormulario) {
+ return (datoDelFormulario==="");
 }
 
 /**
  * Encuentra si el usuario introducido existe en la base de datos y devuelve el key asociado en el local storage
  * @param {object} datosDelFormulario string que contiene el user o el passwd para buscar
- * @return {key} retorna el key del usuario si se encontro en el localStorage
+ * @return {key} retorna el key del usuario si se encontro en el localStorage si no retorna un FALSE
  */
 function encuentraUsuario(datosDelFormulario) {
   let id = false;
@@ -113,24 +123,19 @@ function validacionDePassword(passwordDeFormulario, PasswordRegistrado) {
 function mostrarAlerta(alerta) {
   switch (alerta.valueOf()) {
     case "usuario invalido":
-      //loginAlert.innerHTML ={} ;
-      console.log("Mostrar ALERTA usuario invalido");
+      seccionDeAlerta.innerHTML =ALERTAS_MESSAGES.usuarioInvalido ;
       break;
     case "password invalido":
-      //loginAlert.innerHTML ={} ;
-      console.log("Mostrar ALERTA password invalido");
+      seccionDeAlerta.innerHTML =ALERTAS_MESSAGES.passwordErroneo;
       break;
     case "exito de conexion":
-      //loginAlert.innerHTML ={} ;
-      console.log("Mostrar ALERTA de login exitoso");
+      seccionDeAlerta.innerHTML =ALERTAS_MESSAGES.exito ;
       break;
     case "usuario vacio":
-      //loginAlert.innerHTML ={} ;
-      console.log("Mostrar ALERTA de usuario vacio");
+      seccionDeAlerta.innerHTML =ALERTAS_MESSAGES.usuarioVacio ;
       break;
     case "password vacio":
-      //loginAlert.innerHTML ={} ;
-      console.log("Mostrar password vacio");
+      seccionDeAlerta.innerHTML =ALERTAS_MESSAGES.passwordVacio ;
       break;
     default:
       console.log("Caso no considerado");
@@ -140,12 +145,13 @@ function mostrarAlerta(alerta) {
 ////////////////////CODIGO PRINCIPAL/////////////////////////////////////////////////////
 testUsersDatabase(); // metemos usuarios de prueba en el LocalStorage
 const registerForm = document.forms["loginForm"]; // obtenemos el objeto de Formulario
+const seccionDeAlerta = document.getElementById("seccionDeAlertas");// Obtén una referencia al elemento HTML con el ID "alerta" y guárdala en la variable "alert"
 
 registerForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const infoFormulario = {
     user: registerForm.elements["inputName"].value,
-    password: registerForm.elements["inputPassword"].value,
+    password: registerForm.elements["inputPassword"].value
   };
   validacionDeDatos(infoFormulario);
 });
@@ -156,20 +162,22 @@ registerForm.addEventListener("submit", (event) => {
  * Objeto que contiene usuario y contraseña codificados
  */
 function validacionDeDatos(inputDelFormulario) {
-  let key; // variable asociada al key del localStorage
+  let key; 
   key = encuentraUsuario(inputDelFormulario);
 
+// LS = Local storage  
+
   if (!key) {
-    //al ser falso el no se encontro usuario
-    mostrarAlerta("usuario invalido");
-    return;
+    //al no encontrar un key asociado a un user en el LS , se verifica si esta vacio el user introducido o es invalido para desplegar un aviso adecuado
+    validacionDeCamposVacios(inputDelFormulario.user)? mostrarAlerta("usuario vacio"): mostrarAlerta("usuario invalido");
+
   } else {
     // en este caso se encontraron el usuario y se verifica la contraseña
-    if (validacionDePassword(inputDelFormulario.password,JSON.parse(localStorage.getItem(key)))) {
+    if (validacionDePassword(inputDelFormulario.password,JSON.parse(localStorage.getItem(key)).password)) {
       mostrarAlerta("exito de conexion"); // usuario y contraseña validos
     } else {
-      validacionDeCamposVacios(inputDelFormulario);
-      mostrarAlerta("password invalido"); // pass invalido
+      // solo queda el caso donde el password es invalido de alguna manera 
+      validacionDeCamposVacios(inputDelFormulario.password)? mostrarAlerta("password vacio"):mostrarAlerta("password invalido"); // pass invalido
     }
   }
 };

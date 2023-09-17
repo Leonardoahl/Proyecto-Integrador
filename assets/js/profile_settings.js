@@ -34,13 +34,6 @@ acceptButton.addEventListener("click",(e)=>{
             showSuccessAlert();
         }
     }
-    
-    
-        
-    
-
-
-
 });
 
 function showSuccessAlert() {

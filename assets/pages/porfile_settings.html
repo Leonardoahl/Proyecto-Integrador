@@ -23,33 +23,48 @@
         <!-- <a href="">Regresar</a> -->
         <div class="container py-1" id="containerPrincipal">
             <h1 class="text-center">Configuración de usuario</h1>
+			<!-- Foto de perfil -->
             <div class="row justify-content-center my-3" id="element">
                 <p>Foto de perfil</p>
                 <img src="../img/porfile-image.jpg" alt="perryAvatar" id="avatar">
+                <img src="./pencil.png" class="iconEdit">
+            
+
+
             </div>
-            <form action="">
+
+            <form action="" id="profileSettings">
+							
+
                 <div class="row my-3" id="element">
+					<!-- Input nombre -->
                     <div class="col-lg-6 col-sm-12">
                         <label for="name" class="form-label">Nombre(s)</label>
                         <input type="text" id="name" class="form-control">
                     </div>
+					<!-- Input apellido -->
                     <div class="col-lg-6 col-sm-12">
                         <label for="lastName" class="form-label">Apellido(s)</label>
                         <input type="text" id="lastName" class="form-control">
                     </div>
                 </div>
+
+					<!-- Input user -->
                 <div class="row my-3" id="element">
                     <label for="user" class="form-label">Usuario</label>
                     <input type="text" id="user" class="form-control" placeholder="@nombreApellido00">
                 </div>
+
+				<!-- Input hard skills -->
                 <div class="row my-3" id="element">
                     <label for="hardSkill">Habilidades técnicas</label>
                     <div class="col-6 text-center">
-                        <input type="text" id="skill" class="form-control my-2" name="skill"
+                        <input type="text" id="hardSkill" class="form-control my-2" name="skill"
                             placeholder="Ingresar habilidad">
                         <button type="button" id="addHard" class="btn yellowButton">Agregar</button>
                     </div>
                 </div>
+				<!-- Input soft skills -->
                 <div class="row my-3" id="element">
                     <label for="softSkill">Habilidades blandas</label>
                     <div class="col-6 text-center">
@@ -58,29 +73,46 @@
                         <button type="button" id="addSoft" class="btn yellowButton">Agregar</button>
                     </div>
                 </div>
+
+				<!-- Input description -->
                 <div class="row my-3" id="element">
                     <label for="description" class="form-label">Descripción</label>
                     <textarea type="text" id="description" class="form-control" name="description"
                         placeholder="Agrega una breve descripción"></textarea>
                 </div>
+				<!-- Input email -->
                 <div class="row my-3" id="element">
                     <label for="email" class="form-label">Correo</label>
                     <input type="text" id="email" class="form-control" placeholder="nombre@gmail.com">
                 </div>
+
+				<!-- Password section -->
                 <div class="row my-3" id="element">
+					<!-- Input password -->
                     <div class="col-lg-6 col-sm-12">
                         <label for="password" class="form-label">Contraseña</label>
                         <input type="password" id="password" class="form-control">
                     </div>
+					<!-- Input confirm password -->
                     <div class="col-lg-6 col-sm-12">
                         <label for="passwordConfirm" class="form-label">Confirmar contraseña</label>
                         <input type="password" id="passwordConfirm" class="form-control">
                     </div>
                 </div>
+
+                    <!-- Botones -->
                 <div class="row my-3 text-center justify-content-center align-items-center" id="element">
                     <button type="button" id="accept" class="btn m-3 yellowButton">Guardar</button>
                     <button type="button" id="cancel" class="btn m-3 yellowButton">Cancelar</button>
                 </div>
+
+                <!-- Alerta de cambios realizados -->
+
+                <div class="alert alert-success mt-3" id="successAlert" style="display: none;">
+                    Tus cambios fueron realizados. :D 
+                  </div>
+
+				
             </form>
         </div>
     </main>
@@ -91,7 +123,7 @@
         loadNavbar();
         loadFooter();
     </script>
-
+    <script src="../js/profile_settings.js"></script>
 </body>
 
 </html>

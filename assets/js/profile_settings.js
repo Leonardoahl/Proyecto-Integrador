@@ -3,13 +3,12 @@ console.log("Profile Settings xd");
 const profileSettings = document.forms["profileSettings"];
 const acceptButton = document.getElementById("accept");
 const cancelButton = document.getElementById("cancel");
-
-
 //console.log(profileSettings);
+
 
 acceptButton.addEventListener("click",(e)=>{
     e.preventDefault();
-
+    
     const userData = {
         newName : profileSettings.elements["name"].value,
         newLastName : profileSettings.elements ["lastName"].value,
@@ -21,8 +20,10 @@ acceptButton.addEventListener("click",(e)=>{
         newPassword : profileSettings.elements["password"].value,
         
     }
-
-    console.log(userData);
+    const isNameValid = validateName(userData);
+    if(isNameValid){
+        console.log("nombre valido");
+    }
 
     for (let property in userData) {
         if (userData.hasOwnProperty(property) 
@@ -30,7 +31,6 @@ acceptButton.addEventListener("click",(e)=>{
         && userData[property] !== undefined 
         && userData[property] !== "") {
             console.log(property + ": " + userData[property]);
-            //alert(`Se actualizaron tus datos.`);
             showSuccessAlert();
         }
     }
@@ -42,14 +42,38 @@ function showSuccessAlert() {
     setTimeout(() => {
     successAlert.style.display = "none";
    }, 5000); // Ocultar la alerta después de 5 segundos
-  }
+  };
+
+  function validateName({ newName }) {
+    console.log("entrando a validar nombre");
+    const patron = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s[a-zA-ZÀ-ÿ\u00f1\u00d1])*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
+    const patronMatch = newName.match(patron);
+    let isValid = false;
+    console.log(newName);
+    if (patronMatch) {
+      isValid = true;
+      // Campo válido, se elimina la clase 'is-invalid'
+      const nameInput = document.getElementById("name");
+      nameInput.classList.remove("is-invalid");
+      return isValid;
+    } else {
+      console.log("No validó");
+      // Campo no válido, se adiciona la clase 'is-invalid'.
+      const nameInput = document.getElementById("name");
+      nameInput.classList.add("is-invalid");
+   };
+  };
+
+
 
 cancelButton.addEventListener("click",(e)=>{
 
     profileSettings.reset();
     console.log("se reseteó xd");
 
-})
+});
+
+
     
   
 

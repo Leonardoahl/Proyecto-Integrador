@@ -31,7 +31,7 @@
                     Se ve bien!
                   </div>
                   <div id="nameError" class="invalid-feedback" role="alert">
-                    Nombre no válido.
+                    No olvides agregar tu nombre. Recuerda que solo puedes utilizar caracteres alfabéticos. 
                   </div>
               </div>
               <!-- Apellido -->
@@ -42,7 +42,7 @@
                 Se ve bien!
               </div>
               <div id="lastNameError" class="invalid-feedback" role="alert">
-                  Apellido no válido.
+                No olvides agregar tu apellido. Recuerda que solo puedes utilizar caracteres alfabéticos. 
               </div>
             </div>
               <!-- Usuario -->
@@ -59,18 +59,18 @@
                 <!-- Contraseña -->
                 <div class="col-md-12">
                   <label for="password" class="form-label">Contraseña</label>
-                  <input type="text" name="password" class="form-control" id="password" placeholder="********" >
+                  <input type="password" name="password" class="form-control" id="password" placeholder="********" >
                   <div class="valid-feedback" id="passwordSuccess">
                     Se ve bien!
                   </div>
                   <div id="passwordError" class="invalid-feedback" role="alert">
-                      La contraseña no contiene al menos 8 dígitos.
+                      Tu contraseña debe de tener al menos 8 dígitos.
                   </div>
                 </div>
                   <!-- Confirmar Contraseña  -->
                   <div class="col-md-12">
                     <label for="confirmedPassword" class="form-label">Confirmar contraseña</label>
-                    <input type="text" name="confirmedPassword" class="form-control" id="confirmedPassword" placeholder="********" >
+                    <input type="password" name="confirmedPassword" class="form-control" id="confirmedPassword" placeholder="********" >
                     <div class="valid-feedback" id="confirmedPasswordSuccess">
                       Se ve bien!
                     </div>
@@ -89,9 +89,13 @@
                       Email no válido.
                   </div>
                 </div>
+                <!-- Registro exitoso -->
+                <div class="alert alert-success mt-3" id="successAlert" style="display: none;">
+                  Registro exitoso. ¡Bienvenido!
+                </div>
 
-              <!-- Faltan campos de Contraseña, Confirmar contraseña, y Email aquí -->
-              <!-- ... -->
+              
+              <!--... -->
               <div class="col-md-12">
                   <button type="submit" class="btn btn-warning">¡Regístrate!</button>
               </div>
@@ -106,7 +110,7 @@
       loadNavbar();
       loadFooter();
     </script>
-    
+    <script src="../js/register.js"></script>
 
 </body>
 

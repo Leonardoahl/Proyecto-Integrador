@@ -1,12 +1,21 @@
-console.log("Profile Settings xd");
+/**
+ * @author Perry Code
+ * @version 0.0.1
+ * Profile settings functionality
+ */
+
 
 const profileSettings = document.forms["profileSettings"];
 const acceptButton = document.getElementById("accept");
 const cancelButton = document.getElementById("cancel");
 //console.log(profileSettings);
+/**
+ * @function validacionDeUsuarioNuevo arrow function con el algoritmo principal de validacion y funcionamiento de   
+ * @param {void} void ningun argumento usa
+ * @returns {void} void
+ */
 
-
-acceptButton.addEventListener("click",(e)=>{
+const validacionDeSettingsNuevos= (e)=>{
     e.preventDefault();
     
     const userData = {
@@ -23,6 +32,7 @@ acceptButton.addEventListener("click",(e)=>{
     const isNameValid = validateName(userData);
     if(isNameValid){
         console.log("nombre valido");
+        console.log({newName})
     }
 
     for (let property in userData) {
@@ -34,15 +44,42 @@ acceptButton.addEventListener("click",(e)=>{
             showSuccessAlert();
         }
     }
-});
+}
+
+/////////////////////////////////
+function validateNickname(){
+    return false;
+}
+
+/////////////////////////////////
+function validatePassword(){
+    return false;
+}
+
+
+
+
+/**
+ * @function showSuccessAlert activa o desactiva la alerta de el registro del usuario
+ * @param {void} void ningun argumento usa
+ * @returns {void} void
+ */
 
 function showSuccessAlert() {
     const successAlert = document.getElementById("successAlert");
     successAlert.style.display = "block";
     setTimeout(() => {
-    successAlert.style.display = "none";
+    successAlert.style.display = "none";    
    }, 5000); // Ocultar la alerta después de 5 segundos
   };
+
+
+
+/**
+ * @function validateName retorna un booleando que representa si es o no valido el nombre introducido
+ * @param {String} Object.newName nombre del usuario registrado en el onjeto userData
+ * @returns {boolean} isValid
+ */
 
   function validateName({ newName }) {
     console.log("entrando a validar nombre");
@@ -66,14 +103,23 @@ function showSuccessAlert() {
 
 
 
-cancelButton.addEventListener("click",(e)=>{
+/**
+ * @function resetFunction activa o desactiva la alerta de el registro del usuario
+ * @param {void} void ningun argumento usa
+ * @returns {void} void
+ */
 
+const resetFunction= (e)=>{
     profileSettings.reset();
-    console.log("se reseteó xd");
+}
 
-});
+/**
+ * //////////////////////////// Evento con botones //////////////////////////////////////////
+ */
 
+cancelButton.addEventListener("click",resetFunction);
 
+acceptButton.addEventListener("click",validacionDeSettingsNuevos);
     
   
 

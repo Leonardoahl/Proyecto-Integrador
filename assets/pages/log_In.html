@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/log_in.css">
+    <link rel="stylesheet" href="../css/alerts.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -15,6 +16,7 @@
     <title>Inicia Sesión</title>
     <script type="module" src="../js/navbar.js"></script>
     <script type="module" src="../js/footer.js"></script>
+    <script defer src="../js/login.js"></script>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
               <h1 class="text-center">Inicia Sesión</h1>
           
               <!-- Inicio formulario Log In -->
-              <form class="row g-3">
+              <form class="row g-3" name="loginForm">
                 <div class="col-md-12">
                   <label for="inputName" class="form-label">Usuario</label>
                   <input type="text" class="form-control" id="inputName" placeholder="Tu nombre de usuario aquí">
@@ -44,12 +46,18 @@
               </form>
               <!-- Fin formulario Log In -->
 
+                  <!-- Inicio de alerta -->
+            <section class="row" id="seccionDeAlertas">
+              
+            </section>
+             <!-- Fin de alerta -->
+
             <div class="col-md-6 offset-md-3 mt-5">
                 <h5 class="text-center"> ¿No tienes cuenta?</h5>
             </div>
 
             <div class="col-md-12 text-center mt-4">
-                <button type="submit" class="btn btn-warning btn-sm"> ¡Registrate aquí!</button>
+              <a href="register.html" class="btn btn-warning btn-sm" role="button">Registrate aqui!!</a>
               </div>
           
          

@@ -4,6 +4,7 @@
  *
  */
 
+
 const projects = document.getElementById("post");
 const inputID = "myForm";
 
@@ -14,7 +15,7 @@ function addPostSection(post) {
 
   
     <div class="container">
-    <div id="post" class="row">
+    <div id="a" class="row">
       <div class="row" id="user">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
           <img
@@ -85,7 +86,7 @@ form.addEventListener("submit", (event) => {
   const textData = textarea.value;
 
   // validamos que hayan hashtags en el post
-  if (validateHashtagsPost(textData)) {
+  //if (validateHashtagsPost(textData)) {
     // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
     const newPost = {
       id: postManager.getCurrentId() + 1,
@@ -100,7 +101,7 @@ form.addEventListener("submit", (event) => {
 
     postManager.addPost(newPost);
     projects.innerHTML = addPostSection(postManager);
-  }
+//}
 });
 
 /**
@@ -129,6 +130,7 @@ function validateHashtagsPost(data) {
   }
 }
 
-content.addEventListener("click", ()=>{
+content.style.cursor = 'pointer';
+content.onclick = ()=>{
   window.location = "project_page.html"
-} );
+};

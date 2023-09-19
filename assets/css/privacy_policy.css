@@ -28,8 +28,12 @@
     .btn{
         font-size: 15px !important;
     }
+    .drop-arrow{
+        width: 6px!important;
+        height: 6px!important;
+    }
 }
 .drop-arrow{
-    width: 25px!important;
-    height: 25px!important;
+    width: 12px!important;
+    height: 12px!important;
 }

@@ -34,15 +34,24 @@
             <label for="inputName" class="form-label">Nombre</label>
             <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre completo aquí" >
           </div>
+          <div id="nameError" class="invalid-feedback" role="alert">
+            No olvides agregar tu nombre. Recuerda que solo puedes utilizar caracteres alfabéticos. 
+          </div>
          
           <div class="col-md-12">
             <label for="inputEmail" class="form-label">Email</label>
             <input type="email" name="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
           </div>
+          <div id="emailError" class="invalid-feedback" role="alert">
+            Tu email debe contener un "@".
+          </div>
           
           <div class="col-md-12">
-            <label for="inputCity" class="form-label">Teléfono</label>
+            <label for="phoneNumber" class="form-label">Teléfono</label>
             <input type="text" name="phone" class="form-control" id="phone" placeholder="5555555555" maxlength="10">
+          </div>
+          <div id="phoneError" class="invalid-feedback" role="alert">
+            Tu teléfono debe contener 10 dígitos y solo debes usar caracteres numéricos. 
           </div>
         
           <div class="col-md-12">
@@ -53,6 +62,11 @@
           <div class="col-md-12">
             <button type="submit" class="btn btn-warning">Enviar</button>
             
+          </div>
+
+          <!-- Envío exitoso -->
+          <div class="alert alert-success mt-3" id="successAlert" style="display: none;">
+            ¡Ya enviamos tus comentarios! :D
           </div>
          
         </form>

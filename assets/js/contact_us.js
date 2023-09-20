@@ -51,13 +51,21 @@ function validateNumber({ phone }) {
     return patronMatch && (phoneStr === 10);
 }
 
+function showSuccessAlert() {
+    const successAlert = document.getElementById("successAlert");
+    successAlert.style.display = "block";
+    setTimeout(() => {
+    successAlert.style.display = "none";
+   }, 5000); // Ocultar la alerta después de 5 segundos
+  }
+
 function sendEmail(userData) {
     emailjs.init('_AIRxlmq1luT-s4JJ');
     emailjs.sendForm('contact_service', 'contact_form', contactForm)
         .then(function () {
             console.log('SUCCESS!');
-            alert("Ya enviamos tu correo :) ");
             contactForm.reset();
+            showSuccessAlert();
         }, function (error) {
             console.log('FAILED...', error);
         });

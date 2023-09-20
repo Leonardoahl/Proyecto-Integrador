@@ -140,12 +140,15 @@ function mostrarAlerta(alerta) {
     default:
       console.log("Caso no considerado");
   }
-}
+};
+
+
 
 ////////////////////CODIGO PRINCIPAL/////////////////////////////////////////////////////
 testUsersDatabase(); // metemos usuarios de prueba en el LocalStorage
 const registerForm = document.forms["loginForm"]; // obtenemos el objeto de Formulario
 const seccionDeAlerta = document.getElementById("seccionDeAlertas");// Obtén una referencia al elemento HTML con el ID "alerta" y guárdala en la variable "alert"
+const seccionDeSpinner= document.getElementById("seccionDeSpinner");// Obtén una referencia al elemento HTML con el ID "seccionDeSpinner"
 
 registerForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -175,6 +178,16 @@ function validacionDeDatos(inputDelFormulario) {
     // en este caso se encontraron el usuario y se verifica la contraseña
     if (validacionDePassword(inputDelFormulario.password,JSON.parse(localStorage.getItem(key)).password)) {
       mostrarAlerta("exito de conexion"); // usuario y contraseña validos
+      setTimeout(()=>{window.location.href="publications.html"},2000);
+      
+     seccionDeSpinner.innerHTML= `<div class="d-flex justify-content-center">
+     <div class="spinner-grow text-success">
+     <span class="sr-only">Loading...</span>
+   </div>
+    </div>`
+      //redireccionarPaginaPrincipal
+      
+      
     } else {
       // solo queda el caso donde el password es invalido de alguna manera 
       validacionDeCamposVacios(inputDelFormulario.password)? mostrarAlerta("password vacio"):mostrarAlerta("password invalido"); // pass invalido

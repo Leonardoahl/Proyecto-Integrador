@@ -4,7 +4,6 @@
  *
  */
 
-
 const projects = document.getElementById("post");
 const inputID = "myForm";
 
@@ -14,7 +13,7 @@ function addPostSection(post) {
     text += `
 
   
-    <div class="container">
+    
     <div id="a" class="row">
       <div class="row" id="user">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -40,12 +39,7 @@ function addPostSection(post) {
       </div>
     </div>
   </div>
-  
-
-  
-
-
-            <div class="row" id="info" style="margin-bottom: 20px;">
+   <div class="row" id="info" style="margin-bottom: 20px;">
               <div id="interactios">
                 <button class="btn btn-secondary btn-xs btn-custom-transparent">
                     ${post.post[i].noLike} <img src="../img/corazon.png" width="30" />
@@ -61,15 +55,13 @@ function addPostSection(post) {
                 </button>
               </div>
             </div>
-          </div>
+          
         `;
   }
   localStorage.setItem("postData", JSON.stringify(post.post));
   return text;
 }
 const content = document.getElementById("post");
-
-
 
 const postManager = new PostsController();
 
@@ -87,21 +79,21 @@ form.addEventListener("submit", (event) => {
 
   // validamos que hayan hashtags en el post
   //if (validateHashtagsPost(textData)) {
-    // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
-    const newPost = {
-      id: postManager.getCurrentId() + 1,
-      name: "ana",
-      img: "../img/perryXd.png",
-      noLike: 0,
-      noComments: 0,
-      postContent: textData,
-      postImgs: ["/assets/img/placeholder.png", "/assets/img/placeholder.png"],
-      trend: "#PatronaSubemeElSueldo",
-    };
+  // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
+  const newPost = {
+    id: postManager.getCurrentId() + 1,
+    name: "ana",
+    img: "../img/perryXd.png",
+    noLike: 0,
+    noComments: 0,
+    postContent: textData,
+    postImgs: ["/assets/img/placeholder.png", "/assets/img/placeholder.png"],
+    trend: "#PatronaSubemeElSueldo",
+  };
 
-    postManager.addPost(newPost);
-    projects.innerHTML = addPostSection(postManager);
-//}
+  postManager.addPost(newPost);
+  projects.innerHTML = addPostSection(postManager);
+  //}
 });
 
 /**
@@ -130,7 +122,7 @@ function validateHashtagsPost(data) {
   }
 }
 
-content.style.cursor = 'pointer';
-content.onclick = ()=>{
-  window.location = "project_page.html"
+content.style.cursor = "pointer";
+content.onclick = () => {
+  window.location = "project_page.html";
 };

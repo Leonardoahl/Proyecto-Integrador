@@ -47,3 +47,27 @@ export function loadNavbar(){
 </nav>
     `;
 }
+
+export function loadNavbarInitial(){
+  const navElement = document.getElementById("navbar");
+  navElement.innerHTML = `
+<nav class="navbar navbar-expand-lg py-1">
+<div class="container">
+<a class="navbar-logo" href="log_In.html">
+  <img src="../img/logo blanco blanco pequeño.png" />
+</a>
+<button
+  class="navbar-toggler"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#navbarSupportedContent"
+  aria-controls="navbarSupportedContent"
+  aria-expanded="false"
+  aria-label="Toggle navigation"
+>
+  <span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
+  `;
+}

@@ -2,7 +2,7 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-#trendsList{
+/* #trendsList{
     background: rgba(83,67,49,0.8);
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -18,7 +18,7 @@
     width: 20%;
     height: auto;
     overflow-y: auto;
-  }
+  } */
   
   #projects {
     margin-left: 25%;

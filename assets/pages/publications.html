@@ -26,42 +26,37 @@
 
     <script type="module" src="../js/navbar.js"></script>
     <script type="module" src="../js/footer.js"></script>
-      
   </head>
 
   <body>
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
-      <div class="row justify-content-aroud" id="content">
-        <!-- Trending List -->
-        <section class="col-sm-3" id="trending">
-          <h2 class="title" id="trendingTitle">
-            Trending
-          </h2>
-
-          <ol id="trendsList">
-            <li>#Python</li>
-            <li>#Java</li>
-            <li>#Javascript</li>
-            <li>#C++</li>
-            <li>#RUST</li>
-            <li>#C</li>
-            <li>#COBOL</li>
-          </ol>
-        </section>
-
-        <section class="col-sm-9" id="projects">
+      <div class="row justify-content-center">
+        <div class="col-sm-4 col-md-2" >
+          <!-- Trending List -->
+          <div class="card" id="trending">
+            <div class="card-header text-center bg-success-subtle">Trending</div>
+            <ul class="list-group list-group-flush text-center">
+              <li class="list-group-item">#Python</li>
+              <li class="list-group-item">#Java</li>
+              <li class="list-group-item">#C</li>
+              <li class="list-group-item">#Kotlin</li>
+              <li class="list-group-item">#Android</li>
+            </ul>
+          </div>
+        </div>
+          <!-- //////////////////  TRENDING END /////////////// -->
+        <div class="col-sm-9 col-lg-8">  
+        <section id="projects">
           <h2 class="title" id="titleProjects">
             Proyectos
           </h2>
 
           <!--post form structure -->
-          <form id="myForm"  >
-            <!-- i need a centered so i add a row and center the label of the POST-->
-            <div class="row justify-content-center">
-              <label for="validationTextarea" class="col-sm-2 col-form-label"
-                >POST</label
-              >
+          <form  id="myForm">
+            <div class="row ">
+              <label for="validationTextarea" class="text-center"
+                >Nuevo Post</label>
             </div>
             <!-- Agregue una columna que abarque el textarea y botones y lograr un fondo uniforme para todos esos elementos -->
             <div class="col p-3" id="postCreator">
@@ -74,7 +69,7 @@
               ></textarea>
               <!-- use of new functions to manage buttons position (bootstrap 5 new functions) -->
               <!-- d-grid es una funcion nueva para los btones  -->
-              <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+              <div class="d-grid d-md-flex justify-content-md-end">
                 <button class="yellowButton" type="submit">
                   Enviar
                 </button>
@@ -84,27 +79,36 @@
           </form>
           <!--post form end structure -->
 
-          <!-- Post display Section -->
-          <section class="row" id="post">
+         
+        </section>
+        </div>
+      </div>
+
+       <!-- Post display Section -->
+       <div class="row justify-content-sm-center bg-dark bg-opacity-50">
+        <div >
+          <section id="post">
             
           </section>
-        </section>
-      </div>
+        </div>
+        
+       </div>
+      
     </main>
     <footer class="foot" id="footer"></footer>
     <!-- Bootstrap script -->
-    
+
     <script type="module">
-      import{loadNavbar} from "../js/navbar.js";
-      import{loadFooter} from "../js/footer.js";
+      import { loadNavbar } from "../js/navbar.js";
+      import { loadFooter } from "../js/footer.js";
       loadNavbar();
-      loadFooter(); 
+      loadFooter();
     </script>
-    
+
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
     ></script>
   </body>
 </html>

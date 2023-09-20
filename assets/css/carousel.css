@@ -2,8 +2,8 @@
 	padding-left: 10px;
 	padding-right: 10px;
 	max-width: 170;
-	justify-content: center; /* horizontal centering */
-	align-items: center; /* vertical centering */
+	justify-content: right; /* horizontal centering */
+	align-items: right; /* vertical centering */
   }
 
 .carousel-inner{
@@ -15,7 +15,7 @@
 .carousel-item img{
 	justify-content: center; 
 	align-items: center;
-	width: 25%;
+	width: 20%;
 	height: auto; 
 }
 
@@ -24,7 +24,7 @@
 		margin-right: 0;
 	}
 	.carousel{
-		padding-left: 10px;
+		padding-left: 30px;
 		padding-right: 10px;
 
 	}
@@ -45,5 +45,5 @@
 }
 .carousel-caption p {
 	min-height: calc(1.1em * 2);
-	text-align:end;
+	text-size-adjust:initial;
 }

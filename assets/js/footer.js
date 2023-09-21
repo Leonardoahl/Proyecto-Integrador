@@ -25,17 +25,17 @@ export function loadFooter(){
           >
         </div>
       </div>
-      <div class="box text-center">
+      <div class="box text-center" style="margin: auto;" >
         <small
           >&copy; 2023 <b>PERING</b> - Todos los Derechos Reservados.</small
         >
       </div>
       <div
-        class="socialMedia text-center justify-content-center align-items-center"
+        class="socialMedia text-center justify-content-center align-items-center" style="margin: auto; font-size: 24px;"
       >
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="github"><i class="bi bi-github"></i></a>
+        <a href="#" class="facebook" " ><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram" ; ><i class="bi bi-instagram"></i></a>
+        <a href="#" class="github" ; ><i class="bi bi-github"></i></a>
       </div>
     </div>  
 

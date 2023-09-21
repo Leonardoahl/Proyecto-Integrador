@@ -31,35 +31,31 @@
   <body>
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
-      <div class="row justify-content-center">
-        <div class="col-sm-4 col-md-2" >
-          <!-- Trending List -->
-          <div class="card" id="trending">
-            <div class="card-header text-center bg-success-subtle">Trending</div>
-            <ul class="list-group list-group-flush text-center">
-              <li class="list-group-item">#Python</li>
-              <li class="list-group-item">#Java</li>
-              <li class="list-group-item">#C</li>
-              <li class="list-group-item">#Kotlin</li>
-              <li class="list-group-item">#Android</li>
-            </ul>
-          </div>
+     <div class="row">
+      <div class="col-sm-4 mt-4" id="trending">
+        <div class="card" id="trending">
+          <div class="card-header text-center bg-success-subtle">Trending</div>
+          <ul class="list-group list-group-flush text-center" >
+            <li class="list-group-item">#Python </li>
+            <li class="list-group-item" >#Java</li>
+            <li class="list-group-item">#C</li>
+            <li class="list-group-item">#Kotlin</li>
+            <li class="list-group-item">#Android</li>
+          </ul>
         </div>
-          <!-- //////////////////  TRENDING END /////////////// -->
-        <div class="col-sm-9 col-lg-8">  
-        <section id="projects">
-          <h2 class="title" id="titleProjects">
-            Proyectos
-          </h2>
+      </div>
 
+      <div class="col-sm-8" id="postForm">
+        <section class="ms-0" id="projects">
+          <h2 class="title m-4" id="titleProjects">Proyectos</h2>
           <!--post form structure -->
-          <form  id="myForm">
-            <div class="row ">
-              <label for="validationTextarea" class="text-center"
-                >Nuevo Post</label>
-            </div>
+          <form id="myForm">
+            <label for="validationTextarea" class="text-center"
+              >Nuevo Post</label
+            >
+
             <!-- Agregue una columna que abarque el textarea y botones y lograr un fondo uniforme para todos esos elementos -->
-            <div class="col p-3" id="postCreator">
+            <div id="postCreator">
               <textarea
                 class="form-control mb-2"
                 id="projectDescription"
@@ -70,30 +66,18 @@
               <!-- use of new functions to manage buttons position (bootstrap 5 new functions) -->
               <!-- d-grid es una funcion nueva para los btones  -->
               <div class="d-grid d-md-flex justify-content-md-end">
-                <button class="yellowButton" type="submit">
-                  Enviar
-                </button>
+                <button class="yellowButton" type="submit">Enviar</button>
                 <!-- <button class="btn btn-warning" type="button">other</button>  Se comenta hasta saber si ocuparemos o no el botón -->
               </div>
             </div>
           </form>
           <!--post form end structure -->
-
-         
         </section>
-        </div>
       </div>
+     </div>
+      <div class="d-flex flex-row">
 
-       <!-- Post display Section -->
-       <div class="row justify-content-sm-center bg-dark bg-opacity-50">
-        <div >
-          <section id="post">
-            
-          </section>
-        </div>
-        
-       </div>
-      
+      </div>
     </main>
     <footer class="foot" id="footer"></footer>
     <!-- Bootstrap script -->

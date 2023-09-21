@@ -10,38 +10,39 @@
  * @returns {void} nada
  */
 
-function testUsersDatabase() {
-  const user1 = {
-    id: 1,
-    name: "ed",
-    lastName: "cetina",
-    user: "tururu06",
-    password: "13954357582",
-    email: "edcet@gmail.com",
-  };
+//Se comenta la funcion para que no intervenga con los test de otros usuarios 
+// function testUsersDatabase() {
+//   const user1 = {
+//     id: 1,
+//     name: "ed",
+//     lastName: "cetina",
+//     user: "tururu06",
+//     password: "13954357582",
+//     email: "edcet@gmail.com",
+//   };
 
-  const user2 = {
-    id: 2,
-    name: "ed",
-    lastName: "cetina",
-    user: "tururu07",
-    password: "123456789",
-    email: "edcet@gmail.com",
-  };
+//   const user2 = {
+//     id: 2,
+//     name: "ed",
+//     lastName: "cetina",
+//     user: "tururu07",
+//     password: "123456789",
+//     email: "edcet@gmail.com",
+//   };
 
-  const user3 = {
-    id: 3,
-    name: "ed",
-    lastName: "cetina",
-    user: "tururu08",
-    password: "87685877",
-    email: "edcet@gmail.com",
-  };
+//   const user3 = {
+//     id: 3,
+//     name: "ed",
+//     lastName: "cetina",
+//     user: "tururu08",
+//     password: "87685877",
+//     email: "edcet@gmail.com",
+//   };
 
-  localStorage.setItem(1, JSON.stringify(user3));
-  localStorage.setItem(2, JSON.stringify(user1));
-  localStorage.setItem(3, JSON.stringify(user2));
-}
+//   localStorage.setItem(1, JSON.stringify(user3));
+//   localStorage.setItem(2, JSON.stringify(user1));
+//   localStorage.setItem(3, JSON.stringify(user2));
+// }
 
 
 

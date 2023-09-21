@@ -10,49 +10,50 @@
  * @returns {void} nada
  */
 
-function testUsersDatabase() {
-  const user1 = {
-    id: 1,
-    name: "ed",
-    lastName: "cetina",
-    user: "tururu06",
-    password: "13954357582",
-    email: "edcet@gmail.com",
-  };
+//Se comenta la funcion para que no intervenga con los test de otros usuarios 
+// function testUsersDatabase() {
+//   const user1 = {
+//     id: 1,
+//     name: "ed",
+//     lastName: "cetina",
+//     user: "tururu06",
+//     password: "13954357582",
+//     email: "edcet@gmail.com",
+//   };
 
-  const user2 = {
-    id: 2,
-    name: "ed",
-    lastName: "cetina",
-    user: "tururu07",
-    password: "123456789",
-    email: "edcet@gmail.com",
-  };
+//   const user2 = {
+//     id: 2,
+//     name: "ed",
+//     lastName: "cetina",
+//     user: "tururu07",
+//     password: "123456789",
+//     email: "edcet@gmail.com",
+//   };
 
-  const user3 = {
-    id: 3,
-    name: "ed",
-    lastName: "cetina",
-    user: "tururu08",
-    password: "87685877",
-    email: "edcet@gmail.com",
-  };
+//   const user3 = {
+//     id: 3,
+//     name: "ed",
+//     lastName: "cetina",
+//     user: "tururu08",
+//     password: "87685877",
+//     email: "edcet@gmail.com",
+//   };
 
-  localStorage.setItem(1, JSON.stringify(user3));
-  localStorage.setItem(2, JSON.stringify(user1));
-  localStorage.setItem(3, JSON.stringify(user2));
-}
+//   localStorage.setItem(1, JSON.stringify(user3));
+//   localStorage.setItem(2, JSON.stringify(user1));
+//   localStorage.setItem(3, JSON.stringify(user2));
+// }
 
 
 
 // objeto con las distintas alertas para seleccionar
 
 const ALERTAS_MESSAGES={
-  exito:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Usuario identificado correctamente</div>`,
-  usuarioInvalido:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Usuario no Valido</div>`,
-  usuarioVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Te faltò introducir usuario</div>`,
-  passwordVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Te faltò el password</div>`,
-  passwordErroneo:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Password Erroneo</div>`
+  exito:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center "> Usuario identificado correctamente. <br> !Bienvenido! :D</div>`,
+  usuarioInvalido:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Usuario no válido.</div>`,
+  usuarioVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Faltó introducir usuario.</div>`,
+  passwordVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Faltó introducir la contraseña.</div>`,
+  passwordErroneo:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Contraseña incorrecta.</div>`
 };
  ////////////
 

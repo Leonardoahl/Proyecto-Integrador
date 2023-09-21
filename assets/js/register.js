@@ -83,7 +83,11 @@ function validateRegistration(userData) {
     successAlert.style.display = "block";
     setTimeout(() => {
     successAlert.style.display = "none";
-   }, 5000); // Ocultar la alerta después de 5 segundos
+    window.location.href = "/assets/pages/log_In.html";//cambiar direccion al index en caso de que se mueva el login de lugar
+    
+   }, 3000); // Ocultar la alerta después de 3 segundos y redirigir a login
+
+
   }
 
 

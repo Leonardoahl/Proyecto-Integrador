@@ -146,7 +146,7 @@ function mostrarAlerta(alerta) {
 
 
 ////////////////////CODIGO PRINCIPAL/////////////////////////////////////////////////////
-testUsersDatabase(); // metemos usuarios de prueba en el LocalStorage
+//testUsersDatabase(); // metemos usuarios de prueba en el LocalStorage 
 const registerForm = document.forms["loginForm"]; // obtenemos el objeto de Formulario
 const seccionDeAlerta = document.getElementById("seccionDeAlertas");// Obtén una referencia al elemento HTML con el ID "alerta" y guárdala en la variable "alert"
 const seccionDeSpinner= document.getElementById("seccionDeSpinner");// Obtén una referencia al elemento HTML con el ID "seccionDeSpinner"

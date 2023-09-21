@@ -48,11 +48,11 @@ function testUsersDatabase() {
 // objeto con las distintas alertas para seleccionar
 
 const ALERTAS_MESSAGES={
-  exito:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Usuario identificado correctamente</div>`,
-  usuarioInvalido:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Usuario no Valido</div>`,
-  usuarioVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Te faltò introducir usuario</div>`,
-  passwordVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Te faltò el password</div>`,
-  passwordErroneo:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Password Erroneo</div>`
+  exito:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center "> Usuario identificado correctamente. <br> !Bienvenido! :D</div>`,
+  usuarioInvalido:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Usuario no válido.</div>`,
+  usuarioVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Faltó introducir usuario.</div>`,
+  passwordVacio:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Faltó introducir la contraseña.</div>`,
+  passwordErroneo:`<div class="alert alert-success alerta-personalizada col-md-7 offset-md-3 mt-3 text-center ">Contraseña incorrecta.</div>`
 };
  ////////////
 

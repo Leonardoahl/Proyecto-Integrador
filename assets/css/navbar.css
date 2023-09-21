@@ -24,23 +24,13 @@ nav{
 
 li:hover{
     background-color: #3f523f;
-    border-radius: 10%;
-}
-
-#buttonSearch:hover{
-    background-color: #3f523f;
-    border-radius: 10%;
+    border-radius: 10px;
 }
 
 
 @media (min-width: 767px) {
     .navbar-nav .nav-link span{
         display: none;
-    }
-    
-    .hola{
-        padding-right: 20px !important;
-        padding-left: 10% !important;
     }
 }
 
@@ -53,6 +43,7 @@ li:hover{
     .navbar-nav .nav-link .text-menu {
         display: inline-block;
         margin-left: auto;
+        padding-right: 10px!important;
     }
     
     .navbar-nav .nav-link .bi {

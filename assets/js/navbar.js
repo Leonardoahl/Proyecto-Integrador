@@ -6,12 +6,6 @@ export function loadNavbar(){
         <a class="navbar-logo d-flex justify-content-center align-items-center" href="publications.html">
             <img src="../img/logo blanco blanco pequeño.png" />
         </a>
-        <div class="search">
-          <div class="d-flex align-items-center hola">
-            <input type="text" id="navSearch" name="skill" placeholder="Búsqueda">
-            <button type="button" id="buttonSearch" class="btn"><i class="bi bi-search"></i></button>
-          </div>
-        </div>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

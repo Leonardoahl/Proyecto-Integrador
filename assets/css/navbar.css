@@ -39,7 +39,8 @@ li:hover{
     }
     
     .hola{
-    padding-left: 10% !important;
+        padding-right: 20px !important;
+        padding-left: 10% !important;
     }
 }
 

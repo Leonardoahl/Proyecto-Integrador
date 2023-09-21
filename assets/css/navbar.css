@@ -22,6 +22,15 @@ nav{
     color: white;
 }
 
+li:hover{
+    background-color: #3f523f;
+    border-radius: 10%;
+}
+
+#buttonSearch:hover{
+    background-color: #3f523f;
+    border-radius: 10%;
+}
 
 
 @media (min-width: 767px) {
@@ -30,7 +39,8 @@ nav{
     }
     
     .hola{
-    padding-left: 10% !important;
+        padding-right: 20px !important;
+        padding-left: 10% !important;
     }
 }
 

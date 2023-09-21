@@ -22,3 +22,31 @@ nav{
     color: white;
 }
 
+
+
+@media (min-width: 767px) {
+    .navbar-nav .nav-link span{
+        display: none;
+    }
+    
+    .hola{
+    padding-left: 10% !important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .navbar-logo img{
+        width: 80%;
+        height: auto;
+    }
+    .navbar-nav .nav-link .text-menu {
+        display: inline-block;
+        margin-left: auto;
+    }
+    
+    .navbar-nav .nav-link .bi {
+        display: none;
+    }
+
+}

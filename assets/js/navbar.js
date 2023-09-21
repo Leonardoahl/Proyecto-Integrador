@@ -48,6 +48,8 @@ export function loadNavbar(){
     `;
 }
 
+
+
 export function loadNavbarInitial(){
   const navElement = document.getElementById("navbar");
   navElement.innerHTML = `

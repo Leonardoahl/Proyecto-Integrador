@@ -4,10 +4,8 @@
  *
  */
 
-<<<<<<< HEAD
-=======
-const projects = document.getElementById("post");
-const inputID = "myForm";
+const projects = document.getElementById("publications");
+const inputID = "formularioDeProyecto";
 
 >>>>>>> dev
 function addPostSection(post) {
@@ -95,47 +93,15 @@ function addPostSection(post) {
   localStorage.setItem("postData", JSON.stringify(post.post));
   return text;
 }
-<<<<<<< HEAD
-=======
-const content = document.getElementById("post");
->>>>>>> dev
+
 
 const postManager = new PostsController();
 
 // Create Post Handler
-<<<<<<< HEAD
-const form = document.getElementById("myForm");
-
-form.addEventListener("submit", event => {
-  event.preventDefault();
-  
-   // Get the textarea element by its id
-   const textarea = document.getElementById("projectDescription");
-
-   // Retrieve the data from the textarea using the value property
-   const textData = textarea.value;
-
-  // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
-  const newPost={
-    id: postManager.getCurrentId()+1,
-    name: "ana",
-    img: "/assets/img/perryXd.png",
-    noLike: 0,
-    noComments: 0,
-    postContent:textData,
-    postImgs: ["/assets/img/placeholder.png","/assets/img/placeholder.png"],
-    trend: "#PatronaSubemeElSueldo"
-  }
-
-  postManager.addPost(newPost);
-  projects.innerHTML = addPostSection(postManager);
-  console.log(postManager);
-  
-});
-=======
-const form = document.getElementById(inputID);
+const form = document.getElementById("formularioDeProyecto");
 
 form.addEventListener("submit", (event) => {
+ console.log("boton apretado")
   event.preventDefault();
 
   // Get the textarea element by its id
@@ -189,8 +155,9 @@ function validateHashtagsPost(data) {
   }
 }
 
-content.style.cursor = "pointer";
-content.onclick = () => {
-  window.location = "project_page.html";
-};
->>>>>>> dev
+
+const content = document.getElementById("post");
+// content.style.cursor = "pointer";
+// content.onclick = () => {
+//   window.location = "project_page.html";
+// };

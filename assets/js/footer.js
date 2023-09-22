@@ -3,7 +3,7 @@ export function loadFooter(){
     footerElement.innerHTML = `
   
     <div class="groupOne">
-      <div class="box justify-content-center align-items-center mx-4">
+      <div class="box">
         <div class="row">
           <a href="../pages/about_us.html" class="link-light"
             >Sobre Nosotros</a
@@ -31,9 +31,8 @@ export function loadFooter(){
         >
       </div>
       <div
-        class="socialMedia text-center justify-content-center align-items-center" style="margin: auto; font-size: 24px;"
-      >
-        <a href="#" class="facebook" " ><i class="bi bi-facebook"></i></a>
+        class="socialMedia text-center align-items-center">
+        <a href="#" class="facebook" ; ><i class="bi bi-facebook"></i></a>
         <a href="#" class="instagram" ; ><i class="bi bi-instagram"></i></a>
         <a href="#" class="github" ; ><i class="bi bi-github"></i></a>
       </div>

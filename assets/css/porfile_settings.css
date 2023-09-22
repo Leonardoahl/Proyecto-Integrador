@@ -23,3 +23,8 @@
     background-color: #6b1b1b!important;
     color: #ffff!important;
 }
+
+/* Cambia el color de texto de las opciones */
+#hardSkills option {
+    color: #333;
+}

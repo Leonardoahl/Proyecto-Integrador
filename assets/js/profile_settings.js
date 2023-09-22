@@ -70,7 +70,7 @@ function showSuccessAlert() {
     successAlert.style.display = "block";
     setTimeout(() => {
     successAlert.style.display = "none";    
-   }, 5000); // Ocultar la alerta después de 5 segundos
+    }, 5000); // Ocultar la alerta después de 5 segundos
   };
 
 

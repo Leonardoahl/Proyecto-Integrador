@@ -4,8 +4,8 @@
  *
  */
 
-const projects = document.getElementById("post");
-const inputID = "myForm";
+const projects = document.getElementById("publications");
+const inputID = "formularioDeProyecto";
 
 function addPostSection(post) {
   let text = "";
@@ -61,14 +61,15 @@ function addPostSection(post) {
   localStorage.setItem("postData", JSON.stringify(post.post));
   return text;
 }
-const content = document.getElementById("post");
+
 
 const postManager = new PostsController();
 
 // Create Post Handler
-const form = document.getElementById(inputID);
+const form = document.getElementById("formularioDeProyecto");
 
 form.addEventListener("submit", (event) => {
+ console.log("boton apretado")
   event.preventDefault();
 
   // Get the textarea element by its id
@@ -122,7 +123,9 @@ function validateHashtagsPost(data) {
   }
 }
 
-content.style.cursor = "pointer";
-content.onclick = () => {
-  window.location = "project_page.html";
-};
+
+const content = document.getElementById("post");
+// content.style.cursor = "pointer";
+// content.onclick = () => {
+//   window.location = "project_page.html";
+// };

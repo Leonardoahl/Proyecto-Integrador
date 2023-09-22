@@ -77,61 +77,68 @@
                             <select class="form-select" id="hardSkills"
                                 aria-label="Example select with button addon">
                                 <option value="" selected disabled>Habilidad técnica</option>
-                                <option value="1">Java</option>
-                                <option value="2">Python</option>
-                                <option value="3">JavaScript</option>
-                                <option value="4">C++</option>
-                                <option value="5">Ruby</option>
-                                <option value="6">PHP</option>
-                                <option value="7">Swift</option>
-                                <option value="8">Kotlin</option>
-                                <option value="9">C#</option>
-                                <option value="10">SQL</option>
-                                <option value="11">HTML</option>
-                                <option value="12">CSS</option>
-                                <option value="13">React</option>
-                                <option value="14">Angular</option>
-                                <option value="15">Vue.js</option>
-                                <option value="16">Docker</option>
-                                <option value="17">Kubernetes</option>
-                                <option value="18">AWS</option>
-                                <option value="19">Azure</option>
-                                <option value="20">Git</option>
-                                <option value="21">Jenkis</option>
-                                <option value="22">Terraform</option>
-                                <option value="23">Spring Framework</option>
-                                <option value="24">Ruby on Rails</option>
+                                <option class="optionHard">Java</option>
+                                <option class="optionHard">Python</option>
+                                <option class="optionHard">JavaScript</option>
+                                <option class="optionHard">C++</option>
+                                <option class="optionHard">Ruby</option>
+                                <option class="optionHard">PHP</option>
+                                <option class="optionHard">Swift</option>
+                                <option class="optionHard">Kotlin</option>
+                                <option class="optionHard">C#</option>
+                                <option class="optionHard">SQL</option>
+                                <option class="optionHard">HTML</option>
+                                <option class="optionHard">CSS</option>
+                                <option class="optionHard">React</option>
+                                <option class="optionHard">Angular</option>
+                                <option class="optionHard">Vue.js</option>
+                                <option class="optionHard">Docker</option>
+                                <option class="optionHard">Kubernetes</option>
+                                <option class="optionHard">AWS</option>
+                                <option class="optionHard">Azure</option>
+                                <option class="optionHard">Git</option>
+                                <option class="optionHard">Jenkis</option>
+                                <option class="optionHard">Terraform</option>
+                                <option class="optionHard">Spring Framework</option>
+                                <option class="optionHard">Ruby on Rails</option>
                             </select>
                         </div>
                         <button type="button" id="addHard" class="btn yellowButton my-2">Agregar</button>
                     </div>
-                    <div class="optionsHard">
-
+                    <div id="optionsHard">
+                        
                     </div>
 
                 </div>
                 <!-- Input soft skills -->
                 <div class="row my-3 justify-content-center" id="element">
-                    <p>Habilidades Blandas</p>
                     <div class="col-lg-6 col-sm-10 col-xs-12 text-center">
+                        <p class="titleSkills">Habilidades Blandas</p>
                         <div class="input-group">
                             <select class="form-select" id="softSkills"
                                 aria-label="Example select with button addon">
                                 <option value="" selected disabled>Habilidad blanda</option>
-                                <option class="optionSoft" value="1">Mentalidad de crecimiento</option>
-                                <option class="optionSoft" value="2">Orientación al futuro</option>
-                                <option class="optionSoft" value="3">Orientación al detalle</option>
-                                <option class="optionSoft" value="4">Comunicación</option>
-                                <option class="optionSoft" value="5">Responsabilidad Personal</option>
-                                <option class="optionSoft" value="6">Persistencia</option>
-                                <option class="optionSoft" value="7">Proactividad</option>
-                                <option class="optionSoft" value="8">Trabajo en equipo</option>
+                                <option class="optionSoft">Mentalidad de crecimiento</option>
+                                <option class="optionSoft">Orientación al futuro</option>
+                                <option class="optionSoft">Orientación al detalle</option>
+                                <option class="optionSoft">Comunicación</option>
+                                <option class="optionSoft">Responsabilidad Personal</option>
+                                <option class="optionSoft">Persistencia</option>
+                                <option class="optionSoft">Proactividad</option>
+                                <option class="optionSoft">Trabajo en equipo</option>
                             </select>
                         </div>
-                        <button type="button" id="addSoft" class="btn yellowButton my-2">Agregar</button>
+                        <div id="alertSkills">
+                            Solo se pueden agregar 5 habilidades
+                        </div>
+                        <button type="button" id="addSoft" class="btn yellowButton my-2" onclick="addSoftSkills()">Agregar</button>
                     </div>
-                    <div class="optionsSofts">
+                    <div class="col-lg-6 col-sm-10 text-center">
+                        <div class="skills">
+                            <ul id="optionsSofts">
 
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- Input description -->

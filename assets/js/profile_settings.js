@@ -2,12 +2,14 @@
  * @author Perry Code
  * @version 0.0.1
  * Profile settings functionality
- */
+*/
 
 
 const profileSettings = document.forms["profileSettings"];
 const acceptButton = document.getElementById("accept");
 const cancelButton = document.getElementById("cancel");
+const showAlert = document.getElementById("alertSkills");
+showAlert.style.display = "block";
 //console.log(profileSettings);
 /**
  * @function validacionDeUsuarioNuevo arrow function con el algoritmo principal de validacion y funcionamiento de   
@@ -121,8 +123,27 @@ cancelButton.addEventListener("click",resetFunction);
 
 acceptButton.addEventListener("click",validacionDeSettingsNuevos);
     
+const arrSoftSkills = [];
   
+function addSoftSkills(){
+    const softSkill = document.getElementById("softSkills").value;
+    const showSoft = document.getElementById("optionsSofts");
+    console.log(softSkill);
+    arrSoftSkills.push(softSkill);
 
+    if(arrSoftSkills.length <= 5){
+        showSoft.innerHTML =  arrSoftSkills.map(soft =>`
+                <li>${soft}</li>
+            `).join('');
+    }else{
+        // Después de 5 segundos, oculta el mensaje
+        setTimeout(function() {
+            showAlert.style.display = "block";
+        }, 5000);
+    }
+
+
+}
 
 
 

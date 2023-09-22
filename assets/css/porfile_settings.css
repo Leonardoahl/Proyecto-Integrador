@@ -29,3 +29,30 @@
 #softSkills option {
     color: #000000;
 }
+
+#description {
+    resize: none;
+}
+
+#optionsSofts{
+    list-style:none;
+    padding-left: 0;
+    margin-left: 0;
+    width: auto;
+}
+
+#optionsSofts li{
+    background-color: rgba(83,67,49,0.8);
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.titleSkills{
+    display: flex;
+    justify-content: start;
+}
+
+div #alertSkills{
+    display: none;
+}

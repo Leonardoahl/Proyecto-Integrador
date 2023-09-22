@@ -72,11 +72,11 @@
                 <!-- Input hard skills -->
                 <div class="row my-3 justify-content-center" id="element">
                     <p>Habilidades Técnicas</p>
-                    <div class="col-lg-6 col-sm-12">
+                    <div class="col-lg-6 col-sm-10 col-xs-12 text-center">
                         <div class="input-group">
                             <select class="form-select" id="hardSkills"
                                 aria-label="Example select with button addon">
-                                <option selected>Habilidades Técnicas</option>
+                                <option value="" selected disabled>Habilidad técnica</option>
                                 <option value="1">Java</option>
                                 <option value="2">Python</option>
                                 <option value="3">JavaScript</option>
@@ -103,9 +103,9 @@
                                 <option value="24">Ruby on Rails</option>
                             </select>
                         </div>
-                        <button class="btn yellowButton my-2" type="button">Button</button>
+                        <button type="button" id="addHard" class="btn yellowButton my-2">Agregar</button>
                     </div>
-                    <div class="col-lg-6 col-sm-12">
+                    <div class="optionsHard">
 
                     </div>
 
@@ -113,12 +113,12 @@
                 <!-- Input soft skills -->
                 <div class="row my-3 justify-content-center" id="element">
                     <p>Habilidades Blandas</p>
-                    <div class="col-lg-6 col-sm-12">
+                    <div class="col-lg-6 col-sm-10 col-xs-12 text-center">
                         <div class="input-group">
                             <select class="form-select" id="softSkills"
                                 aria-label="Example select with button addon">
-                                <option selected>Habilidades Blandas</option>
-                                <option class="optionSoft" value="1">Menatlidad de crecimiento</option>
+                                <option value="" selected disabled>Habilidad blanda</option>
+                                <option class="optionSoft" value="1">Mentalidad de crecimiento</option>
                                 <option class="optionSoft" value="2">Orientación al futuro</option>
                                 <option class="optionSoft" value="3">Orientación al detalle</option>
                                 <option class="optionSoft" value="4">Comunicación</option>
@@ -128,28 +128,29 @@
                                 <option class="optionSoft" value="8">Trabajo en equipo</option>
                             </select>
                         </div>
-                        <div class="justify-content-center">
-                            <button class="btn yellowButton my-2" type="button">Button</button>
-                        </div>
+                        <button type="button" id="addSoft" class="btn yellowButton my-2">Agregar</button>
                     </div>
-                    <div class="col-lg-6 col-sm-12">
+                    <div class="optionsSofts">
 
                     </div>
                 </div>
-
                 <!-- Input description -->
                 <div class="row my-3" id="element">
-                    <label for="description" class="form-label">Descripción</label>
-                    <textarea type="text" id="description" class="form-control" name="description"
+                    <div class="col-12">
+                        <label for="description" class="form-label">Descripción</label>
+                        <textarea type="text" id="description" class="form-control" name="description"
                         placeholder="Agrega una breve descripción"></textarea>
+                    </div>
                 </div>
                 <div id="descriptionError" class="invalid-feedback" role="alert">
                     El límite de caracteres es 250.
                 </div>
                 <!-- Input email -->
                 <div class="row my-3" id="element">
-                    <label for="email" class="form-label">Correo</label>
-                    <input type="text" id="email" class="form-control" placeholder="nombre@gmail.com">
+                    <div class="col-12">
+                        <label for="email" class="form-label">Correo</label>
+                        <input type="text" id="email" class="form-control" placeholder="nombre@gmail.com">
+                    </div>
                 </div>
                 <div id="emailError" class="invalid-feedback" role="alert">
                     Email no válido.

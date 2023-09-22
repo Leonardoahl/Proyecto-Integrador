@@ -25,6 +25,7 @@
 }
 
 /* Cambia el color de texto de las opciones */
-#hardSkills option {
-    color: #333;
+#hardSkills option,
+#softSkills option {
+    color: #000000;
 }

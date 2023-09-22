@@ -6,73 +6,73 @@
 
 
 const contactForm = document.forms["contactForm"];
-console.log(contactForm);
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const phoneError = document.getElementById("phoneError");
 
-contactForm.addEventListener("submit",(event)=>{
+contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    // const name = contactForm.elements["name"].value;
-    // console.log(name);
+
     const userData = {
-        name:contactForm.elements["name"].value,
-        email:contactForm.elements["email"].value,
-        phone:contactForm.elements["phone"].value,
-        feedback:contactForm.elements["feedback"].value
+        name: contactForm.elements["name"].value,
+        email: contactForm.elements["email"].value,
+        phone: contactForm.elements["phone"].value,
+        feedback: contactForm.elements["feedback"].value
     }
-    console.log(userData);
 
-    sendEmail(userData);
-   
-    // printAlerts(userData);
+    // Validar los campos
+    const isNameValid = validateName(userData);
+    const isEmailValid = validateEmail(userData);
+    const isPhoneValid = validateNumber(userData);
 
+    // Mostrar u ocultar mensajes de error
+    nameError.style.display = isNameValid ? "none" : "block";
+    emailError.style.display = isEmailValid ? "none" : "block";
+    phoneError.style.display = isPhoneValid ? "none" : "block";
+
+    // Solo enviar el correo si todos los campos son válidos
+    if (isNameValid && isEmailValid && isPhoneValid) {
+        sendEmail(userData);
+    }
 });
 
-function validateName ({name}){
-  
+function validateName({ name }) {
     const patron = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s[a-zA-ZÀ-ÿ\u00f1\u00d1])*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
     const patronMatch = name.match(patron);
-    let isValid = false;
+    return patronMatch;
+}
 
-    if(patronMatch)isValid = true;
-    return isValid;
+function validateEmail({ email }) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const emailMatch = email.match(emailPattern);
+    return emailMatch !== null;
+}
 
-};
-function validateNumber({phone}){
-
+function validateNumber({ phone }) {
     const numPatron = /^[0-9]+$/;
     const patronMatch = phone.match(numPatron);
-    let isValid = false;
     const phoneStr = phone.split(" ").join("").length;
-    if(patronMatch && (phoneStr === 10)) isValid = true;
-    return isValid;
 
-};
+    return patronMatch && (phoneStr === 10);
+}
 
-function printAlerts (userData){
+function showSuccessAlert() {
+    const successAlert = document.getElementById("successAlert");
+    successAlert.style.display = "block";
+    setTimeout(() => {
+    successAlert.style.display = "none";
+   }, 5000); // Ocultar la alerta después de 5 segundos
+  }
 
-    if (!validateName(userData))alert("Pon un nombre válido.");
-    if (!validateNumber(userData))alert("Pon un número válido.");
-
-};
-
-function sendEmail (userData){
-
-
-    if (validateName(userData) && validateNumber(userData) ){
-    console.log("xdd");
+function sendEmail(userData) {
     emailjs.init('_AIRxlmq1luT-s4JJ');
     emailjs.sendForm('contact_service', 'contact_form', contactForm)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                        alert("Ya enviamos tu correo :) ");
-                        contactForm.reset();
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-
-
-}else{
-    printAlerts(userData);
+        .then(function () {
+            console.log('SUCCESS!');
+            contactForm.reset();
+            showSuccessAlert();
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
 }
 
-
-}

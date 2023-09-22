@@ -8,8 +8,8 @@
 
 const post1 = {
     id: 1,
-    name: "ana",
-    img: "/assets/img/perryXd.png",
+    name: "BryanFan",
+    img: "../img/perryXd.png",
     noLike: 3,
     noComments: 0,
     postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
@@ -53,4 +53,3 @@ class PostsController {
         this.post[index].postContent = content;
     }
 }
-

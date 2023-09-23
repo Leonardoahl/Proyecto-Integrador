@@ -4,13 +4,40 @@
  *
  */
 
-const projects = document.getElementById("post");
-const inputID = "myForm";
+const projects = document.getElementById("publications");
+const inputID = "formularioDeProyecto";
 
+>>>>>>> dev
 function addPostSection(post) {
   let text = "";
   for (let i = 0; i < post.post.length; i++) {
     text += `
+<<<<<<< HEAD
+        <div class="row" id="user">
+              <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
+                <img
+                  class="img-thumbnail rounded float-start"
+                  src='${post.post[i].img}'
+                  alt="user profile thumbnail"
+                  width="90"
+                />
+              </div>
+              <div class="col-lg-11 col-md-10 col-sm-11 col-xs-11">
+                <h2 class="row" id="userId">
+                  <strong>@${post.post[i].name}</strong>
+                </h2>
+                <div class="row" id="hashtag">
+                  <label>${post.post[i].trend}</label>
+                </div>
+              </div>
+            </div>
+            <div class="row" id="content">
+              <p>
+                ${post.post[i].postContent}
+              </p>
+            </div>
+            <div class="row" id="info">
+=======
 
   
     
@@ -40,6 +67,7 @@ function addPostSection(post) {
     </div>
   </div>
    <div class="row" id="info" style="margin-bottom: 20px;">
+>>>>>>> dev
               <div id="interactios">
                 <button class="btn btn-secondary btn-xs btn-custom-transparent">
                     ${post.post[i].noLike} <img src="../img/corazon.png" width="30" />
@@ -55,20 +83,25 @@ function addPostSection(post) {
                 </button>
               </div>
             </div>
+<<<<<<< HEAD
+          </div>
+=======
           
+>>>>>>> dev
         `;
   }
   localStorage.setItem("postData", JSON.stringify(post.post));
   return text;
 }
-const content = document.getElementById("post");
+
 
 const postManager = new PostsController();
 
 // Create Post Handler
-const form = document.getElementById(inputID);
+const form = document.getElementById("formularioDeProyecto");
 
 form.addEventListener("submit", (event) => {
+ console.log("boton apretado")
   event.preventDefault();
 
   // Get the textarea element by its id
@@ -122,7 +155,9 @@ function validateHashtagsPost(data) {
   }
 }
 
-content.style.cursor = "pointer";
-content.onclick = () => {
-  window.location = "project_page.html";
-};
+
+const content = document.getElementById("post");
+// content.style.cursor = "pointer";
+// content.onclick = () => {
+//   window.location = "project_page.html";
+// };

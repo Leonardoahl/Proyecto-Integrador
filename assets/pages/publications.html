@@ -23,77 +23,134 @@
     <script defer src="../js/PostsController.js"></script>
     <script defer src="../js/post.js"></script>
     <title>Publicaciones</title>
-
-    <script type="module" src="../js/navbar.js"></script>
-    <script type="module" src="../js/footer.js"></script>
   </head>
 
   <body>
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
-      <div class="row justify-content-center">
-        <div class="col-sm-4 col-md-2" >
-          <!-- Trending List -->
-          <div class="card" id="trending">
-            <div class="card-header text-center bg-success-subtle">Trending</div>
-            <ul class="list-group list-group-flush text-center">
-              <li class="list-group-item">#Python</li>
-              <li class="list-group-item">#Java</li>
-              <li class="list-group-item">#C</li>
-              <li class="list-group-item">#Kotlin</li>
-              <li class="list-group-item">#Android</li>
-            </ul>
-          </div>
+     
+      <!-- FORMULARIO DE PUBLICACION-->
+      <div class="row ms-1 border border-4 border-black rounded mt-1  bg-light-subtle bg-gradient" id="formularioDeProyecto"> 
+       <div class="d-inline bg-success-subtle">
+        <label for="FormControlInput1" class="form-label text-dark ">Elige un nombre para tu idea</label>
+       </div>
+
+        <div class="mb-3 ">
+          <input type="email" class="form-control" id="titulo" placeholder="ej: creacion de sitio web con spring">
         </div>
-          <!-- //////////////////  TRENDING END /////////////// -->
-        <div class="col-sm-9 col-lg-8">  
-        <section id="projects">
-          <h2 class="title" id="titleProjects">
-            Proyectos
-          </h2>
 
-          <!--post form structure -->
-          <form  id="myForm">
-            <div class="row ">
-              <label for="validationTextarea" class="text-center"
-                >Nuevo Post</label>
-            </div>
-            <!-- Agregue una columna que abarque el textarea y botones y lograr un fondo uniforme para todos esos elementos -->
-            <div class="col p-3" id="postCreator">
-              <textarea
-                class="form-control mb-2"
-                id="projectDescription"
-                placeholder="Shared your thoughts"
-                required
-                minlength="10"
-              ></textarea>
-              <!-- use of new functions to manage buttons position (bootstrap 5 new functions) -->
-              <!-- d-grid es una funcion nueva para los btones  -->
-              <div class="d-grid d-md-flex justify-content-md-end">
-                <button class="yellowButton" type="submit">
-                  Enviar
-                </button>
-                <!-- <button class="btn btn-warning" type="button">other</button>  Se comenta hasta saber si ocuparemos o no el botón -->
-              </div>
-            </div>
-          </form>
-          <!--post form end structure -->
+        <div class="d-inline bg-success-subtle">
+          <label for="FormControlInput1" class="form-label text-dark ">Cuentanos mas acerca de tu proyecto</label>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" id="descripcion" placeholder="Describe tu proyecto aqui" rows="3"></textarea>
+        </div>
 
+        <div class="d-grid d-md-flex justify-content-end">
+            
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Trendings
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li>
+                  <a class="dropdown-item" href="#">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="Checkme1" />
+                          <label class="form-check-label" for="Checkme1">Check me</label>
+                      </div>
+                  </a>
+              </li>
+              <li>
+                  <a class="dropdown-item" href="#">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="Checkme2" checked />
+                          <label class="form-check-label" for="Checkme2">Check me</label>
+                      </div>
+                  </a>
+              </li>
+              <li>
+                  <a class="dropdown-item" href="#">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="Checkme3" />
+                          <label class="form-check-label" for="Checkme3">Check me</label>
+                      </div>
+                  </a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                  <a class="dropdown-item" href="#">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="Checkme4" checked />
+                          <label class="form-check-label" for="Checkme4">Check me</label>
+                      </div>
+                  </a>
+              </li>
+          </ul>
+          </div>
+
+          <button class="yellowButton" type="submit">Enviar</button>
+        </div>
+            
+      </div>
+       <!-- FORMULARIO DE PUBLICACION-->
+     
+      <!--                              LISTA DE TRENDINGS                -->
+      <div class="row mt-2 justify-content-around">
+      <div class="col-sm-3">
+        <div class="card border border-4 border-black " id="trending">
+          <div class="card-header text-center bg-success-subtle">
+            Trending
+          </div>
+          <div class="d-grid d-inline-block justify-content-center">
+            <div class="badge bg-primary text-wrap rounded-5 mb-1" style="width: 6rem;">
+             C
+            </div>
+            <div class="badge bg-primary text-wrap rounded-5 mb-1" style="width: 6rem;">
+              SpringBoot
+            </div>
+            <div class="badge bg-primary text-wrap rounded-5 mb-1" style="width: 6rem;">
+              Kotlin
+            </div>
+            <div class="badge bg-primary text-wrap rounded-5 mb-1" style="width: 6rem;">
+              Swift
+            </div>
+            <div class="badge bg-primary text-wrap rounded-5 mb-1 shadow-lg p-2" style="width: 6rem;">
+              Algoritmos
+            </div>
+            <div class="badge bg-primary text-wrap rounded-5 mb-1" style="width: 6rem;">
+              Linux
+            </div>
+            <div class="badge bg-primary text-wrap rounded-5 mb-1" style="width: 6rem;">
+              Cobol
+            </div>
+          </div>
          
-        </section>
         </div>
       </div>
 
-       <!-- Post display Section -->
-       <div class="row justify-content-sm-center bg-dark bg-opacity-50">
-        <div >
-          <section id="post">
-            
-          </section>
+
+      <!-- POST SECTION -->
+      <div class="col-sm-9 bg-light-subtle border border-black border-5 rounded-3 ">
+      <div class="row border border-bottom border-black border-opacity-25 bg-success-subtle" id="headerPublications">
+        <div class="dropdown d-grid d-md-flex justify-content-around">
+          <p class="text-dark fs-5 fw-bold">Ultimas publicaciones</p>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Ordenar por:
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item text-dark" href="#">Action</a></li>
+            <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
+            <li><a class="dropdown-item text-dark" href="#">Something else here</a></li>
+          </ul>
         </div>
-        
-       </div>
-      
+      </div>
+      <div class="row" id="publications">
+
+      </div>
+      </div>
+      <!-- END OF POST SECTION -->
+    </div>
     </main>
     <footer class="foot" id="footer"></footer>
     <!-- Bootstrap script -->

@@ -1,4 +1,10 @@
-console.log("xd");
+console.log("registro xd");
+
+if (sessionUser){
+  window.location.href = "../pages/log_In.html";
+}
+
+console.log(sessionUser);
 
 const users = [];
 let i = 1;
@@ -83,7 +89,7 @@ function validateRegistration(userData) {
     successAlert.style.display = "block";
     setTimeout(() => {
     successAlert.style.display = "none";
-    window.location.href = "/assets/pages/log_In.html";//cambiar direccion al index en caso de que se mueva el login de lugar
+    window.location.href = "../pages/log_In.html";//cambiar direccion al index en caso de que se mueva el login de lugar
     
    }, 3000); // Ocultar la alerta después de 3 segundos y redirigir a login
 

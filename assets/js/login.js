@@ -10,6 +10,12 @@
  * @returns {void} nada
  */
 
+
+if (sessionUser){
+  window.location.href = "../pages/publications.html";
+}
+
+
 //Se comenta la funcion para que no intervenga con los test de otros usuarios 
 // function testUsersDatabase() {
 //   const user1 = {
@@ -179,6 +185,7 @@ function validacionDeDatos(inputDelFormulario) {
     // en este caso se encontraron el usuario y se verifica la contraseña
     if (validacionDePassword(inputDelFormulario.password,JSON.parse(localStorage.getItem(key)).password)) {
       mostrarAlerta("exito de conexion"); // usuario y contraseña validos
+      setCookie("user","Jimena",1);
       setTimeout(()=>{window.location.href="publications.html"},2000);
       
      seccionDeSpinner.innerHTML= `<div class="d-flex justify-content-center">

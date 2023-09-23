@@ -195,3 +195,4 @@ function validacionDeDatos(inputDelFormulario) {
     }
   }
 };
+

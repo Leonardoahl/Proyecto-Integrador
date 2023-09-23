@@ -34,14 +34,16 @@
     resize: none;
 }
 
-#optionsSofts{
+#optionsSofts,
+#optionsHards{
     list-style:none;
     padding-left: 0;
     margin-left: 0;
     width: auto;
 }
 
-#optionsSofts li{
+#optionsSofts li,
+#optionsHards li{
     background-color: rgba(83,67,49,0.8);
     border-radius: 20px;
     margin-top: 5px;
@@ -53,6 +55,3 @@
     justify-content: start;
 }
 
-div #alertSkills{
-    display: none;
-}

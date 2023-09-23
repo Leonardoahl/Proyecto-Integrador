@@ -7,6 +7,34 @@
 *{
     margin-left: 6px;
 }
+#mision{
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-right: 10px;
+    
+}
+#somos{
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-right: 10px;
+    
+}
+#vision{
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-right: 10px;
+    
+}
+
 .text{
     margin-top: 20px;
     display: flex;

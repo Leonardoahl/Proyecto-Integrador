@@ -38,7 +38,7 @@
     />
     <script defer src="../js/PostsController.js"></script>
     <script defer src="../js/post.js"></script>
-    <script defer src="../js/publications/serchHashtags..js"></script>
+    <!-- <script defer src="../js/publications/searchHashtags.js"></script> -->
     <!-- MDB -->
     <script
       type="text/javascript"
@@ -50,24 +50,24 @@
   <body>
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
-      <!-- FORMULARIO DE PUBLICACION-->
-      <div
-        class="row ms-1 border border-4 border-black rounded mt-1 bg-light-subtle bg-gradient"
-        id="formularioDeProyecto"
-      >
+      <form
+        class="row ms-1 border border-4 border-black rounded mt-1 bg-light-subtle bg-gradient" id="formularioDeProyecto">
+        <!--                                                  FORMULARIO DE PUBLICACION                 -->
         <div class="d-inline bg-success-subtle">
-          <label for="FormControlInput1" class="form-label text-dark"
+         
+          <label for="form14" class="form-label text-dark"
             >Elige un nombre para tu idea</label
           >
         </div>
 
         <div class="mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="titulo"
-            placeholder="ej: creacion de sitio web con spring"
-          />
+          <div class="form-outline">
+            <input type="text" id="tituloproyecto" class="form-control" />
+            <label class="form-label" for="tituloproyecto""
+              >Como quieres llamarme?</label
+            >
+            <!-- <div class="form-helper">Example helper</div> -->
+          </div>
         </div>
 
         <div class="d-inline bg-success-subtle">
@@ -80,40 +80,39 @@
             class="form-control"
             id="descripcion"
             placeholder="Describe tu proyecto aqui"
-            rows="3"
           ></textarea>
         </div>
 
         <div class="d-grid d-md-flex">
-          <!--                                  DROPDOWN & SEARCH ------------------------>
-          <a
-          class="dropdown-toggle hidden-arrow btn btn-primary"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          dropdown
-        </a>
-        <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink">
-          <li>
-            <div class="input-group mt-2 mx-2">
-              <div class="form-outline w-auto">
-                <input type="search" id="form1" class="form-control-dropdown" />
-                <label class="form-label" for="form1">Search</label>
-              </div>
-            </div>
-          </li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-          <!--                                   DROPDOWN ENDING-------------------------->
+          <!--                                          DROPDOWN & SEARCH ------------------------>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton2"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Clasificacion
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-dark"
+              aria-labelledby="dropdownMenuButton2"
+            >
+              <li><a class="dropdown-item active" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+
+          <!--                                                 DROPDOWN ENDING-------------------------->
           <button class="yellowButton" type="submit">Enviar</button>
         </div>
-      </div>
+      
+      </form>
       <!-- FORMULARIO DE PUBLICACION-->
 
       <!--                              LISTA DE TRENDINGS                -->
@@ -171,9 +170,6 @@
         <div
           class="col-sm-9 bg-light-subtle border border-black border-5 rounded-3"
         >
-
-          
-
           <div
             class="row border border-bottom border-black border-opacity-25 bg-success-subtle"
             id="headerPublications"
@@ -203,12 +199,8 @@
             </div>
           </div>
           <!--                                        SHOW NEW POST PAGE  START-->
-          <div class="row" id="publications">
-
-            
-
-          </div>
-           <!--                                        SHOW NEW POST PAGE  END-->
+          <div class="row" id="publications"></div>
+          <!--                                        SHOW NEW POST PAGE  END-->
         </div>
         <!-- END OF POST SECTION -->
       </div>

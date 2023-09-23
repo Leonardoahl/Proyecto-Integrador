@@ -61,14 +61,14 @@ function addPostSection(post) {
 const postManager = new PostsController();
 
 // Create Post Handler
-const form = document.getElementById("formularioDeProyecto");
+const form = document.getElementById(inputID);
 
 form.addEventListener("submit", (event) => {
  console.log("boton apretado")
   event.preventDefault();
 
   // Get the textarea element by its id
-  const textarea = document.getElementById("projectDescription");
+  const textarea = document.getElementById("descripcion");
 
   // Retrieve the data from the textarea using the value property
   const textData = textarea.value;

@@ -2,24 +2,36 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-h2,
-.content{
-    background: rgba(83,67,49,0.8);
-    padding: 4px;
-    margin: 4px;
+
+/* h2, */
+*{
+    margin-left: 6px;
+}
+.text{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.text-container{
+    max-width: 800px;
+    
+    margin: 0 auto;
+}
+.additional-text{
+    display: none;
 }
 
-.slide {
-    position: relative;
-    margin-top: 26px;
-    margin-bottom: 26px;
+.initial-text{
+    margin-bottom: 10px;
 }
+
+
 .slide-inner {
     position: relative;
     overflow: hidden;
     width: 100%;/* 
     height: calc( 300px + 1em); */
-}
+} 
 .slide-open:checked + .slide-item {
     position: static;
     opacity: 100;
@@ -123,13 +135,15 @@ h2,
     .slide-item img {
         max-width: 80px;
     }
+   
 }
 
 @media screen and (max-width:576px){
     .slide-item img {
         display: block;
         height: auto;
-        max-width: 70px;
+        margin: 0 auto;
+        max-width: 80px;
     }
     .imagen {
         text-align: center; /* Centra el contenido horizontalmente */
@@ -139,11 +153,21 @@ h2,
       .imagen img {
         display: block;
         margin: 0 auto!important; /* Centra la imagen horizontalmente */
-        max-width: 80px; /* Ajusta el ancho de la imagen al contenedor */
+        max-width: 70px; /* Ajusta el ancho de la imagen al contenedor */
       }
     
       .information {
         margin-left: 35px; /* Opcional: Agrega margen izquierdo para separar del texto */
         margin-right: 35px; /* Opcional: Agrega margen derecho para separar del texto */
+      }
+
+      .h5{
+        font-size: 18px;
+      }
+      .content{
+        font-size: 14px;
+        padding: 2px;
+        margin: 2px;
+        text-align: justify;
       }
 }

@@ -2,59 +2,32 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-/* #trendsList{
-    background: rgba(83,67,49,0.8);
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    margin-top: 2rem;
+
+
+.card{
+    border-radius: 4px;
+    background-color: #333; 
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+
 }
 
-#trendingTitle{
-    text-align: right;
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(12, 234, 241, 0.768), 0 4px 8px rgba(0,0,0,.06);
 }
 
-#trending {
-    position: fixed;
-    width: 20%;
-    height: auto;
-    overflow-y: auto;
-  } */
+
+#formularioDeProyecto{
+  background-color: #333;
   
-  #projects {
-    margin-left: 25%;
-  }
-
-.title{
-    border-bottom: 2px dotted rgb(212, 170, 125);
-    width: 90%;
-    margin: auto;
 }
-.yellowButton{
-  width: 70px !important;
+
+textarea{
+  background-color: #333;
 }
-/* Estilos para botones personalizados transparentes */
-.btn-custom-transparent {
-    background-color: transparent!important; /* Fondo transparente */
-    border: none!important; /* Sin borde */
-   
-  }
 
-  @media (max-width: 750px) {
-    /* Estilos para pantallas pequeñas (menos de 768px) */
-
-    #trending {
-        position: relative;
-        width: 90%;
-        height: auto;
-        overflow-y: 0;
-        margin-left: 5%;
-        margin-right:5%;
-        margin-top: 0;
-      }
-      
-      #projects {
-        margin-left: 5%;
-        margin-right:5%;
-        width: 90%;
-      }
-  } 
+#postingSection,#publications{
+ background-color: #333;
+ 
+}

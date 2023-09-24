@@ -14,7 +14,7 @@
 
 .card:hover{
      transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.768), 0 4px 8px rgba(0,0,0,.06);
+  box-shadow: 0 10px 20px rgba(12, 234, 241, 0.768), 0 4px 8px rgba(0,0,0,.06);
 }
 
 
@@ -24,5 +24,10 @@
 }
 
 textarea{
-  color: #333;
+  background-color: #333;
+}
+
+#postingSection,#publications{
+ background-color: #333;
+ 
 }

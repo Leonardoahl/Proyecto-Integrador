@@ -38,7 +38,7 @@
     />
     <script defer src="../js/PostsController.js"></script>
     <script defer src="../js/post.js"></script>
-    <!-- <script defer src="../js/publications/searchHashtags.js"></script> -->
+    <script defer src="../js/publications/searchHashtags.js"></script>
     <!-- MDB -->
     <script
       type="text/javascript"
@@ -50,78 +50,85 @@
   <body>
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
-      <form
-        class="row ms-1 border rounded mt-1" id="formularioDeProyecto">
+      <form class="row ms-1 me-1 mt-1 " id="formularioDeProyecto">
         <!--                                                  FORMULARIO DE PUBLICACION                 -->
-        <div class="d-inline bg-info">
-         
-          <label for="tituloProyecto " class="form-label text-light"
-            >Elige un nombre para tu idea</label>
+        <div class="d-inline bg-dark bg-gradient">
+          <h4>Elige el nombre de tu proyecto</h4>
         </div>
 
         <div class="mb-3">
-          <div class="form-outline">
-            <input type="text" id="tituloProyecto" class="form-control" />
-            <label class="form-label text-light" for="tituloProyecto""
+          <div class="form-outline text-white">
+            <input type="text" id="tituloProyecto" class="form-control bg-dark text-light" />
+            <label class="form-label text-light" for="tituloProyecto"
               >Como quieres llamarme?</label
             >
             <!-- <div class="form-helper">Example helper</div> -->
           </div>
         </div>
 
-        <div class="d-inline bg-info">
-          <label for="FormControlInput1" class="form-label text-light"
-            >Cuentanos mas acerca de tu proyecto</label
-          >
-        </div>
-        <div class="mb-3 text-light">
-          <textarea
-            class="form-control "
-            id="descripcion"
-            placeholder="Describe tu proyecto aqui"
-          ></textarea>
+        <div class="d-inline bg-dark bg-gradient">
+          <h4>Cuentanos mas acerca de tu proyecto</h4>
         </div>
 
-        <div class="d-grid d-md-flex">
-          <!--                                          DROPDOWN & SEARCH ------------------------>
-
-          <div class="dropdown">
-            <button
-              class="btn btn-info dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton2"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
+        <div class="mb-3">
+          <div class="form-outline text-white">
+            <textarea class="form-control bg-dark text-white" aria-label="With textarea" id="projectDescription"></textarea>
+            <label class="form-label text-light" for="projectDescription"
+              >Decripcion</label
             >
-              Clasificacion
-            </button>
-            <ul
-              class="dropdown-menu dropdown-menu-dark"
-              aria-labelledby="dropdownMenuButton2"
-            >
-              <li><a class="dropdown-item active" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
+            <!-- <div class="form-helper">Example helper</div> -->
           </div>
-
-          <!--                                                 DROPDOWN ENDING-------------------------->
-          <button class="yellowButton" type="submit">Enviar</button>
         </div>
-      
-      </form>
-      <!-- FORMULARIO DE PUBLICACION-->
 
-      <!--                              LISTA DE TRENDINGS                -->
+        <div class="d-flex d-grid justify-content-end">
+          <!-------------------------------------------- DROPDOWN & SEARCH------------------------------------->
+          <a
+            class="dropdown-toggle hidden-arrow btn btn-primary"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            dropdown
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-left"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li>
+              <div class="input-group mt-2 mx-2">
+                <div class="form-outline w-auto">
+                  <input
+                    type="search"
+                    id="form1"
+                    class="form-control-dropdown"
+                  />
+                  <label class="form-label" for="form1">Search</label>
+                </div>
+              </div>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+          <!-------------------------------------------DROPDOWN SEARCH ENDING-------------------------->
+          <button class="btn btn-warning" type="submit">Enviar</button>
+        </div>
+      </form>
+      <!--                                      FINAL DE  FORMULARIO DE PUBLICACION-->
+
       <div class="row mt-2 justify-content-around">
+        <!--                              LISTA DE TRENDINGS                -->
         <div class="col-sm-3" id="trending">
           <div class="card">
-            <div class="card-header text-black text-center bg-info">Trending</div>
+            <div class="card-header text-black text-center bg-info">
+              Trending
+            </div>
             <div class="d-grid d-inline-block justify-content-center bg-dark">
               <div
-               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
                 style="width: 6rem"
               >
                 C
@@ -133,13 +140,13 @@
                 SpringBoot
               </div>
               <div
-               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
                 style="width: 6rem"
               >
                 Kotlin
               </div>
               <div
-               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
                 style="width: 6rem"
               >
                 Swift
@@ -151,13 +158,13 @@
                 Algoritmos
               </div>
               <div
-               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
                 style="width: 6rem"
               >
                 Linux
               </div>
               <div
-               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
                 style="width: 6rem"
               >
                 Cobol
@@ -165,15 +172,16 @@
             </div>
           </div>
         </div>
-        <!-- POST SECTION -->
-        <div
-          class="col-sm-9 bg-gradient border rounded-3" id="postingSection">
+        <!--                             FIN LISTA DE TRENDINGS                -->
+
+        <!--                                  POST SECTION                        -->
+        <div class="col-sm-9 bg-gradient border rounded-3" id="postingSection">
           <div
-            class="row border border-bottom border-info-subtle border-opacity-25 "
+            class="row border border-bottom border-info-subtle border-opacity-25"
             id="headerPublications"
           >
             <div class="dropdown d-grid d-md-flex justify-content-around">
-              <p class=" fs-5 fw-bold text-light">Ultimas publicaciones</p>
+              <p class="fs-5 fw-bold text-light">Ultimas publicaciones</p>
               <button
                 class="btn btn-info dropdown-toggle"
                 type="button"
@@ -184,14 +192,12 @@
                 Ordenar por:
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item " href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Action</a></li>
                 <li>
-                  <a class="dropdown-item " href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
                 </li>
                 <li>
-                  <a class="dropdown-item " href="#"
-                    >Something else here</a
-                  >
+                  <a class="dropdown-item" href="#">Something else here</a>
                 </li>
               </ul>
             </div>

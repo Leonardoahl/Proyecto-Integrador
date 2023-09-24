@@ -186,8 +186,13 @@ inputChat.addEventListener("submit", handleMessageInput);
 
 // wait for dom to load 
 window.addEventListener('DOMContentLoaded', () => {
-    const socket = new SockJS('http://127.0.0.1:8080/ws');
-    stompClient = Stomp.over(socket);
+    try{
+        const socket = new SockJS('http://127.0.0.1:8080/ws');
+        stompClient = Stomp.over(socket);
+    
+        stompClient.connect({}, onConnected, onError);
+    }catch(e){
+        console.log("no se puede xd")
+    }
 
-    stompClient.connect({}, onConnected, onError);
 });

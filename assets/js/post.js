@@ -4,17 +4,14 @@
  *
  */
 
-<<<<<<< HEAD
-=======
-const projects = document.getElementById("post");
-const inputID = "myForm";
+const projects = document.getElementById("publications");
+const inputID = "formularioDeProyecto";
 
->>>>>>> dev
+
 function addPostSection(post) {
   let text = "";
   for (let i = 0; i < post.post.length; i++) {
     text += `
-<<<<<<< HEAD
         <div class="row" id="user">
               <div class="col-lg-1 col-md-2 col-sm-1 col-xs-1">
                 <img
@@ -39,37 +36,6 @@ function addPostSection(post) {
               </p>
             </div>
             <div class="row" id="info">
-=======
-
-  
-    
-    <div id="a" class="row">
-      <div class="row" id="user">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-          <img
-            class="userIcon"
-            src='${post.post[i].img}'
-            alt="user profile thumbnail"
-            width="90"
-            style="margin-right: 2px;"
-          />
-        </div>
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-          <div class="row" id="userId" style="margin-top: 10px;"> 
-            <label>@${post.post[i].name}</label>
-          </div>
-          <div class="row" id="hashtag" style="margin-top: 10px;"> 
-            <label>${post.post[i].trend}</label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <p>${post.post[i].postContent}</p>
-      </div>
-    </div>
-  </div>
-   <div class="row" id="info" style="margin-bottom: 20px;">
->>>>>>> dev
               <div id="interactios">
                 <button class="btn btn-secondary btn-xs btn-custom-transparent">
                     ${post.post[i].noLike} <img src="../img/corazon.png" width="30" />
@@ -85,61 +51,25 @@ function addPostSection(post) {
                 </button>
               </div>
             </div>
-<<<<<<< HEAD
           </div>
-=======
-          
->>>>>>> dev
         `;
   }
   localStorage.setItem("postData", JSON.stringify(post.post));
   return text;
 }
-<<<<<<< HEAD
-=======
-const content = document.getElementById("post");
->>>>>>> dev
+
 
 const postManager = new PostsController();
 
 // Create Post Handler
-<<<<<<< HEAD
-const form = document.getElementById("myForm");
-
-form.addEventListener("submit", event => {
-  event.preventDefault();
-  
-   // Get the textarea element by its id
-   const textarea = document.getElementById("projectDescription");
-
-   // Retrieve the data from the textarea using the value property
-   const textData = textarea.value;
-
-  // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
-  const newPost={
-    id: postManager.getCurrentId()+1,
-    name: "ana",
-    img: "/assets/img/perryXd.png",
-    noLike: 0,
-    noComments: 0,
-    postContent:textData,
-    postImgs: ["/assets/img/placeholder.png","/assets/img/placeholder.png"],
-    trend: "#PatronaSubemeElSueldo"
-  }
-
-  postManager.addPost(newPost);
-  projects.innerHTML = addPostSection(postManager);
-  console.log(postManager);
-  
-});
-=======
 const form = document.getElementById(inputID);
 
 form.addEventListener("submit", (event) => {
+ console.log("boton apretado")
   event.preventDefault();
 
   // Get the textarea element by its id
-  const textarea = document.getElementById("projectDescription");
+  const textarea = document.getElementById("descripcion");
 
   // Retrieve the data from the textarea using the value property
   const textData = textarea.value;
@@ -189,8 +119,9 @@ function validateHashtagsPost(data) {
   }
 }
 
-content.style.cursor = "pointer";
-content.onclick = () => {
-  window.location = "project_page.html";
-};
->>>>>>> dev
+
+const content = document.getElementById("post");
+// content.style.cursor = "pointer";
+// content.onclick = () => {
+//   window.location = "project_page.html";
+// };

@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/publications.css" />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,177 +38,170 @@
     />
     <script defer src="../js/PostsController.js"></script>
     <script defer src="../js/post.js"></script>
+    <!-- <script defer src="../js/publications/searchHashtags.js"></script> -->
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
     <title>Publicaciones</title>
-<<<<<<< HEAD
-=======
-
-    <script type="module" src="../js/navbar.js"></script>
-    <script type="module" src="../js/footer.js"></script>
->>>>>>> dev
   </head>
 
   <body>
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
-      <div class="row justify-content-center">
-        <div class="col-sm-4 col-md-2" >
-          <!-- Trending List -->
-          <div class="card" id="trending">
-            <div class="card-header text-center bg-success-subtle">Trending</div>
-            <ul class="list-group list-group-flush text-center">
-              <li class="list-group-item">#Python</li>
-              <li class="list-group-item">#Java</li>
-              <li class="list-group-item">#C</li>
-              <li class="list-group-item">#Kotlin</li>
-              <li class="list-group-item">#Android</li>
-            </ul>
+      <form
+        class="row ms-1 border rounded mt-1" id="formularioDeProyecto">
+        <!--                                                  FORMULARIO DE PUBLICACION                 -->
+        <div class="d-inline bg-info">
+         
+          <label for="tituloProyecto " class="form-label text-light"
+            >Elige un nombre para tu idea</label>
+        </div>
+
+        <div class="mb-3">
+          <div class="form-outline">
+            <input type="text" id="tituloProyecto" class="form-control" />
+            <label class="form-label text-light" for="tituloProyecto""
+              >Como quieres llamarme?</label
+            >
+            <!-- <div class="form-helper">Example helper</div> -->
           </div>
         </div>
-          <!-- //////////////////  TRENDING END /////////////// -->
-        <div class="col-sm-9 col-lg-8">  
-        <section id="projects">
-          <h2 class="title" id="titleProjects">
-            Proyectos
-          </h2>
 
-<<<<<<< HEAD
-    <main class="container">
-      <div class="row justify-content-aroud" id="content">
-        <!-- Trending List -->
-        <section class="col-sm-4" id="trending">
-          <h1 class="text-center">
-            Trending
-            <!--  Vertical line -->
-            <div class="v_line"></div>
-          </h1>
-
-          <ol class="text-center" id="trendsList">
-            <li>#Python</li>
-            <li>#Java</li>
-            <li>#Javascript</li>
-            <li>#C++</li>
-            <li>#RUST</li>
-            <li>#C</li>
-            <li>#COBOL</li>
-          </ol>
-        </section>
-
-        <section class="col-sm-8" id="projects">
-          <h1 class="row" id="title">
-            Proyectos
-            <div class="v_line"></div>
-            <!--  Vertical line -->
-          </h1>
-          <!--post form structure -->
-          <form id="myForm">
-            <div class="mb-3">
-              <label for="validationTextarea" class="form-label">POST</label>
-              <textarea
-                class="form-control"
-                id="projectDescription"
-                placeholder="Shared your thoughts"
-                required
-              ></textarea>
-            </div>
-            <div class="mb-3">
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon3"
-                  >URL images</span
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="basic-url"
-                  aria-describedby="basic-addon3 basic-addon4"
-                />
-              </div>
-            </div>
-            <div class="mb-3">
-              <button class="btn btn-primary" type="submit">Enviar</button>
-            </div>
-          </form>
-           <!--post form end structure -->
-           
-          <!-- Post display Section -->
-          <section class="row" id="post"></section>
-        </section>
-      </div>
-    </main>
-
-    <footer class="foot">
-      <div class="groupOne">
-        <div class="box justify-content-center align-items-center mx-4">
-          <div class="row">
-            <a href="../pages/about_us.html" class="link-light"
-              >Sobre Nosotros</a
-            >
-          </div>
-          <div class="row">
-            <a href="../pages/privacy_policy.html" class="link-light"
-              >Política de privacidad</a
-            >
-          </div>
-          <div class="row">
-            <a href="../pages/terms_conditions.html" class="link-light"
-              >Términos y condiciones</a
-            >
-          </div>
-        </div>
-        <div class="box text-center">
-          <small
-            >&copy; 2023 <b>PERING</b> - Todos los Derechos Reservados.</small
+        <div class="d-inline bg-info">
+          <label for="FormControlInput1" class="form-label text-light"
+            >Cuentanos mas acerca de tu proyecto</label
           >
         </div>
-        <div
-          class="socialMedia text-center justify-content-center align-items-center"
-        >
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="github"><i class="bi bi-github"></i></a>
-=======
-          <!--post form structure -->
-          <form  id="myForm">
-            <div class="row ">
-              <label for="validationTextarea" class="text-center"
-                >Nuevo Post</label>
-            </div>
-            <!-- Agregue una columna que abarque el textarea y botones y lograr un fondo uniforme para todos esos elementos -->
-            <div class="col p-3" id="postCreator">
-              <textarea
-                class="form-control mb-2"
-                id="projectDescription"
-                placeholder="Shared your thoughts"
-                required
-                minlength="10"
-              ></textarea>
-              <!-- use of new functions to manage buttons position (bootstrap 5 new functions) -->
-              <!-- d-grid es una funcion nueva para los btones  -->
-              <div class="d-grid d-md-flex justify-content-md-end">
-                <button class="yellowButton" type="submit">
-                  Enviar
-                </button>
-                <!-- <button class="btn btn-warning" type="button">other</button>  Se comenta hasta saber si ocuparemos o no el botón -->
+        <div class="mb-3 text-light">
+          <textarea
+            class="form-control "
+            id="descripcion"
+            placeholder="Describe tu proyecto aqui"
+          ></textarea>
+        </div>
+
+        <div class="d-grid d-md-flex">
+          <!--                                          DROPDOWN & SEARCH ------------------------>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-info dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton2"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Clasificacion
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-dark"
+              aria-labelledby="dropdownMenuButton2"
+            >
+              <li><a class="dropdown-item active" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+
+          <!--                                                 DROPDOWN ENDING-------------------------->
+          <button class="yellowButton" type="submit">Enviar</button>
+        </div>
+      
+      </form>
+      <!-- FORMULARIO DE PUBLICACION-->
+
+      <!--                              LISTA DE TRENDINGS                -->
+      <div class="row mt-2 justify-content-around">
+        <div class="col-sm-3" id="trending">
+          <div class="card">
+            <div class="card-header text-black text-center bg-info">Trending</div>
+            <div class="d-grid d-inline-block justify-content-center bg-dark">
+              <div
+               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                C
+              </div>
+              <div
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                SpringBoot
+              </div>
+              <div
+               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Kotlin
+              </div>
+              <div
+               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Swift
+              </div>
+              <div
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Algoritmos
+              </div>
+              <div
+               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Linux
+              </div>
+              <div
+               class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Cobol
               </div>
             </div>
-          </form>
-          <!--post form end structure -->
-
-         
-        </section>
->>>>>>> dev
+          </div>
         </div>
+        <!-- POST SECTION -->
+        <div
+          class="col-sm-9 bg-gradient border rounded-3" id="postingSection">
+          <div
+            class="row border border-bottom border-info-subtle border-opacity-25 "
+            id="headerPublications"
+          >
+            <div class="dropdown d-grid d-md-flex justify-content-around">
+              <p class=" fs-5 fw-bold text-light">Ultimas publicaciones</p>
+              <button
+                class="btn btn-info dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Ordenar por:
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item " href="#">Action</a></li>
+                <li>
+                  <a class="dropdown-item " href="#">Another action</a>
+                </li>
+                <li>
+                  <a class="dropdown-item " href="#"
+                    >Something else here</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--                                        SHOW NEW POST PAGE  START-->
+          <div class="row" id="publications"></div>
+          <!--                                        SHOW NEW POST PAGE  END-->
+        </div>
+        <!-- END OF POST SECTION -->
       </div>
-
-       <!-- Post display Section -->
-       <div class="row justify-content-sm-center bg-dark bg-opacity-50">
-        <div >
-          <section id="post">
-            
-          </section>
-        </div>
-        
-       </div>
-      
     </main>
     <footer class="foot" id="footer"></footer>
     <!-- Bootstrap script -->

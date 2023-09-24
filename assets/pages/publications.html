@@ -51,33 +51,32 @@
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
       <form
-        class="row ms-1 border border-4 border-black rounded mt-1 bg-light-subtle bg-gradient" id="formularioDeProyecto">
+        class="row ms-1 border rounded mt-1" id="formularioDeProyecto">
         <!--                                                  FORMULARIO DE PUBLICACION                 -->
-        <div class="d-inline bg-success-subtle">
+        <div class="d-inline bg-dark">
          
-          <label for="form14" class="form-label text-dark"
-            >Elige un nombre para tu idea</label
-          >
+          <label for="tituloProyecto " class="form-label text-light"
+            >Elige un nombre para tu idea</label>
         </div>
 
         <div class="mb-3">
           <div class="form-outline">
-            <input type="text" id="tituloproyecto" class="form-control" />
-            <label class="form-label" for="tituloproyecto""
+            <input type="text" id="tituloProyecto" class="form-control" />
+            <label class="form-label text-light" for="tituloProyecto""
               >Como quieres llamarme?</label
             >
             <!-- <div class="form-helper">Example helper</div> -->
           </div>
         </div>
 
-        <div class="d-inline bg-success-subtle">
-          <label for="FormControlInput1" class="form-label text-dark"
+        <div class="d-inline bg-dark">
+          <label for="FormControlInput1" class="form-label text-light"
             >Cuentanos mas acerca de tu proyecto</label
           >
         </div>
-        <div class="mb-3">
+        <div class="mb-3 text-light">
           <textarea
-            class="form-control"
+            class="form-control "
             id="descripcion"
             placeholder="Describe tu proyecto aqui"
           ></textarea>
@@ -118,8 +117,8 @@
       <!--                              LISTA DE TRENDINGS                -->
       <div class="row mt-2 justify-content-around">
         <div class="col-sm-3" id="trending">
-          <div class="card" style="background-color: #333">
-            <div class="card-header text-center bg">Trending</div>
+          <div class="card">
+            <div class="card-header text-light text-center bg-dark">Trending</div>
             <div class="d-grid d-inline-block justify-content-center">
               <div
                 class="badge bg-primary text-wrap rounded-5 mb-1"
@@ -168,14 +167,14 @@
         </div>
         <!-- POST SECTION -->
         <div
-          class="col-sm-9 bg-light-subtle border border-black border-5 rounded-3"
+          class="col-sm-9 bg-black bg-gradient border border-black border-5 rounded-3"
         >
           <div
-            class="row border border-bottom border-black border-opacity-25 bg-success-subtle"
+            class="row border border-bottom border-info-subtle border-opacity-25 "
             id="headerPublications"
           >
             <div class="dropdown d-grid d-md-flex justify-content-around">
-              <p class="text-dark fs-5 fw-bold">Ultimas publicaciones</p>
+              <p class=" fs-5 fw-bold text-light">Ultimas publicaciones</p>
               <button
                 class="btn btn-secondary dropdown-toggle"
                 type="button"
@@ -186,12 +185,12 @@
                 Ordenar por:
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item text-dark" href="#">Action</a></li>
+                <li><a class="dropdown-item " href="#">Action</a></li>
                 <li>
-                  <a class="dropdown-item text-dark" href="#">Another action</a>
+                  <a class="dropdown-item " href="#">Another action</a>
                 </li>
                 <li>
-                  <a class="dropdown-item text-dark" href="#"
+                  <a class="dropdown-item " href="#"
                     >Something else here</a
                   >
                 </li>

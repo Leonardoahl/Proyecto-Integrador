@@ -50,140 +50,142 @@
   <body>
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
-      <div clas></div>
-      <!--                   LISTA DE TRENDINGS            -->
-      <div class="flex-column col-3 m-2" id="trending">
-        <div class="card border border-2 border-info-subtle">
-          <div class="card-header text-white text-center bg-dark bg-gradient">
-            Trending
-          </div>
-          <div class="d-grid d-inline-block justify-content-center bg-dark">
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              C
+      <div class="d-flex flex-row">
+        <!--                   LISTA DE TRENDINGS            -->
+        <div class="flex-column col-3 m-2" id="trending">
+          <div class="card border border-1">
+            <div class="card-header text-white text-center bg-dark bg-gradient">
+              Trending
             </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              SpringBoot
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Kotlin
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Swift
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Algoritmos
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Linux
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Cobol
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--                             FIN LISTA DE TRENDINGS                -->
-      <form
-        class="row rounded-3 ms-1 me-1 mt-1 border border-3 border-info-subtle"
-        id="formularioDeProyecto"
-      >
-        <!--                                                  FORMULARIO DE PUBLICACION                 -->
-
-        <div class="d-inline rounded-3 bg-dark bg-gradient">
-          <div class="fs-2 fw-bold">Elige el nombre de tu proyecto</div>
-        </div>
-
-        <div class="mb-3">
-          <div class="form-outline text-white">
-            <input
-              type="text"
-              id="tituloProyecto"
-              class="form-control bg-dark text-light"
-            />
-            <label class="form-label text-light" for="tituloProyecto"
-              >Como quieres llamarme?</label
-            >
-            <!-- <div class="form-helper">Example helper</div> -->
-          </div>
-        </div>
-
-        <div class="d-inline rounded-3 bg-dark bg-gradient">
-          <div class="fs-2 fw-bold">Cuentanos mas acerca de tu proyecto</div>
-        </div>
-
-        <div class="mb-3">
-          <div class="form-outline text-white">
-            <textarea
-              class="form-control bg-dark text-white"
-              aria-label="With textarea"
-              id="projectDescription"
-            ></textarea>
-            <label class="form-label text-light" for="projectDescription"
-              >Decripcion</label
-            >
-            <!-- <div class="form-helper">Example helper</div> -->
-          </div>
-        </div>
-
-        <div class="d-flex d-grid justify-content-end">
-          <!-------------------------------------------- DROPDOWN & SEARCH------------------------------------->
-          <a
-            class="dropdown-toggle hidden-arrow btn btn-light btn-outline-info text-dark"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Trends
-          </a>
-          <ul
-            class="dropdown-menu dropdown-menu-left"
-            aria-labelledby="navbarDropdownMenuLink"
-          >
-            <li>
-              <div class="input-group mt-2 mx-2">
-                <div class="form-outline w-auto">
-                  <input
-                    type="search"
-                    id="form1"
-                    class="form-control-dropdown"
-                  />
-                  <label class="form-label" for="form1">Search</label>
-                </div>
+            <div class="d-grid d-inline-block justify-content-center bg-dark">
+              <div
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                C
               </div>
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-          <!-------------------------------------------DROPDOWN SEARCH ENDING-------------------------->
-          <button class="btn btn-warning" type="submit">Enviar</button>
+              <div
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                SpringBoot
+              </div>
+              <div
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Kotlin
+              </div>
+              <div
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Swift
+              </div>
+              <div
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Algoritmos
+              </div>
+              <div
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Linux
+              </div>
+              <div
+                class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
+                style="width: 6rem"
+              >
+                Cobol
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
-      <!--                                      FINAL DE  FORMULARIO DE PUBLICACION-->
+        <!--                             FIN LISTA DE TRENDINGS                -->
+        <form
+          class="row rounded-3 ms-1 me-1 mt-1 border border-1"
+          id="formularioDeProyecto"
+        >
+          <!--                                                  FORMULARIO DE PUBLICACION                 -->
+
+          <div class="d-inline rounded-3 bg-dark bg-gradient">
+            <div class="fs-2 fw-bold">Elige el nombre de tu proyecto</div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-outline text-white">
+              <input
+                type="text"
+                id="tituloProyecto"
+                class="form-control bg-dark text-light"
+              />
+              <label class="form-label text-light" for="tituloProyecto"
+                >Como quieres llamarme?</label
+              >
+              <!-- <div class="form-helper">Example helper</div> -->
+            </div>
+          </div>
+
+          <div class="d-inline rounded-3 bg-dark bg-gradient">
+            <div class="fs-2 fw-bold">Cuentanos mas acerca de tu proyecto</div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-outline text-white">
+              <textarea
+                class="form-control bg-dark text-white"
+                aria-label="With textarea"
+                id="projectDescription"
+              ></textarea>
+              <label class="form-label text-light" for="projectDescription"
+                >Decripcion</label
+              >
+              <!-- <div class="form-helper">Example helper</div> -->
+            </div>
+          </div>
+
+          <div class="d-flex d-grid justify-content-end">
+            <!-------------------------------------------- DROPDOWN & SEARCH------------------------------------->
+            <a
+              class="dropdown-toggle hidden-arrow btn btn-light btn-outline-info text-dark"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Trends
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-left"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <div class="input-group mt-2 mx-2">
+                  <div class="form-outline w-auto">
+                    <input
+                      type="search"
+                      id="form1"
+                      class="form-control-dropdown"
+                    />
+                    <label class="form-label" for="form1">Search</label>
+                  </div>
+                </div>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            <!-------------------------------------------DROPDOWN SEARCH ENDING-------------------------->
+            <button class="btn btn-warning" type="submit">Enviar</button>
+          </div>
+        </form>
+        <!--                                      FINAL DE  FORMULARIO DE PUBLICACION-->
+      </div>
+      <!-- FIN ROW DE TRENDINGS Y POST -->
 
       <div class="d-flex flex-row mt-2 justify-content-around">
         <!--                                  POST SECTION                        -->

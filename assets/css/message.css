@@ -9,6 +9,7 @@
 main{
 /*     margin-left: 10%;
     margin-right: 10%; */
+    min-width: 70%;
     margin-left: auto;
     margin-right: auto;
 }

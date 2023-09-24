@@ -15,7 +15,7 @@ chatTab.addEventListener('click', ()=>{
     if(chatBox.classList.contains('hidden')){
         chatBox.classList.remove('hidden');
         chatSelector.classList.add('hidden');
-        chatDisplay.scrollTop = chatDisplay.scrollHeight;
+        // chatDisplay.scrollTop = chatDisplay.scrollHeight;
     }else{
         chatBox.classList.add('hidden');
         chatSelector.classList.remove('hidden');
@@ -82,6 +82,7 @@ const onError = ()=>{
 
 const onMessageReceived = (payload)=>{
     const message = JSON.parse(payload.body);
+    if(message.type != "CHAT") return
 
     const messageElement = document.createElement('li');
     messageElement.classList.add("d-flex");

@@ -11,7 +11,7 @@ body {
 }
 
 .profile-container {
-    max-width: 800px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -47,10 +47,6 @@ body {
     cursor: pointer; 
 }
 
-.about-me:hover {
-    transform: scale(1.05); 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
-}
 .skills {
     margin-top: 20px;
 }
@@ -72,17 +68,10 @@ body {
     background-color: transparent; 
 }
 
-.skills .card ul li:hover {
-    background-color: transparent; 
-}
+
 
 .skills .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-.skills .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
 }
 
 .projects {

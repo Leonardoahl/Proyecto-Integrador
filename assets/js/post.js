@@ -7,6 +7,7 @@
 const projects = document.getElementById("publications");
 const inputID = "formularioDeProyecto";
 
+
 function addPostSection(post) {
   let text = "";
   for (let i = 0; i < post.post.length; i++) {

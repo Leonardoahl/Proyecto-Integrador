@@ -25,18 +25,23 @@
             <h1 class="text-center">Configuración de usuario</h1>
             <!-- Foto de perfil -->
             <div class="row justify-content-center my-3" id="element">
-                <p>Foto de perfil</p>
-                <img src="../img/porfile-image.jpg" alt="perryAvatar" id="avatar">
+                <p class="text-center">Foto de perfil</p>
+                <div class="d-grid justify-content-center">
+                    <img src="../img/imgProfile.png" alt="avatar" class="avatar">
+                </div>
 
                 <div class="d-grid justify-content-center">
-                    <button type="button" class="btn changeImage">
+                    <button type="button" class="btn changeImage" onclick="changeAvatar()">
                         <i class="bi bi-pencil-square"></i>
                     </button>
                 </div>
-
             </div>
 
-            <form id="configurationForm" class="row g-3 text-light">
+            <div id="showAvatars" style="display: none;" class="text-center">
+                <!-- Aquí se mostrarán las imágenes de avatares -->
+            </div>
+
+            <form id="configurationForm" class="row text-light justify-content-center">
                 <div class="row my-3" id="element">
                     <!-- Input nombre -->
                     <div class="col-lg-6 col-sm-12 py-1">
@@ -46,7 +51,7 @@
                             Se ve bien!
                         </div>
                         <div id="nameError" class="invalid-feedback" role="alert">
-                            No olvides agregar tu nombre. Recuerda que solo puedes utilizar caracteres alfabéticos.
+                            Agrega un nombre correctamente
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 py-1">
@@ -57,7 +62,7 @@
                             Se ve bien!
                         </div>
                         <div id="lastNameError" class="invalid-feedback" role="alert">
-                            No olvides agregar tu apellido. Recuerda que solo puedes utilizar caracteres alfabéticos.
+                            Agrega un apellido correctamente
                         </div>
                     </div>
                 </div>
@@ -159,10 +164,8 @@
                 <div class="row my-3" id="element">
                     <div class="col-12">
                         <label for="description" class="form-label">Descripción</label>
-                        <textarea type="text" id="description" class="form-control" name="description" placeholder="Agrega una breve descripción"></textarea>
-                        <div id="descriptionError" class="invalid-feedback" role="alert">
-                            El límite de caracteres es 250.
-                        </div>
+                        <div id="counter">0/250</div>
+                        <textarea type="text" id="description" class="form-control" name="description" placeholder="Agrega una breve descripción" maxlength="250"></textarea>
                     </div>
                 </div>
                 <!-- Input email -->
@@ -201,7 +204,7 @@
                 <!-- Botones -->
                 <div class="row my-3 text-center justify-content-center align-items-center" id="element">
                     <button type="submit" id="accept" class="btn m-3 yellowButton">Guardar</button>
-                    <button type="button" id="cancel" class="btn m-3 yellowButton">Cancelar</button>
+                    <a href="user_profile.html" class="btn m-3 yellowButton" id="cancel">Cancelar</a>
                 </div>
 
                 <!-- Alerta de cambios realizados -->

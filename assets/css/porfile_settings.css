@@ -2,10 +2,14 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-#avatar{
+.avatar,
+.selectAvatar{
     border-radius: 50%;
-    height: 35%;
-    width: 35%;
+    height: 150px;
+}
+
+.selectAvatar{
+    height: 100px;
 }
 
 #containerPrincipal{
@@ -57,6 +61,11 @@
     margin-bottom: 5px;
 }
 
+#counter{
+    display: flex;
+    text-align: end;
+}
+
 /* Estilo por defecto para ocultar la "x" */
 .iconDelete {
     opacity: 0;
@@ -71,5 +80,15 @@ li:hover .iconDelete {
 .titleSkills{
     display: flex;
     justify-content: start;
+}
+
+@media (max-width: 750px){
+    .avatar{
+        height: 80px;
+    }
+
+    .selectAvatar{
+        height: 30px;
+    }
 }
 

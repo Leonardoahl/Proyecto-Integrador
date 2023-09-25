@@ -6,7 +6,12 @@
 console.log("xd");
 
 const registerForm = document.forms["configurationForm"];
-console.log(registerForm);
+const avatarsProfile = ["https://i.pinimg.com/564x/40/f4/5c/40f45c3184f7331d844c29d0e38649d0.jpg",
+                        "https://i.pinimg.com/564x/8d/94/83/8d948388cbe771358a6ec1bc4cae238b.jpg",
+                        "https://i.pinimg.com/564x/fe/8b/36/fe8b36deeae7148c73c6d2db65ba6f42.jpg",
+                        "https://i.pinimg.com/564x/d1/1d/0a/d11d0a0516cfe047719d5c8f10fe4110.jpg",
+                        "https://i.pinimg.com/564x/e9/13/fe/e913feb4d4588cf5693cd3bf809ad99b.jpg"];
+/* console.log(registerForm); */
 
 registerForm.addEventListener("submit", (event) => {
     event.preventDefault()
@@ -169,18 +174,14 @@ function validateUser({ email }) {
     return isValid;
 }
 
-function validateDescription({ description }) {
-    const isValid = description.length <= 250;
-    const descriptionInput = document.getElementById("description");
-
-    if (isValid) {
-        descriptionInput.classList.remove("is-invalid");
-    } else {
-        descriptionInput.classList.add("is-invalid");
-    }
-
-    return isValid;
-}
+const description = document.getElementById('description');
+const counter = document.getElementById('counter');
+description.addEventListener('input', function(event) {
+    const target = event.target;
+    const longitudMax = target.maxLength; // Accede a la propiedad maxLength
+    const longitudAct = target.value.length;
+    counter.innerHTML = `${longitudAct}/${longitudMax}`;
+});
 
 const arrSoftSkills = [];
 const arrHardSkills = [];
@@ -213,6 +214,8 @@ function addSkill(type, skillValue, showElement, alertElement, addButton, skills
     } else {
         addButton.disabled = false;
     }
+
+    console.log(skillsArray);
 }
 
 function removeSkill(skillToRemove, type, event) {
@@ -256,4 +259,38 @@ function addSoftSkills() {
 
 function removeSoftSkill(skillToRemove, event) {
     removeSkill(skillToRemove, "Softs", event);
+}
+
+function changeAvatar() {
+    const showAvatars = document.getElementById("showAvatars");
+
+    if (showAvatars.style.display === "block") {
+        // Si está visible, ocultar las imágenes y salir
+        showAvatars.style.display = "none";
+        return;
+    }
+
+    showAvatars.innerHTML = "";
+
+    // Recorre el array de avatares y crea un elemento img para cada uno
+    avatarsProfile.forEach((avatar, index) => {
+        const img = document.createElement("img");
+        img.src = avatar;
+        img.alt = "Avatar " + (index + 1);
+        img.className = "selectAvatar px-1";
+        
+        img.onclick = () => changeCurrentAvatar(index, showAvatars);
+
+        showAvatars.appendChild(img);
+    });
+
+    showAvatars.style.display = "block";
+}
+
+function changeCurrentAvatar(index, showAvatars) {
+    const avatarElement = document.querySelector(".avatar");
+    avatarElement.src = avatarsProfile[index]; // Usa el índice para obtener la URL
+
+    // Oculta el contenedor de avatares
+    showAvatars.style.display = "none";
 }

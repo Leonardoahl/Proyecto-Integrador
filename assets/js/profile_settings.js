@@ -190,31 +190,60 @@ const arrHardSkills = [];
 
 
 
+function addSkill(type, skillValue, showElement, alertElement, addButton, skillsArray) {
+    if (skillsArray.includes(skillValue)) {
+        alertElement.textContent = "¡Esta habilidad ya ha sido agregada!";
+        return; // No agrega la habilidad y sale de la función
+    }
+
+    if (skillsArray.length < 5) {
+        skillsArray.unshift(skillValue);
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `${skillValue} <a href="#" class="iconDelete" onclick="removeSkill('${skillValue}', '${type}', event)"><i class="bi bi-x-circle"></i></a>`;
+        showElement.insertBefore(listItem, showElement.firstChild);
+        alertElement.textContent = "";
+    }
+
+    if (skillsArray.length === 5) {
+        addButton.disabled = true;
+        alertElement.textContent = "¡Ya has alcanzado el límite de habilidades!";
+        setTimeout(function() {
+            alertElement.textContent = "";
+        }, 3000);
+    } else {
+        addButton.disabled = false;
+    }
+}
+
+function removeSkill(skillToRemove, type, event) {
+    event.preventDefault();
+    console.log("Removing skill: " + skillToRemove);
+    const skillsArray = type === "Hards" ? arrHardSkills : arrSoftSkills;
+    const indexToRemove = skillsArray.indexOf(skillToRemove);
+    if (indexToRemove !== -1) {
+        skillsArray.splice(indexToRemove, 1);
+        const listItems = document.querySelectorAll(`#options${type} li`);
+        for (let i = 0; i < listItems.length; i++) {
+            if (listItems[i].textContent.includes(skillToRemove)) {
+                listItems[i].remove();
+                break;
+            }
+        }
+    }
+    const addButton = type === "Hards" ? document.getElementById("addHard") : document.getElementById("addSoft");
+    addButton.disabled = false;
+}
+
 function addHardSkills() {
     const hardSkill = document.getElementById("hardSkills").value;
     const showHard = document.getElementById("optionsHards");
     const alertHard = document.getElementById("alertHard");
     const buttonHard = document.getElementById("addHard");
-    console.log(hardSkill);
+    addSkill("Hards", hardSkill, showHard, alertHard, buttonHard, arrHardSkills);
+}
 
-    if (arrHardSkills.length < 6) {
-        arrHardSkills.unshift(hardSkill);
-        // Actualiza el contenido HTML para mostrar solo el nuevo elemento
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `${hardSkill} <a href="#" class="iconDelete" onclick="removeHardSkill('${hardSkill}', event)"><i class="bi bi-x-circle"></i></a>`;
-        showHard.insertBefore(listItem, showHard.firstChild);
-        alertHard.textContent = "";
-    } else {
-        // Si ya se han agregado 5 habilidades, muestra el mensaje
-        alertHard.textContent = "¡Ya has alcanzado el límite de habilidades!";
-    }
-    
-    // Deshabilita el botón después de alcanzar el límite
-    if (arrHardSkills.length === 6) {
-        buttonHard.disabled = true;
-    } else {
-        buttonHard.disabled = false;
-    }
+function removeHardSkill(skillToRemove, event) {
+    removeSkill(skillToRemove, "Hards", event);
 }
 
 function addSoftSkills() {
@@ -222,66 +251,9 @@ function addSoftSkills() {
     const showSoft = document.getElementById("optionsSofts");
     const alertSoft = document.getElementById("alertSoft");
     const buttonSoft = document.getElementById("addSoft");
-    console.log(softSkill);
-
-    if (arrSoftSkills.length < 6) {
-        arrSoftSkills.unshift(softSkill);
-        // Actualiza el contenido HTML para mostrar solo el nuevo elemento
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `${softSkill} <a href="#" class="iconDelete" onclick="removeSoftSkill('${softSkill}', event)"><i class="bi bi-x-circle"></i></a>`;
-        showSoft.insertBefore(listItem, showSoft.firstChild);
-        alertSoft.textContent = "";
-    } else {
-        // Si ya se han agregado 5 habilidades, muestra el mensaje
-        alertSoft.textContent = "¡Ya has alcanzado el límite de habilidades!";
-    }
-
-    // Deshabilita el botón después de alcanzar el límite
-    if (arrSoftSkills.length === 6) {
-        buttonSoft.disabled = true;
-    } else {
-        buttonSoft.disabled = false;
-    }
+    addSkill("Softs", softSkill, showSoft, alertSoft, buttonSoft, arrSoftSkills);
 }
 
 function removeSoftSkill(skillToRemove, event) {
-    event.preventDefault();
-    const indexToRemove = arrSoftSkills.indexOf(skillToRemove); // Encuentra el índice de la habilidad en el array
-    if (indexToRemove !== -1) {
-        arrSoftSkills.splice(indexToRemove, 1); // Elimina la habilidad del array
-        
-        // Encuentra el elemento de la lista por su contenido y elimínalo
-        const listItems = document.querySelectorAll("#optionsSofts li");
-        for (let i = 0; i < listItems.length; i++) {
-            if (listItems[i].textContent.includes(skillToRemove)) {
-                listItems[i].remove();
-                break; // Sal del bucle después de eliminar la primera instancia
-            }
-        }
-    }
-    
-    // Habilita el botón nuevamente si se elimina una habilidad
-    const buttonSoft = document.getElementById("addSoft");
-    buttonSoft.disabled = false;
-}
-
-function removeHardSkill(skillToRemove, event) {
-    event.preventDefault();
-    const indexToRemove = arrHardSkills.indexOf(skillToRemove); // Encuentra el índice de la habilidad en el array
-    if (indexToRemove !== -1) {
-        arrHardSkills.splice(indexToRemove, 1); // Elimina la habilidad del array
-        
-        // Encuentra el elemento de la lista por su contenido y elimínalo
-        const listItems = document.querySelectorAll("#optionsHards li");
-        for (let i = 0; i < listItems.length; i++) {
-            if (listItems[i].textContent.includes(skillToRemove)) {
-                listItems[i].remove();
-                break; // Sal del bucle después de eliminar la primera instancia
-            }
-        }
-    }
-    
-    // Habilita el botón nuevamente si se elimina una habilidad
-    const buttonHard = document.getElementById("addHard");
-    buttonHard.disabled = false;
+    removeSkill(skillToRemove, "Softs", event);
 }

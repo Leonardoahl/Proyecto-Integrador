@@ -27,6 +27,10 @@ li:hover{
     border-radius: 10px;
 }
 
+i{
+    font-size: 18px;
+}
+
 
 @media (min-width: 767px) {
     .navbar-nav .nav-link span{

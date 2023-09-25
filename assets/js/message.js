@@ -42,8 +42,8 @@ const handleChatSelectorDisplayWidth = (e) =>{
     }
 }
 
-mediaQueryMin.addListener(handleChatDisplayWidth);
-mediaQueryMax.addListener(handleChatSelectorDisplayWidth);
+mediaQueryMin.addEventListener("change",handleChatDisplayWidth);
+mediaQueryMax.addEventListener("change",handleChatSelectorDisplayWidth);
 
 screenWidth = window.innerWidth;
 console.log(screenWidth);
@@ -68,7 +68,8 @@ let username = "Leonardo";
 
 const onConnected = ()=>{
 
-    stompClient.subscribe("/topic/public", onMessageReceived);
+    stompClient.subscribe("/topic/public/", onMessageReceived);
+    
 
     stompClient.send("/app/chat.addUser",
                     {},
@@ -78,6 +79,18 @@ const onConnected = ()=>{
 
 const onError = ()=>{
     console.log("websocket connection failed");
+}
+
+const onConnectToPrivate = ()=>{
+
+    //logica sacar id de convo
+    const id =1;
+
+    stompClient.subscribe(`/topic/public/${id}`, onMessageReceived);
+    stompClient.send("/app/private.addUser",
+                    {},
+                    JSON.stringify({sender:username, type:'JOIN'}));
+
 }
 
 const onMessageReceived = (payload)=>{
@@ -192,7 +205,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
         stompClient.connect({}, onConnected, onError);
     }catch(e){
-        console.log("no se puede xd")
+        console.log(e);
     }
 
 });

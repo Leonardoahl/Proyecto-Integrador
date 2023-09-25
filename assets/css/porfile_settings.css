@@ -14,9 +14,6 @@
 
 #element{
     padding-top: 5px;
-    border-top: dotted;
-    border-top-color: #FED766;
-    border-top-width: 2px;
 }
 
 #cancel{
@@ -48,6 +45,17 @@
     border-radius: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+/* Estilo por defecto para ocultar la "x" */
+.iconDelete {
+    opacity: 0;
+    transition: opacity 0.2s ease; /* Agregar transición suave */
+}
+
+/* Mostrar la "x" cuando se hace hover sobre el elemento li */
+li:hover .iconDelete {
+    opacity: 1;
 }
 
 .titleSkills{

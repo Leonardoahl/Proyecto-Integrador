@@ -23,131 +23,206 @@
         <!-- <a href="">Regresar</a> -->
         <div class="container py-1" id="containerPrincipal">
             <h1 class="text-center">Configuración de usuario</h1>
-			<!-- Foto de perfil -->
+            <!-- Foto de perfil -->
             <div class="row justify-content-center my-3" id="element">
-                <p>Foto de perfil</p>
-                <img src="../img/porfile-image.jpg" alt="perryAvatar" id="avatar">
-               
-                <div class="d-grid d-sm-flex justify-content-center">
-                <button type="button" class="btn btn-secondary btn-floating">
-                    <i class="bi bi-pencil small text-center"></i>
-                  </button>
+                <p class="text-center">Foto de perfil</p>
+                <div class="d-grid justify-content-center">
+                    <img src="../img/imgProfile.png" alt="avatar" class="avatar">
                 </div>
 
+                <div class="d-grid justify-content-center">
+                    <button type="button" class="btn changeImage" onclick="changeAvatar()">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                </div>
             </div>
 
-            <form class="was-validated" id="profileSettings">
-							
+            <div id="showAvatars" style="display: none;" class="text-center">
+                <!-- Aquí se mostrarán las imágenes de avatares -->
+            </div>
 
+            <form id="configurationForm" class="row text-light justify-content-center">
                 <div class="row my-3" id="element">
-					<!-- Input nombre -->
-                    <div class="col-lg-6 col-sm-12">
-                        <label for="name" class="form-label">Nombre(s)</label>
-                        <input type="text" id="name" class="form-control">
+                    <!-- Input nombre -->
+                    <div class="col-lg-6 col-sm-12 py-1">
+                        <label for="inputFirstName" class="form-label">Nombre</label>
+                        <input type="text" name="name" class="form-control" id="inputFirstName" placeholder="Johana">
+                        <div class="valid-feedback" id="nameSuccess">
+                            Se ve bien!
+                        </div>
+                        <div id="nameError" class="invalid-feedback" role="alert">
+                            Agrega un nombre correctamente
+                        </div>
                     </div>
-                    <div id="nameError" class="invalid-feedback" role="alert">
-                        No olvides agregar tu nombre. Recuerda que solo puedes utilizar caracteres alfabéticos. 
-                      </div>
-					<!-- Input apellido -->
-                    <div class="col-lg-6 col-sm-12">
-                        <label for="lastName" class="form-label">Apellido(s)</label>
-                        <input type="text" id="lastName" class="form-control">
+                    <div class="col-lg-6 col-sm-12 py-1">
+                        <!-- Input apellido -->
+                        <label for="inputLastName" class="form-label">Apellido</label>
+                        <input type="text" name="lastName" class="form-control" id="inputLastName" placeholder="Gómez">
+                        <div class="valid-feedback" id="lastNameSuccess">
+                            Se ve bien!
+                        </div>
+                        <div id="lastNameError" class="invalid-feedback" role="alert">
+                            Agrega un apellido correctamente
+                        </div>
                     </div>
-                    <div id="lastNameError" class="invalid-feedback" role="alert">
-                        No olvides agregar tu apellido. Recuerda que solo puedes utilizar caracteres alfabéticos. 
-                      </div>
                 </div>
 
-					<!-- Input user -->
-                    <label for="validationTooltipUsername" class="form-label">Username</label>
-                    <div class="input-group has-validation">
-                      <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-                      <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
-                      <div class="invalid-tooltip">
-                        Selecciona un unico Username
-                      </div>
+                <!-- Input user -->
+                <div class="row my-3" id="element">
+                    <div class="col-md-12">
+                        <label for="user" class="form-label">Usuario</label>
+                        <input type="text" name="user" class="form-control" id="user" placeholder="jgomez">
+                        <div class="valid-feedback">
+                            Se ve bien!
+                        </div>
+                        <div id="userError" class="invalid-feedback" role="alert">
+                            User no válido.
+                        </div>
                     </div>
+                </div>
 
-				<!-- Input hard skills -->
+                <!-- Input hard skills -->
                 <div class="row my-3 justify-content-center" id="element">
-                    <label for="hardSkill">Habilidades técnicas</label>
-                    <div class="col-6 text-center">
-                        <input type="text" id="hardSkill" class="form-control my-2" name="skill"
-                            placeholder="Ingresar habilidad">
-                        <button type="button" id="addHard" class="btn yellowButton">Agregar</button>
+                    <div class="col-md-6 col-sm-10 col-xs-12  text-center">
+                        <p class="titleSkills">Habilidades Técnicas</p>
+                        <div class="input-group">
+                            <select class="form-select" id="hardSkills" aria-label="Example select with button addon">
+                                <option value="" selected disabled>Habilidad técnica</option>
+                                <option class="optionHard">Java</option>
+                                <option class="optionHard">Python</option>
+                                <option class="optionHard">JavaScript</option>
+                                <option class="optionHard">C++</option>
+                                <option class="optionHard">Ruby</option>
+                                <option class="optionHard">PHP</option>
+                                <option class="optionHard">Swift</option>
+                                <option class="optionHard">Kotlin</option>
+                                <option class="optionHard">C#</option>
+                                <option class="optionHard">SQL</option>
+                                <option class="optionHard">HTML</option>
+                                <option class="optionHard">CSS</option>
+                                <option class="optionHard">React</option>
+                                <option class="optionHard">Angular</option>
+                                <option class="optionHard">Vue.js</option>
+                                <option class="optionHard">Docker</option>
+                                <option class="optionHard">Kubernetes</option>
+                                <option class="optionHard">AWS</option>
+                                <option class="optionHard">Azure</option>
+                                <option class="optionHard">Git</option>
+                                <option class="optionHard">Jenkis</option>
+                                <option class="optionHard">Terraform</option>
+                                <option class="optionHard">Spring Framework</option>
+                                <option class="optionHard">Ruby on Rails</option>
+                            </select>
+                        </div>
+                        <div id="alertHard">
+                            <!-- Se agrega alerta de no más habilidades -->
+                        </div>
+                        <button type="button" id="addHard" class="btn yellowButton my-2"
+                            onclick="addHardSkills()">Agregar</button>
+                    </div>
+                    <div class="col-md-6 col-sm-10 col-xs-12  text-center">
+                        <div class="skills">
+                            <ul id="optionsHards">
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Input soft skills -->
+                <div class="row my-3 justify-content-center" id="element">
+                    <div class="col-md-6 col-sm-10 col-xs-12 text-center">
+                        <p class="titleSkills">Habilidades Blandas</p>
+                        <div class="input-group">
+                            <select class="form-select" id="softSkills" aria-label="Example select with button addon">
+                                <option value="" selected disabled>Habilidad blanda</option>
+                                <option class="optionSoft">Mentalidad de crecimiento</option>
+                                <option class="optionSoft">Orientación al futuro</option>
+                                <option class="optionSoft">Orientación al detalle</option>
+                                <option class="optionSoft">Comunicación</option>
+                                <option class="optionSoft">Responsabilidad Personal</option>
+                                <option class="optionSoft">Persistencia</option>
+                                <option class="optionSoft">Proactividad</option>
+                                <option class="optionSoft">Trabajo en equipo</option>
+                            </select>
+                        </div>
+                        <div id="alertSoft">
+                            <!-- Se agrega alerta de no más habilidades -->
+                        </div>
+                        <button type="button" id="addSoft" class="btn yellowButton my-2"
+                            onclick="addSoftSkills()">Agregar</button>
+                    </div>
+                    <div class="col-md-6 col-sm-10 col-xs-12 text-center">
+                        <div class="skills">
+                            <ul id="optionsSofts">
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
-				<!-- Input soft skills -->
-                <div class="row my-3 justify-content-center " id="element">
-                    <label for="softSkill">Habilidades blandas</label>
-                    <div class="col-6 text-center">
-                        <input type="text" id="softSkill" class="form-control my-2" name="skill"
-                            placeholder="Ingresar habilidad">
-                        <button type="button" id="addSoft" class="btn yellowButton">Agregar</button>
+                <!-- Input description -->
+                <div class="row my-3" id="element">
+                    <div class="col-12">
+                        <label for="description" class="form-label">Descripción</label>
+                        <div id="counter">0/250</div>
+                        <textarea type="text" id="description" class="form-control" name="description" placeholder="Agrega una breve descripción" maxlength="250"></textarea>
+                    </div>
+                </div>
+                <!-- Input email -->
+                <div class="row my-3" id="element">
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="jgomez@gmail.com">
+                        <div id="emailError" class="invalid-feedback" role="alert">
+                            Email no válido.
+                        </div>
                     </div>
                 </div>
 
-				<!-- Input description -->
+                <!-- Password section -->
                 <div class="row my-3" id="element">
-                    <label for="description" class="form-label">Descripción</label>
-                    <textarea type="text" id="description" class="form-control" name="description"
-                        placeholder="Agrega una breve descripción"></textarea>
-                </div>
-                <div id="descriptionError" class="invalid-feedback" role="alert">
-                    El límite de caracteres es 250.
-                </div>
-				<!-- Input email -->
-                <div class="row my-3" id="element">
-                    <label for="email" class="form-label">Correo</label>
-                    <input type="text" id="email" class="form-control" placeholder="nombre@gmail.com">
-                </div>
-                <div id="emailError" class="invalid-feedback" role="alert">
-                    Email no válido.
-                </div>
-
-				<!-- Password section -->
-                <div class="row my-3" id="element">
-					<!-- Input password -->
+                    <!-- Input password -->
                     <div class="col-lg-6 col-sm-12">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" id="password" class="form-control">
+                        <input type="password" name="password" class="form-control" id="password"
+                            placeholder="********">
+                        <div id="passwordError" class="invalid-feedback" role="alert">
+                            Tu contraseña debe de tener al menos 8 dígitos.
+                        </div>
                     </div>
-                    <div id="passwordError" class="invalid-feedback" role="alert">
-                        Tu contraseña debe de tener al menos 8 dígitos.
-                    </div>
-					<!-- Input confirm password -->
+                    <!-- Input confirm password -->
                     <div class="col-lg-6 col-sm-12">
-                        <label for="passwordConfirm" class="form-label">Confirmar contraseña</label>
-                        <input type="password" id="passwordConfirm" class="form-control">
-                    </div>
-                    <div id="confirmedPasswordError" class="invalid-feedback" role="alert">
-                        Las contraseñas no coinciden.
+                        <label for="confirmedPassword" class="form-label">Confirmar contraseña</label>
+                        <input type="password" name="confirmedPassword" class="form-control" id="confirmedPassword"
+                            placeholder="********">
+                        <div id="confirmedPasswordError" class="invalid-feedback" role="alert">
+                            Las contraseñas no coinciden.
+                        </div>
                     </div>
                 </div>
 
-                    <!-- Botones -->
+                <!-- Botones -->
                 <div class="row my-3 text-center justify-content-center align-items-center" id="element">
-                    <button type="button" id="accept" class="btn m-3 yellowButton">Guardar</button>
-                    <button type="button" id="cancel" class="btn m-3 yellowButton">Cancelar</button>
+                    <button type="submit" id="accept" class="btn m-3 yellowButton">Guardar</button>
+                    <a href="user_profile.html" class="btn m-3 yellowButton" id="cancel">Cancelar</a>
                 </div>
 
                 <!-- Alerta de cambios realizados -->
-
                 <div class="alert alert-success mt-3" id="successAlert" style="display: none;">
-                    Tus cambios fueron realizados. :D 
-                  </div>
+                    Tus cambios se han realizado :D
+                </div>
 
-				
+
             </form>
         </div>
     </main>
     <footer class="foot" id="footer"></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script type="module">
-        import{loadNavbar} from "../js/navbar.js";
-        import{loadFooter} from "../js/footer.js";
+        import { loadNavbar } from "../js/navbar.js";
+        import { loadFooter } from "../js/footer.js";
         loadNavbar();
         loadFooter();
     </script>

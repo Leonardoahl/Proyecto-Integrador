@@ -21,6 +21,16 @@
     color: #ffff!important;
 }
 
+.btn.changeImage {
+    background-color: transparent;
+    margin-top: 2px;
+}
+
+.btn.changeImage:hover {
+    /* Cambiar el fondo del botón a gris */
+    background-color: #3f523f;
+}
+
 /* Cambia el color de texto de las opciones */
 #hardSkills option,
 #softSkills option {

@@ -1,5 +1,5 @@
-const searchInputDropdown = document.getElementById('search-input-dropdown');
-const dropdownOptions = document.querySelectorAll('.input-group-dropdown-item');
+const searchInputDropdown = document.getElementById('publicationTrends');
+const dropdownOptions = document.querySelectorAll('.dropdown-item');
 
 searchInputDropdown.addEventListener('input', () => {
   const filter = searchInputDropdown.value.toLowerCase();

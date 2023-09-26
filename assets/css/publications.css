@@ -18,17 +18,23 @@
 } */
 
 
-#formularioDeProyecto{
+#formularioDeProyecto {
   background-color: #333;
 
-  
+
 }
 
-textarea{
+textarea {
   background-color: #333;
 }
 
-#publications{
- background-color: #333;
- 
+#publications {
+  background-color: #333;
+
 }
+
+
+.blur-out-contract-bck{
+  animation: blur-out-expand-fwd 2s cubic-bezier(.55, .085, .68, .53) infinite both
+}
+

@@ -39,6 +39,7 @@
     <script defer src="../js/PostsController.js"></script>
     <script defer src="../js/post.js"></script>
     <script defer src="../js/publications/searchHashtags.js"></script>
+    <script defer src="../js/publications/trends.js"></script>
     <!-- MDB -->
     <script
       type="text/javascript"
@@ -51,64 +52,26 @@
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
       <!--           ROW CON trendings y post creator -->
-      <div class="d-flex flex-row mt-1">
+      <div class="d-flex flex-row justify-content-between mt-1">
         <!--                   LISTA DE TRENDINGS            -->
 
-        <div class="card col-3 bg-dark bg-gradient border border-1 border-info border-opacity-75">
-          <div class="card-header bg-dark bg-gradient text-white text-center">Trending</div>
-          <!-- <div class="d-grid d-inline-block justify-content-center bg-dark"> -->
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              
-            >
-              C
+        <div
+          class="card d-inline-block col-3 bg-dark bg-gradient border border-1 border-info border-opacity-75"
+        >
+          <div class="d-inline">
+            <div class="card-header bg-dark bg-gradient text-white">
+              Trending
             </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              SpringBoot
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Kotlin
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Swift
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Algoritmos
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Linux
-            </div>
-            <div
-              class="badge bg-warning text-wrap text-dark rounded-5 mb-1"
-              style="width: 6rem"
-            >
-              Cobol
-            </div>
-          <!-- </div> -->
+            <div class="d-flex flex-row bd-highlight mb-3"></div>
+          </div>
         </div>
 
-        <!--                             FIN LISTA DE TRENDINGS                -->
+        <!--                                                  FIN LISTA DE TRENDINGS                -->
+        <!--                                                  FORMULARIO DE PUBLICACION                 -->
         <form
-          class="row rounded-3 ms-1 me-1 border border-1 border-info border-opacity-75"
+          class="d-inline-block flex-fill rounded-3 ms-1 me-1 border border-1 border-info border-opacity-75"
           id="formularioDeProyecto"
         >
-          <!--                                                  FORMULARIO DE PUBLICACION                 -->
-
           <div class="d-inline rounded-3 bg-dark bg-gradient">
             <div class="fw-bold">Elige el nombre de tu proyecto</div>
           </div>
@@ -164,13 +127,15 @@
               <li>
                 <div class="input-group">
                   <!-- <div class="form-outline "> -->
-                    <input
-                      type="search"
-                      id="publicationTrends"
-                      class="form-control-dropdown form-control-sm bg-black"
-                    />
-                    <label class="form-label text-white" for="publicationTrends">Search</label>
-                   
+                  <input
+                    type="search"
+                    id="publicationTrends"
+                    class="form-control-dropdown form-control-sm bg-black"
+                  />
+                  <label class="form-label text-white" for="publicationTrends"
+                    >Search</label
+                  >
+
                   <!-- </div> -->
                 </div>
               </li>
@@ -181,84 +146,41 @@
             </ul>
             <!-------------------------------------------DROPDOWN SEARCH ENDING-------------------------->
             <button class="btn btn-warning" type="submit">Enviar</button>
-      
-            <!-- CAROUSEL TRENDS START -->
-
-
-
-
-          </div class="d-inline">
-          <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <p class="text-center">primer cat</p>
-              </div>
-              <div class="carousel-item">
-                 <p class="text-center">primer cat</p>
-              </div>
-              <div class="carousel-item">
-                 <p class="text-center">primer cat</p>
-              </div>
-              <div class="carousel-item">
-                 <p class="text-center">primer cat</p>
-              </div>
-              <div class="carousel-item">
-                 <p class="text-center">primer cat</p>
-              </div>
-              <div class="carousel-item">
-                <p class="text-center">primer cat</p>
-              </div>
-              <div class="carousel-item">
-                 <p class="text-center">primer cat</p>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-              <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-              <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
-          </div>
-           <!-- CAROUSEL TRENDS ENDING-->
         </form>
-        <!--                                      FINAL DE  FORMULARIO DE PUBLICACION-->
       </div>
       <!-- FIN ROW DE TRENDINGS Y POST -->
-      
-       <!--                                  POST SECTION                        -->
-      <div class="d-flex bg-dark bg-gradient mt-2 border rounded-3 border border-1 border-info border-opacity-75 justify-content-between">
-       
+
+      <!--                                  POST SECTION                        -->
+      <div
+        class="d-flex bg-dark bg-gradient mt-2 border rounded-3 border border-1 border-info border-opacity-75 justify-content-between"
+      >
         <p class="fw-bold">Ultimas publicaciones</p>
-          <div class="dropdown d-inline">
-            <button
-              class="btn btn-light dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Ordenar por:
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Reciente</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Mas Likes</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Mas antiguo</a>
-              </li>
-            </ul>
-          </div>
+        <div class="dropdown d-inline">
+          <button
+            class="btn btn-light dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Ordenar por:
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Reciente</a></li>
+            <li>
+              <a class="dropdown-item" href="#">Mas Likes</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Mas antiguo</a>
+            </li>
+          </ul>
+        </div>
       </div>
-       <!-- END OF POST SECTION -->
+      <!-- END OF POST SECTION -->
 
       <!--                                        SHOW NEW POST PAGE  START-->
-      <div class="d-block flex-fill" id="publications">
-
-      </div>
+      <div class="d-block flex-fill" id="publications"></div>
       <!--                                        SHOW NEW POST PAGE  END-->
     </main>
     <footer class="foot" id="footer"></footer>

@@ -3,15 +3,22 @@
  * @version 0.0.1
  * 
  */
-$(document).ready(function() {
-    $('.img-container img').click(function() {
-      // Oculta todas las listas al principio
-      $('.hidden-list').hide();
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtiene todos los elementos de imagen dentro de .img-container
+    var imgElements = document.querySelectorAll('.img-container img');
   
-      // Muestra la lista correspondiente a la imagen clicada
-      var listaId = $(this).closest('.carousel-item').find('h5').text();
-      listaId = listaId.replace(/\s+/g, '-').toLowerCase(); // Convierte el nombre en un identificador válido
-      $('#' + listaId).show();
+    imgElements.forEach(function(img) {
+      img.addEventListener('click', function() {
+        // Oculta todas las listas al principio
+        var hiddenLists = document.querySelectorAll('.hidden-list');
+        hiddenLists.forEach(function(list) {
+          list.style.display = 'none';
+        });
+  
+        // Muestra la lista correspondiente a la imagen clicada
+        var listaId = this.closest('.carousel-item').querySelector('h5').textContent;
+        listaId = listaId.replace(/\s+/g, '-').toLowerCase();
+        document.getElementById(listaId).style.display = 'block';
+      });
     });
   });
-  

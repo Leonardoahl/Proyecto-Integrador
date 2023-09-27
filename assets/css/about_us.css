@@ -2,7 +2,9 @@
 @import "./navbar.css";
 @import "./styles.css";
 
+/*
 
+*/
 .carousel-item{
     background-color: #33333300;
 }
@@ -17,6 +19,8 @@
     cursor: pointer;
     filter: brightness(0.7);
 }
+
+
 
 
 #carusel{
@@ -54,7 +58,25 @@
     margin-right: 10px;
     
 }
-
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .carousel-control-prev {
+    left: 10px; /* Ajusta la posición de la flecha izquierda */
+  }
+  
+  .carousel-control-next {
+    right: 10px; /* Ajusta la posición de la flecha derecha */
+  }
 
 
 

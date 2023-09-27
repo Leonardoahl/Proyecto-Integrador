@@ -5,12 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/about_us.css" />
-
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1f5Ff5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,7 +76,7 @@
     </div>
     <div id="carousel-control" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active" id="slide 1">
           <div class="img-container">
           <img src="../img/bryan.png" class="d-block mx-auto my-2 open-modal " style="width: 50%; max-width: 25%;" alt="Bryan" data-target="#modal-bryan" />
           </div>
@@ -89,7 +85,7 @@
           </div>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" id="slide 2">
           <div class="img-container">
           <img src="../img/ale.png" class="d-block mx-auto my-2 open-modal " style="width: 50%; max-width: 25%;" alt="ale" data-target="#modal-ale" />
           </div>
@@ -97,7 +93,7 @@
             <h5>Alejandro Díaz</h5>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" id="slide 3">
           <div class="img-container">
           <img src="../img/ana.png" class="d-block mx-auto my-2 open-modal " style="width: 50%; max-width: 25%;" alt="ana" data-target="#modal-ana" />
           </div>
@@ -105,7 +101,7 @@
             <h5>Ana Victoria Santoyo</h5>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" id="slide 4">
           <div class="img-container">
           <img src="../img/edd.png" class="d-block mx-auto my-2 open-modal " style="width: 50%; max-width: 25%;" alt="ed" data-target="#modal-ed" />
           </div>
@@ -113,7 +109,7 @@
             <h5>Edwin Cetina</h5>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" id="slide 5">
           <div class="img-container">
           <img src="../img/fer.png" class="d-block mx-auto my-2 open-modal " style="width: 50%; max-width: 25%;" alt="fer" data-target="#modal-fer" />
           </div>
@@ -121,7 +117,7 @@
             <h5>Fernanda Gómez</h5>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" id="slide 6">
           <div class="img-container">
           <img src="../img/jimena.png" class="d-block mx-auto my-2 open-modal " style="width: 50%; max-width: 25%;" alt="jimena" data-target="#model-jimena" />
           </div>
@@ -129,7 +125,7 @@
             <h5>Jimena Barranco</h5>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" id="slide 7">
           <div class="img-container">
           <img src="../img/leo.png" class="d-block mx-auto my-2 open-modal " style="width: 50%; max-width: 25%;" alt="leo" data-target="#model-leo" />
           </div>
@@ -137,14 +133,20 @@
             <h5>Leonardo Hernández</h5>
           </div>
         </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carousel-control" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carousel-control" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        <label for="slide-7" class="slide-control prev control-1">‹</label>
+        <label for="slide-2" class="slide-control next control-1">›</label>
+        <label for="slide-1" class="slide-control prev control-2">‹</label>
+        <label for="slide-3" class="slide-control next control-2">›</label>
+        <label for="slide-2" class="slide-control prev control-3">‹</label>
+        <label for="slide-4" class="slide-control next control-3">›</label>
+        <label for="slide-3" class="slide-control prev control-4">‹</label>
+        <label for="slide-5" class="slide-control next control-4">›</label>
+        <label for="slide-4" class="slide-control prev control-5">‹</label>
+        <label for="slide-6" class="slide-control next control-5">›</label>
+        <label for="slide-5" class="slide-control prev control-6">‹</label>
+        <label for="slide-7" class="slide-control next control-6">›</label>
+        <label for="slide-6" class="slide-control prev control-7">‹</label>
+        <label for="slide-1" class="slide-control next control-7">›</label>
     </div>
     </div>
 <!--Modal for each person-->

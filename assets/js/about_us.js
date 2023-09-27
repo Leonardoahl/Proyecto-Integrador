@@ -2,8 +2,9 @@
  * @author Perry Code
  * @version 0.0.1
  * 
-*/
-/* const imagenesCarrusel = document.querySelectorAll('.open-modal');
+**/
+
+const imagenesCarrusel = document.querySelectorAll('.open-modal');
 const descripciones = document.querySelectorAll('.image-description');
 
 // Agrega un evento click a cada imagen
@@ -44,3 +45,4 @@ images.forEach(function (image) {
     }
   });
 });
+

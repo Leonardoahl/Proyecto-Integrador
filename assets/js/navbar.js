@@ -7,7 +7,7 @@ export function loadNavbar(){
             <img src="../img/logo blanco blanco pequeño.png" />
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        <button id="myButton" class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,6 +26,13 @@ export function loadNavbar(){
                         <span class="badge bg-info"></span>
                         <i class="bi bi-people-fill"></i>
                         <span class="text-menu">Conexiones</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="message.html">
+                        <span class="badge bg-info"></span>
+                        <i class="bi bi-chat-square-text-fill"></i>
+                        <span class="text-menu">Mensajes</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -53,6 +60,8 @@ export function loadNavbar(){
     `;
 }
 
+
+
 export function loadNavbarInitial(){
   const navElement = document.getElementById("navbar");
   navElement.innerHTML = `
@@ -65,3 +74,34 @@ export function loadNavbarInitial(){
 </nav>
   `;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtén el botón de alternar y el menú
+    const toggleButton = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector(".collapse.navbar-collapse");
+    let myButton = document.getElementById("myButton");
+
+    // Agrega un evento clic al botón de alternar
+    toggleButton.addEventListener("click", function () {
+        if (!navbarCollapse.classList.contains("show")) {
+            navbarCollapse.classList.add("show");
+        } else {
+            navbarCollapse.classList.remove("show");
+            myButton.disabled = true;
+            setTimeout(function () {
+                myButton.disabled = false;
+            }, 500);
+        }
+    });
+
+    // Agrega un evento clic al documento para cerrar el menú al hacer clic en cualquier parte de la pantalla
+    document.addEventListener("click", function (event) {
+        if (
+            !toggleButton.contains(event.target) &&
+            !navbarCollapse.contains(event.target) &&
+            navbarCollapse.classList.contains("show")
+        ) {
+            navbarCollapse.classList.remove("show");
+        }
+    });
+});

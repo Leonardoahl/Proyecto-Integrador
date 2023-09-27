@@ -22,9 +22,13 @@ nav{
     color: white;
 }
 
-li:hover{
+nav     li:hover{
     background-color: #3f523f;
     border-radius: 10px;
+}
+
+i{
+    font-size: 18px;
 }
 
 

@@ -2,9 +2,7 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-/*
 
-*/
 .carousel-item{
     background-color: #33333300;
 }
@@ -19,8 +17,27 @@
     cursor: pointer;
     filter: brightness(0.7);
 }
+.list {
+    background-color: #e80000; 
+    color: #333;
+    border: 1px solid red;
+} 
 
-
+.image-description {
+    display: none;
+    margin-left: 15%;
+    align-items: center; /* Centra el contenido verticalmente */
+    background-color: rgba(0, 0, 0, 0.8); /* Color de fondo semi-transparente */
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    color: white;
+    max-width: 70%;
+    font-size: 16px;
+  }
 
 
 #carusel{
@@ -58,52 +75,24 @@
     margin-right: 10px;
     
 }
-.slide-control {
-    background: rgba(0, 0, 0, 0.28);
-    border-radius: 50%;
-    color: #fff;
-    cursor: pointer;
-    display: none;
-    font-size: 40px;
-    height: 40px;
-    line-height: 35px;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-    cursor: pointer;
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    text-align: center;
-    width: 40px;
-    z-index: 10;
-}
-.slide-control.prev {
-    left: 2%;
-}
-.slide-control.next {
-    right: 2%;
-}
-.slide-control:hover {
-    color: #aaaaaa;
-}
-#slide-1:checked ~ .control-1,
-#slide-2:checked ~ .control-2,
-#slide-3:checked ~ .control-3,
-#slide-4:checked ~ .control-4,
-#slide-5:checked ~ .control-5,
-#slide-6:checked ~ .control-6,
-#slide-7:checked ~ .control-7 {
-    display: block;
-}
+
+
 
 
 
 
 @media screen and (max-width:700px){
-    
+    .image-description{
+        font-size: 12px;
+        max-width: 100%;
+        margin-right: 10%;
+    }
 }
 
 @media screen and (max-width:576px){
-  
+    .carousel-caption {
+        text-align: center; /* Centra el texto en pantalla pequeña */
+        display: block !important; /* Muestra el nombre en pantalla pequeña */
+      }
     
 }

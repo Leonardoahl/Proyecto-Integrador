@@ -6,31 +6,21 @@
 
 
 const hashtags = [
-  "Java",
-  "Python",
-  "JavaScript",
-  "C++",
-  "Ruby",
-  "PHP",
-  "Swift",
-  "Kotlin",
-  "C#",
-  "SQL",
-  "HTML",
-  "CSS",
-  "React",
-  "Angular",
-  "Vue.js",
-  "Docker",
-  "Kubernetes",
-  "AWS",
-  "Azure",
-  "Git",
-  "Jenkis",
-  "Terraform",
-  "Spring Framework",
-  "Ruby on Rails",
-];
+    "Java",
+    "Python",
+    "JavaScript",
+    "C++",
+    "Ruby",
+    "PHP",
+    "Swift",
+    "Kotlin",
+    "C#",
+    "SQL",
+    "HTML",
+    "CSS",
+    "React"
+  ];
+
 
 
 /**
@@ -50,3 +40,5 @@ function showTrends(){
 
 
 showTrends();
+
+

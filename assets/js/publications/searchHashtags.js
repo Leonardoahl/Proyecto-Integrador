@@ -2,14 +2,14 @@ const searchInputDropdown = document.getElementById('publicationTrends');
 const dropdownOptions = document.querySelectorAll('.dropdown-item');
 
 searchInputDropdown.addEventListener('input', () => {
-  const filter = searchInputDropdown.value.toLowerCase();
+  const query = searchInputDropdown.value.toLowerCase();
   showOptions();
-  const valueExist = !!filter.length;
+  const valueExist = !!query.length;
 
   if (valueExist) {
     dropdownOptions.forEach((el) => {
       const elText = el.textContent.trim().toLowerCase();
-      const isIncluded = elText.includes(filter);
+      const isIncluded = elText.includes(query);
       if (!isIncluded) {
         el.style.display = 'none';
       }

@@ -62,41 +62,37 @@ chatDisplay.scrollTop = chatDisplay.scrollHeight;
 const inputChat = document.forms["input-chat"];
 let stompClient = null;
 let username = "Leonardo";
+/* let id = "1"; */
 
 
 
 
 const onConnected = ()=>{
 
-    stompClient.subscribe("/topic/public/", onMessageReceived);
+    stompClient.subscribe("/topic/public", onMessageReceived);  
+    stompClient.subscribe("/users/queue/messages", onMessageReceived);
     
 
     stompClient.send("/app/chat.addUser",
-                    {},
+					{},
 					JSON.stringify({sender: username, type: 'JOIN'})
-                    );
+					);
 }
 
 const onError = ()=>{
     console.log("websocket connection failed");
-}
+    const alertElement = document.createElement('li');
+    alertElement.classList.add('alert');
+    alertElement.classList.add('alert-danger');
+    const textLi = "La conexión con el servidor a fallado";
+    alertElement.innerText = textLi;
 
-const onConnectToPrivate = ()=>{
-
-    //logica sacar id de convo
-    const id =1;
-
-    stompClient.subscribe(`/topic/public/${id}`, onMessageReceived);
-    stompClient.send("/app/private.addUser",
-                    {},
-                    JSON.stringify({sender:username, type:'JOIN'}));
-
+    chatDisplay.appendChild(alertElement);
 }
 
 const onMessageReceived = (payload)=>{
     const message = JSON.parse(payload.body);
     if(message.type != "CHAT") return
-
     const messageElement = document.createElement('li');
     messageElement.classList.add("d-flex");
     messageElement.classList.add("justify-content-between");
@@ -176,11 +172,11 @@ const sendMessage = (message)=> {
             content: message,
             type: 'CHAT'
         };
-        stompClient.send(
-            '/app/chat.sendMessage',
-            {},
-            JSON.stringify(chatMessage)
-        );
+		stompClient.send(
+			'/app/chat.sendMessage',
+			{},
+			JSON.stringify(chatMessage)
+		);
         inputChat.elements['message-text'].value = "";
     }
 }
@@ -200,10 +196,11 @@ inputChat.addEventListener("submit", handleMessageInput);
 // wait for dom to load 
 window.addEventListener('DOMContentLoaded', () => {
     try{
+        
         const socket = new SockJS('http://127.0.0.1:8080/ws');
         stompClient = Stomp.over(socket);
     
-        stompClient.connect({}, onConnected, onError);
+        stompClient.connect({username:username}, onConnected, onError);
     }catch(e){
         console.log(e);
     }

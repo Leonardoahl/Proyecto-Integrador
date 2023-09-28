@@ -63,6 +63,7 @@ const inputChat = document.forms["input-chat"];
 let stompClient = null;
 let username = "Leonardo";
 /* let id = "1"; */
+console.log("hola" + sessionUser);
 
 
 

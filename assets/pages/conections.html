@@ -8,12 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Quicksand:wght@300&display=swap"
         rel="stylesheet">
-    
+    <link rel="stylesheet" href="../css/custom.css"> <!-- Agrega tu hoja de estilo personalizada -->
+
     <title>Conections</title>
     <script type="module" src="../js/navbar.js"></script>
     <script type="module" src="../js/footer.js"></script>
@@ -24,38 +24,32 @@
     <header id="navbar"></header>
     <main>
         <div class="container text-center">
-            <div class="btn-group m-3">
-                      <div class="col-4">
-                         <button class="btn btn-outline-secondary" type="button">Buscar <!-- <i class="fa-solid fa-magnifying-glass"></i> --></button>
-                      </div>
-                      <div class="col-9">
-                          <input type="text" class="form-control" placeholder="Busca un usuario" aria-label="Recipient's username with two button addons">
-                      </div>                
-              </div>
-
-
-            <div class="row">
-
-                    <div class="col-md-6 order-2 order-md-1">
-                        <p class="subtitle">Contactos</p>
-                        <div class="row" id="contactos">
-                        </div>
+            <div class="btn-group m-3" id="boton">
+                <div class="col-4">
+                   <button  class="btn btn-outline-light" type="button">Buscar <!-- <i class="fa-solid fa-magnifying-glass"></i> --></button>
+                </div>
+                <div class="col-9">
+                    <input type="text" class="form-control" placeholder="Busca un usuario" aria-label="Recipient's username with two button addons">
+                </div>                
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h2>Contactos</h2>
+                    <div class="row" id="contactos">
+                        <!-- Aquí van los contactos -->
                     </div>
-
-                    <div class="col-md-6 order-1 order-md-2 align-content-lg-start">
-                        <p class="subtitle">Solicitudes</p>
-                        <div class="row" id="solicitudes">
-                        </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <h2>Solicitudes</h2>
+                    <div class="row" id="solicitudes">
+                        <!-- Aquí van las solicitudes -->
                     </div>
-
-
-
-           </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="foot" id="footer"></footer>
 
-    
     <script type="module">
         import{loadNavbar} from "../js/navbar.js";
         import{loadFooter} from "../js/footer.js";
@@ -65,3 +59,4 @@
 </body>
 
 </html>
+

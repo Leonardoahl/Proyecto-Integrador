@@ -6,8 +6,18 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
     
     
+}
+
+.profile-container .profile-info .col-md-6 .profile-image {
+    margin-right: 5px;
+}
+
+.profile-container .profile-info .profile-image {
+    margin-bottom: -20px; /* Ajusta el valor según tus necesidades */
 }
 
 .profile-container {
@@ -16,8 +26,14 @@ body {
     padding: 20px;
 }
 
-.profile-image {
+/* .profile-image {
     max-width: 200px;
+    border-radius: 50%;
+} */
+
+.profile-image {
+    max-width: 100%; 
+    width: 40%; 
     border-radius: 50%;
 }
 
@@ -45,10 +61,14 @@ body {
 .about-me {
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     cursor: pointer; 
+} 
+
+     
 }
 
 .skills {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .skills ul {
@@ -76,6 +96,7 @@ body {
 
 .projects {
     margin-top: 20px;
+    
 }
 
 .project-item {
@@ -121,6 +142,7 @@ body {
     border-color: grey;
     font-size: 12px; 
     padding: 5px 10px;
+    
 }
 
 .btn {
@@ -187,3 +209,78 @@ body {
     margin-bottom: 20px;
     color: white; 
 }
+
+@media (min-width: 768px) {
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-image {
+        max-width: 200px;
+        border-radius: 50%;
+        margin-right: 20px; 
+    }
+
+    .profile-info {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .connect-button {
+        margin-top: 10px;
+    }
+}
+
+
+/* @media (max-width: 767px) {
+    .profile-container {
+        flex-direction: column; 
+        align-items: center;
+        
+    }
+
+    .profile-image {
+        max-width: 80%; 
+        margin-right: 0;
+        
+    }
+
+    .profile-info {
+        text-align: center;
+        margin-top: 20px;
+
+        }
+  }
+
+
+ */
+
+ @media (max-width: 767px) {
+    .profile-container {
+        flex-direction: row; 
+        align-items: center;  
+        justify-content: center; 
+    }
+
+    .profile-image {
+        max-width: 30%; 
+        margin-right: 20px;
+    }
+
+    .profile-info {
+        text-align: left; 
+        margin-top: 0; 
+    }
+
+    .connect-button {
+        margin-top: 10px;
+    }
+
+    .skills h3,
+    .projects h3 {
+    text-align: center;
+  }
+}
+

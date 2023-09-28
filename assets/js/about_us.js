@@ -4,7 +4,7 @@
  * 
 */
 
-// Obtén una lista de todas las imágenes con la clase "open-modal"
+
 var images = document.querySelectorAll('.open-modal');
 
 // Agrega un evento de clic a cada imagen

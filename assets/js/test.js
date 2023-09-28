@@ -101,15 +101,16 @@ createUserForm.addEventListener("submit", async (e)=>{
     e.preventDefault() 
     
 
-    const user ={
+     const user ={
         username: createUserForm.elements['username-post'].value,
         firstname: createUserForm.elements['name-post'].value,
         email: createUserForm.elements['email-post'].value
-    }
+    } 
 
+ 
     const headers = new Headers();
     
-    const url="http://127.0.0.1:8080/users"
+    const url="http://127.0.0.1:8080/users/register"
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
     headers.append('Origin','http://127.0.0.1:8080');
@@ -117,7 +118,7 @@ createUserForm.addEventListener("submit", async (e)=>{
     const res = await fetch(url, {
         mode:"cors",
         method:"POST",
-        headers: headers,
+        headers:headers,
         body: JSON.stringify(user)
     });
 

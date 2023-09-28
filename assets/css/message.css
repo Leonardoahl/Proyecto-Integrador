@@ -36,7 +36,7 @@
     height: 700px;
 }
 
-#chat-display{
+#chat-display,#chat-display-private{
     list-style-type: none;
     margin: 0;
     margin-top: 40px;
@@ -44,6 +44,23 @@
     overflow-y: scroll;
     padding: 0 10px 0px 10px;
     height: 693px;
+}
+
+
+.selectorCard{
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important; 
+    border-top: 1px solid rgba(0, 0, 0, 0.3) !important;  */
+    margin-bottom: 10px;
+
+}
+
+.selectorCard:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+
+.selectorCard:active{
+    transform: translateY(4px);
 }
 
 .message-header{
@@ -123,7 +140,7 @@
 
        
 
-        #chat-display{
+        #chat-display, #chat-display-private{
             margin-top: 10px;
             height: 700px;
         }
@@ -161,7 +178,7 @@
 
     
 
-     /* scroll bar del chat */
+     /* scroll bar del chat publico */
 
       #chat-display::-webkit-scrollbar {
         width: 10px;
@@ -183,6 +200,32 @@
       #chat-display::-webkit-scrollbar-thumb:hover {
         background: #555; 
       }
+
+        /* scroll bar del chat privado */
+
+        #chat-display-private::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        /* Track */
+        #chat-display-private::-webkit-scrollbar-track {
+            background: rgba(40,45,40,0.9);
+            border-radius: 2rem;
+        }
+        
+        /* Handle */
+        #chat-display-private::-webkit-scrollbar-thumb {
+            background: #ffffff; 
+            border-radius: 2rem;
+        }
+        
+        /* Handle on hover */
+        #chat-display-private::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
+
+
 
      /* scroll bar del selector de chats */
 

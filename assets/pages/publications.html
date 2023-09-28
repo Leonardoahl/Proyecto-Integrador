@@ -40,7 +40,6 @@
     <script defer src="../js/post.js"></script>
     <script defer src="../js/publications/searchHashtags.js"></script>
     <script defer src="../js/publications/trends.js"></script>
-    <script defer src="../js/publications/displayTrends.js"></script>
 
     <!-- MDB -->
     <script
@@ -82,11 +81,11 @@
                 type="text"
                 id="tituloProyecto"
                 class="form-control bg-dark text-light"
+                autocomplete="off"
               />
               <label class="form-label text-light" for="tituloProyecto"
                 >Como quieres llamarme?</label
               >
-              <!-- <div class="form-helper">Example helper</div> -->
             </div>
           </div>
 
@@ -100,6 +99,7 @@
                 class="form-control bg-dark text-white"
                 aria-label="With textarea"
                 id="descripcion"
+                autocomplete="off"
               ></textarea>
               <label class="form-label text-light" for="projectDescription"
                 >Decripcion</label
@@ -108,33 +108,27 @@
             </div>
           </div>
 
-          <div class="d-flex justify-content-between">
-            <!-------------------------------------------- DROPDOWN & SEARCH------------------------------------->
+          <div
+            class="d-inline-block text-light bg-black bg-opacity-25 rounded rounded-2 justify-content-between"
+            id="searchResults"
+          ></div>
 
-            <!-------------------------------------------DROPDOWN SEARCH ENDING-------------------------->
-            <button class="btn btn-warning" type="submit">Enviar</button>
-          </div>
-          <div class="row">
+          <div class="d-flex justify-content-between">
+            <!-------------------------------------------- DROPDOWN & SEARCH----------------------------->
             <form class="form-inline">
               <input
                 class="form-control mr-sm-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Buscador de hashtags"
                 aria-label="Search"
                 id="searchInput"
                 autocomplete="off"
               />
-              <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
             </form>
-    
-            <div
-              class="d-inline-flex bg-dark text-light justify-content-center"
-              id="searchResults"
-            ></div>
-    
+
             <div class="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                class="btn btn-secondary btn-sm dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
@@ -145,10 +139,13 @@
               </button>
               <div class="dropdown-menu" role="menu" id="searchedOptions"></div>
             </div>
+            <button class="btn btn-warning btn-sm" type="submit">Enviar</button>
+
+            <!-------------------------------------------DROPDOWN SEARCH ENDING-------------------------->
           </div>
-          
         </form>
       </div>
+
       <!-- FIN ROW DE TRENDINGS Y POST -->
 
       <!--                                  POST SECTION                        -->
@@ -180,7 +177,39 @@
       <!-- END OF POST SECTION -->
 
       <!--                                        SHOW NEW POST PAGE  START-->
-      <div class="d-block flex-fill" id="publications"></div>
+      <div class="row mt-1 justify-content-evenly" id="newPost">
+        <div class="col-md-1" id="userPhoto">
+          <!-- Imagen de perfil -->
+          <picture>
+            <img src="../img/edd.png" class="img-fluid rounded row d-block" width="200rem" />
+          </picture>
+        </div>
+        <div class="col-md-7 mb-1  border-bottom border-top " id="postBody">
+          <div class="visually-hidden" id="postId">
+            id del post debe estar oculto visualmente
+          </div>
+         
+          <!-- Título -->
+          <h3 class="fw-bold">Título del post</h3>
+          <!-- Fecha -->
+          <p id="postDate">Publicado 28/08/2023</p>
+          <!-- Mensaje -->
+          <p id="postContent"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit consequatur corporis qui sit voluptate ea, tenetur officiis dolores sunt, neque, laboriosam ducimus amet cupiditate maiores? Iure reprehenderit inventore at adipisci.</p>
+          <!-- Botones de likes y comentarios -->
+          <span class="badge text-bg-primary">Java</span>
+          <span class="badge text-bg-primary">Spring</span>
+          <span class="badge text-bg-primary">C++</span>
+          <span class="badge text-bg-primary">Freeelancing</span>
+          
+          <!-- Hashtags -->
+        </div>
+
+        <div class="col-md-2 text-center align-items-center">
+          <button class="btn btn-primary btn-sm" id="postLikes">Likes</button>
+          <button class="btn btn-secondary btn-sm" id="postComments">Comentarios</button>
+        </div>
+      </div>
+
       <!--                                        SHOW NEW POST PAGE  END-->
     </main>
     <footer class="foot" id="footer"></footer>

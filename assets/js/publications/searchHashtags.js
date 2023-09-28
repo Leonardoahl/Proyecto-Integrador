@@ -38,7 +38,7 @@ searchInput.addEventListener("input", function () {
       // Mostrar hasta 3 resultados coincidentes
       for (let i = 0; i < Math.min(3, matchingResults.length); i++) {
         const resultItem = document.createElement("div");
-        resultItem.setAttribute("class", "text-light me-2 bi-hash");
+        resultItem.setAttribute("class", "badge rounded-pill text-light me-2 bi-hash");
         resultItem.textContent = matchingResults[i];
         searchResults.appendChild(resultItem);
       }
@@ -58,5 +58,29 @@ searchInput.addEventListener("input", function () {
       noResultsItem.textContent = "No se encontraron resultados";
       searchResults.appendChild(noResultsItem);
     }
+  }
+});
+
+// codigo select hashtags
+
+const dropdownMenu = document.getElementById('searchedOptions');
+
+let selectedOption = null; // Variable para guardar la opción seleccionada
+
+// Agregar un controlador de eventos al menú desplegable
+dropdownMenu.addEventListener('click', function (event) {
+    const clickedItem = event.target;
+    if (clickedItem.classList.contains('dropdown-item')) {
+        selectedOption = clickedItem.textContent; // Guardar la opción seleccionada en la variable
+        console.log(`Opción seleccionada: ${selectedOption}`);
+    }
+});
+
+// Agregar un controlador de eventos a la fila con resultados en texto
+searchResults.addEventListener('click', function (event) {
+  const clickedItem = event.target;
+  if (clickedItem.classList.contains('badge')) {
+      selectedOption = clickedItem.textContent; // Guardar la opción seleccionada en la variable
+      console.log(`Opción seleccionada: ${selectedOption}`);
   }
 });

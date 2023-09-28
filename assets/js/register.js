@@ -1,4 +1,10 @@
-console.log("xd");
+console.log("registro xd");
+
+if (sessionUser){
+  window.location.href = "../pages/log_In.html";
+}
+
+console.log(sessionUser);
 
 const users = [];
 let i = 1;

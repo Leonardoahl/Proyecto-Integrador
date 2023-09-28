@@ -119,8 +119,8 @@ function validateHashtagsPost(data) {
 }
 
 
-const content = document.getElementById("post");
-// content.style.cursor = "pointer";
-// content.onclick = () => {
-//   window.location = "project_page.html";
-// };
+const content = document.getElementById("postBody");
+content.style.cursor = "pointer";
+content.onclick = () => {
+  window.location = "project_page.html";
+};

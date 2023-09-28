@@ -6,6 +6,15 @@ img {
     width: 80px;
     height: 80px;
 }
+/* border-radius imágenes de contacto */
+img {
+    border-radius: 50px;
+}
+
+div{
+    margin-bottom: 15px;
+    
+}
 
  .subtitle {
     font-size: 20px;
@@ -26,6 +35,7 @@ img {
     width: 80px!important;
 }
 
+
  @media screen and (max-width:800px) {
  main {
     margin: 0;
@@ -38,6 +48,17 @@ img {
 
 }
 
+@media (max-width: 750px){
+    .avatar{
+        height: 80px;
+    }
+
+    .selectAvatar{
+        height: 30px;
+    }
+}
+
+
 /* @media screen and (max-widh:768px) {
     img {
         width: 45px;
@@ -48,3 +69,4 @@ img {
     } 
     
 } */
+

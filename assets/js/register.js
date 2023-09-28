@@ -10,10 +10,9 @@ const users = [];
 let i = 1;
 
 const registerForm = document.forms["registerForm"];
-console.log(registerForm);
 
-registerForm.addEventListener("submit", (event) => {
-  event.preventDefault()
+registerForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
   const userData = {
     name: registerForm.elements["name"].value,
@@ -22,9 +21,8 @@ registerForm.addEventListener("submit", (event) => {
     password: registerForm.elements["password"].value,
     confirmedPassword: registerForm.elements["confirmedPassword"].value,
     email: registerForm.elements["email"].value,
-
   };
-  
+
   const isNameValid = validateName(userData);
   const isLastNameValid = validateLastName(userData);
   const isPasswordValid = validatePassword(userData);
@@ -38,10 +36,37 @@ registerForm.addEventListener("submit", (event) => {
     isConfirmedPasswordValid &&
     isEmailValid
   ) {
-  //console.log(userData);
-  validateRegistration(userData);
-  }
 
+    const newUserPost = {
+      username: userData.user,
+      firstname: userData.name,
+      lastName: userData.lastName,
+      email: userData.email,
+      password: userData.password,
+      user: userData.user,
+    }
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Origin','http://127.0.0.1:8080');
+
+    const url = "http://127.0.0.1:8080/users/register";
+
+    try {
+      const res = await fetch(url, {
+        mode: "cors",
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(newUserPost)
+      });
+
+      const result = await res.json();
+      console.log(result);
+      validateRegistration(newUserPost);
+    } catch (error) {
+      console.error('Error registering user:', error);
+    }
+  }
 });
 
 

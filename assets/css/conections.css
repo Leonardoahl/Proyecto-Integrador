@@ -3,18 +3,48 @@
 @import "./styles.css";
 
 img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
-#title {
-    border: 1px;
-    border-bottom-style: dotted;
-    border-color: #d4aa7d;
-    font-size: 30px;
-}
- 
-.subtitle {
+ .subtitle {
     font-size: 20px;
     border-bottom: 4px color(#fed766);
 }
+
+
+
+/* .btn-group {
+    border: 2px solid red;
+} */
+
+/* .row {
+    border: 4px solid red;
+} */
+
+.yellowButton:hover{
+    width: 80px!important;
+}
+
+ @media screen and (max-width:800px) {
+ main {
+    margin: 0;
+ }
+}
+@media screen and (max-width:700px) {
+    yellowButton {
+        width: 50px!important;
+    }
+
+}
+
+/* @media screen and (max-widh:768px) {
+    img {
+        width: 45px;
+        height: 45px;
+    }
+    yellowButton {
+        width: 30px!important;
+    } 
+    
+} */

@@ -87,7 +87,7 @@ let stompClient = null;
 let username = "Leonardo";
 let receiver = null;
 /* let id = "1"; */
-console.log("hola" + sessionUser);
+console.log("hola: " + sessionUser);
 
 
 

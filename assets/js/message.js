@@ -42,8 +42,8 @@ const handleChatSelectorDisplayWidth = (e) =>{
     }
 }
 
-mediaQueryMin.addListener(handleChatDisplayWidth);
-mediaQueryMax.addListener(handleChatSelectorDisplayWidth);
+mediaQueryMin.addEventListener("change",handleChatDisplayWidth);
+mediaQueryMax.addEventListener("change",handleChatSelectorDisplayWidth);
 
 screenWidth = window.innerWidth;
 console.log(screenWidth);
@@ -62,28 +62,38 @@ chatDisplay.scrollTop = chatDisplay.scrollHeight;
 const inputChat = document.forms["input-chat"];
 let stompClient = null;
 let username = "Leonardo";
+/* let id = "1"; */
+console.log("hola" + sessionUser);
 
 
 
 
 const onConnected = ()=>{
 
-    stompClient.subscribe("/topic/public", onMessageReceived);
+    stompClient.subscribe("/topic/public", onMessageReceived);  
+    stompClient.subscribe("/users/queue/messages", onMessageReceived);
+    
 
     stompClient.send("/app/chat.addUser",
-                    {},
+					{},
 					JSON.stringify({sender: username, type: 'JOIN'})
-                    );
+					);
 }
 
 const onError = ()=>{
     console.log("websocket connection failed");
+    const alertElement = document.createElement('li');
+    alertElement.classList.add('alert');
+    alertElement.classList.add('alert-danger');
+    const textLi = "La conexión con el servidor a fallado";
+    alertElement.innerText = textLi;
+
+    chatDisplay.appendChild(alertElement);
 }
 
 const onMessageReceived = (payload)=>{
     const message = JSON.parse(payload.body);
     if(message.type != "CHAT") return
-
     const messageElement = document.createElement('li');
     messageElement.classList.add("d-flex");
     messageElement.classList.add("justify-content-between");
@@ -163,11 +173,11 @@ const sendMessage = (message)=> {
             content: message,
             type: 'CHAT'
         };
-        stompClient.send(
-            '/app/chat.sendMessage',
-            {},
-            JSON.stringify(chatMessage)
-        );
+		stompClient.send(
+			'/app/chat.sendMessage',
+			{},
+			JSON.stringify(chatMessage)
+		);
         inputChat.elements['message-text'].value = "";
     }
 }
@@ -187,12 +197,13 @@ inputChat.addEventListener("submit", handleMessageInput);
 // wait for dom to load 
 window.addEventListener('DOMContentLoaded', () => {
     try{
+        
         const socket = new SockJS('http://127.0.0.1:8080/ws');
         stompClient = Stomp.over(socket);
     
-        stompClient.connect({}, onConnected, onError);
+        stompClient.connect({username:username}, onConnected, onError);
     }catch(e){
-        console.log("no se puede xd")
+        console.log(e);
     }
 
 });

@@ -34,7 +34,7 @@
                             </a>
                         </div>
                         <!-- <h4>Ed Cetina</h4> --> 
-                        <p style="color: gainsboro;"><strong>Ed Cetina</strong> @el_bateado </p>
+                        <p id="name" style="color: gainsboro;"><strong>Ed Cetina</strong> @el_bateado </p>
                         <button type="button" class="btn btn-outline-dark connect-button"
                             data-mdb-ripple-color="dark">Conexión</button>   
                     </div>
@@ -48,8 +48,7 @@
                 </div>
                 <div class="about-me">
                     <h3>Sobre mí</h3>
-                    <p style="color: white;">Profesionista amante de la naturaleza, nadar en cenotes, gozar de la gastronomía Mexicana.
-                        Amante 100% del backend, en proceso de entender por qué a la gente le gusta el frontend.</p>
+                    <p id="description" style="color: white;"></p>
                 </div>
                 <div class="skills">
                     <h3 class="text-white">Habilidades: </h3>
@@ -57,24 +56,24 @@
                         <div class="col-md-6">
                             <div class="card">
                             <h4 class="text-white">Blandas</h4>
-                            <ul>
-                                <li>Proactivo</li>
-                                <li>Analítico</li>
-                                <li>Cooperativo</li>
-                                <li>Creativo</li>
-                                <li>Comunicativo</li>
+                            <ul id="soft">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
                             </ul>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="card">
                             <h4 class="text-white">Técnicas</h4>
-                            <ul>
-                                <li>Uso de Git/Github</li>
-                                <li>JavaScript</li>
-                                <li>React</li>
-                                <li>Gestión de bases de datos</li>
-                                <li> Java</li>
+                            <ul id="tech">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
                             </ul>
                             </div>
                         </div>
@@ -103,6 +102,7 @@
         import{loadNavbar} from "../js/navbar.js";
         import{loadFooter} from "../js/footer.js";
         loadNavbar();
-        loadFooter();
+        loadFooter();    
     </script>
+    <script src="../js/user_profile.js"></script>
 </body>

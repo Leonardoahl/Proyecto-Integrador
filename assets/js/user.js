@@ -1,10 +1,11 @@
 console.log("cookie");
 let sessionUser = null;
 
+sessionId= getCookie("id");
 sessionUser = getCookie("user");
 
-if (sessionUser){
-    console.log(responseData.id);
+if (sessionUser && sessionId){
+    console.log("Hola");
 }else{
     console.log("Adios");
 

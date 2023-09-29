@@ -51,7 +51,7 @@ const ALERTAS_MESSAGES={
   }
 
   // Perform login validation by sending user data to the server
-  const url = "http://127.0.0.1:8080/users/login";
+  const url = "http://127.0.0.1:8081/users/login";
   const data = await fetch(url, {
     method: 'POST',
     headers: {
@@ -67,18 +67,20 @@ const ALERTAS_MESSAGES={
   const responseData = await data.json();
   console.log(responseData);
   const id = responseData['id'];
+  const username = responseData['username'];
 
   if (data.status === 200) {
     mostrarAlerta("exito de conexion");
     console.log(responseData);
-    setCookie("user", id);
+    setCookie("id",id );
+    setCookie("user",username );
     // if (responseData && responseData.id) {
       
       
     // } else {
     //   console.error("El objeto responseData no tiene la propiedad 'id' definida.");
     // }
-    setTimeout(() => { window.location.href = "publications.html" }, 10000);
+    setTimeout(() => { window.location.href = "publications.html" }, 3000);
     seccionDeSpinner.innerHTML = `<div class="d-flex justify-content-center">
       <div class="spinner-grow text-success">
         <span class="sr-only">Loading...</span>

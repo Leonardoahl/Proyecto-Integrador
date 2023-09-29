@@ -4,6 +4,7 @@
  * Profile settings functionality
 */
 console.log("xd");
+let urlAvatar = "";
 
 const registerForm = document.forms["configurationForm"];
 const avatarsProfile = ["https://i.pinimg.com/564x/40/f4/5c/40f45c3184f7331d844c29d0e38649d0.jpg",
@@ -13,7 +14,7 @@ const avatarsProfile = ["https://i.pinimg.com/564x/40/f4/5c/40f45c3184f7331d844c
                         "https://i.pinimg.com/564x/e9/13/fe/e913feb4d4588cf5693cd3bf809ad99b.jpg"];
 /* console.log(registerForm); */
 
-registerForm.addEventListener("submit", (event) => {
+registerForm.addEventListener("submit", async (event) => {
     event.preventDefault()
 
     const newDataUser = {
@@ -31,7 +32,6 @@ registerForm.addEventListener("submit", (event) => {
     const isNameValid = validateName(newDataUser);
     const isLastNameValid = validateLastName(newDataUser);
     const isUser = validateUser(newDataUser);
-    const description = validateDescription(newDataUser);
     const isPasswordValid = validatePassword(newDataUser);
     const isConfirmedPasswordValid = confirmPassword(newDataUser);
     const isEmailValid = validateEmail(newDataUser);
@@ -44,7 +44,39 @@ registerForm.addEventListener("submit", (event) => {
         isEmailValid && isUser
     ) {
         //console.log(userData);
+    const headers = new Headers();
+    
+    const updateUser = {
+        firstname: newDataUser.name,
+        lastname: newDataUser.lastName,
+        username: newDataUser.user,
+        email: newDataUser.email,
+        password: newDataUser.password,
+        profilepic: urlAvatar,
+        techSkills : arrayTechSkillsIdObj,
+        softSkills : arraySoftSkillsIdObj
+    }
+
+    console.log(updateUser);
+
+    const url="http://127.0.0.1:8080/users/update/3"
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Origin','http://127.0.0.1:8080');
+
+    const res = await fetch(url, {
+        mode:"cors",
+        method:"POST",
+        headers:headers,
+        body: JSON.stringify(updateUser)
+    });
+
+    const result = await res.json();
+    console.log(result);
+
         showSuccessAlert();
+
+
     }
 
 });
@@ -54,7 +86,7 @@ function showSuccessAlert() {
     successAlert.style.display = "block";
     setTimeout(() => {
         successAlert.style.display = "none";
-    }, 3000); // Ocultar la alerta después de 3 segundos y redirigir a login
+    }, 7000); // Ocultar la alerta después de 3 segundos y redirigir a login
 }
 
 
@@ -158,10 +190,10 @@ function validateEmail({ email }) {
     return isValid;
 }
 
-function validateUser({ email }) {
+function validateUser({ user }) {
     console.log("entrando a validar email");
     const patronUser = /^[a-zA-Z0-9_\-]+$/;
-    const userMatch = email.match(patronUser);
+    const userMatch = user.match(patronUser);
     let isValid = userMatch !== null;
     const userInput = document.getElementById("user");
 
@@ -185,13 +217,56 @@ description.addEventListener('input', function(event) {
 
 const arrSoftSkills = [];
 const arrHardSkills = [];
+const arrayTechSkillsIdObj = [];
+const arraySoftSkillsIdObj = [];
 
 // Funciones para agregar las habilidades y a su vez imprimirlas
 // Se pone un límite de 5 habilidades
 
+function getIdForSkill(skillValue) {
+    // Implementa la lógica para obtener el ID de la habilidad aquí
+    // Puedes usar un objeto o un mapa para mapear habilidades a IDs
+    // Por ejemplo:
+    const skillToIdMap = {
+        "Java": 1,
+        "Python": 2,
+        "JavaScript": 3,
+        "C++": 4,
+        "Ruby": 5,
+        "PHP":6,
+        "Swift":7,
+        "Kotlin":8,
+        "C#":9,
+        "SQL":10,
+        "HTML":11,
+        "CSS":12,
+        "React":13,
+        "Angular":14,
+        "Vue.js":15,
+        "Docker":16,
+        "Kubernetes":17,
+        "AWS":18,
+        "Azure":19,
+        "Git":20,
+        "Jenkis":21,
+        "Terraform":22,
+        "Spring":23,
+        "Framework":24,
+        "Ruby on Rails":25,
+        "Mentalidad de crecimiento":1,
+        "Orientación al futuro":2,
+        "Orientación al detalle":3,
+        "Comunicación":4,
+        "Responsabilidad Personal":5,
+        "Persistencia":6,
+        "Proactividad":7,
+        "Trabajo en equipo":8
+        // ...
+    };
+    return skillToIdMap[skillValue];
+}
 
-
-function addSkill(type, skillValue, showElement, alertElement, addButton, skillsArray) {
+function addSkill(type, skillValue, showElement, alertElement, addButton, skillsArray, idArray) {
     if (skillsArray.includes(skillValue)) {
         alertElement.textContent = "¡Esta habilidad ya ha sido agregada!";
         return; // No agrega la habilidad y sale de la función
@@ -200,8 +275,13 @@ function addSkill(type, skillValue, showElement, alertElement, addButton, skills
     if (skillsArray.length < 5) {
         skillsArray.unshift(skillValue);
         const listItem = document.createElement("li");
-        listItem.innerHTML = `${skillValue} <a href="#" class="iconDelete" onclick="removeSkill('${skillValue}', '${type}', event)"><i class="bi bi-x-circle"></i></a>`;
+        listItem.innerHTML = `${skillValue} <a href="#" class="iconDelete" onclick="removeSkill('${skillValue}', '${type}', event, ${idArray})"><i class="bi bi-x-circle"></i></a>`;
         showElement.insertBefore(listItem, showElement.firstChild);
+        
+        // Agrega el ID correspondiente al array de IDs
+        const skillId = getIdForSkill(skillValue);
+        idArray.unshift({ id: skillId });
+        
         alertElement.textContent = "";
     }
 
@@ -215,16 +295,20 @@ function addSkill(type, skillValue, showElement, alertElement, addButton, skills
         addButton.disabled = false;
     }
 
-    console.log(skillsArray);
+    console.log(idArray);
 }
 
-function removeSkill(skillToRemove, type, event) {
+function removeSkill(skillToRemove, type, event, idArray) {
     event.preventDefault();
     console.log("Removing skill: " + skillToRemove);
     const skillsArray = type === "Hards" ? arrHardSkills : arrSoftSkills;
     const indexToRemove = skillsArray.indexOf(skillToRemove);
     if (indexToRemove !== -1) {
         skillsArray.splice(indexToRemove, 1);
+
+        // Elimina el ID correspondiente del array de IDs
+        idArray.splice(indexToRemove, 1);
+
         const listItems = document.querySelectorAll(`#options${type} li`);
         for (let i = 0; i < listItems.length; i++) {
             if (listItems[i].textContent.includes(skillToRemove)) {
@@ -232,9 +316,13 @@ function removeSkill(skillToRemove, type, event) {
                 break;
             }
         }
+    } else {
+        console.log("La habilidad no se encontró en el array.");
     }
     const addButton = type === "Hards" ? document.getElementById("addHard") : document.getElementById("addSoft");
     addButton.disabled = false;
+
+    console.log(skillsArray);
 }
 
 function addHardSkills() {
@@ -242,11 +330,11 @@ function addHardSkills() {
     const showHard = document.getElementById("optionsHards");
     const alertHard = document.getElementById("alertHard");
     const buttonHard = document.getElementById("addHard");
-    addSkill("Hards", hardSkill, showHard, alertHard, buttonHard, arrHardSkills);
+    addSkill("Hards", hardSkill, showHard, alertHard, buttonHard, arrHardSkills, arrayTechSkillsIdObj);
 }
 
-function removeHardSkill(skillToRemove, event) {
-    removeSkill(skillToRemove, "Hards", event);
+function removeHardSkill(skillToRemove, event, arrayTechSkillsIdObj) {
+    removeSkill(skillToRemove, "Hards", event, arrayTechSkillsIdObj);
 }
 
 function addSoftSkills() {
@@ -254,11 +342,11 @@ function addSoftSkills() {
     const showSoft = document.getElementById("optionsSofts");
     const alertSoft = document.getElementById("alertSoft");
     const buttonSoft = document.getElementById("addSoft");
-    addSkill("Softs", softSkill, showSoft, alertSoft, buttonSoft, arrSoftSkills);
+    addSkill("Softs", softSkill, showSoft, alertSoft, buttonSoft, arrSoftSkills, arraySoftSkillsIdObj);
 }
 
-function removeSoftSkill(skillToRemove, event) {
-    removeSkill(skillToRemove, "Softs", event);
+function removeSoftSkill(skillToRemove, event, arraySoftSkillsIdObj) {
+    removeSkill(skillToRemove, "Softs", event, arraySoftSkillsIdObj);
 }
 
 function changeAvatar() {
@@ -290,7 +378,8 @@ function changeAvatar() {
 function changeCurrentAvatar(index, showAvatars) {
     const avatarElement = document.querySelector(".avatar");
     avatarElement.src = avatarsProfile[index]; // Usa el índice para obtener la URL
-
+    urlAvatar = avatarElement.src;
+    console.log(urlAvatar);
     // Oculta el contenedor de avatares
     showAvatars.style.display = "none";
 }

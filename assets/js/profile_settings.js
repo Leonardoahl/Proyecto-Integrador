@@ -63,10 +63,10 @@ registerForm.addEventListener("submit", async (event) => {
 
     console.log(updateUser);
 
-    const url="http://127.0.0.1:8080/users/update/" + sessionId;
+    const url="https://pering.onrender.com//users/update/" + sessionId;
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
-    headers.append('Origin','http://127.0.0.1:8080');
+    headers.append('Origin','https://pering.onrender.com');
 
     const res = await fetch(url, {
         mode:"cors",

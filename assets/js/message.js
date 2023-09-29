@@ -93,7 +93,7 @@ console.log("hola: " + sessionUser)
 
 
 const getImg = async (username)=>{
-    const response = await fetch("http://127.0.0.1:8080/users/username/Usuario7");
+    const response = await fetch("https://pering.onrender.com/users/username/" + sessionUser);
     const result = await response.json();
     console.log(result);
     return result.profilepic;
@@ -453,7 +453,7 @@ window.addEventListener('DOMContentLoaded', () => {
         
 
         //const url = "https://pering.onrender.com";;
-        const url = "http://127.0.0.1:8080";
+        const url = "https://pering.onrender.com";
         const socket = new SockJS(url + '/ws');
         stompClient = Stomp.over(socket);
     

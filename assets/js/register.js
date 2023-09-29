@@ -48,9 +48,9 @@ registerForm.addEventListener("submit", async (event) => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
-    headers.append('Origin','http://127.0.0.1:8081');
+    headers.append('Origin','https://pering.onrender.com');
 
-    const url = "http://127.0.0.1:8081/users/register";
+    const url = "https://pering.onrender.com/users/register";
 
     try {
       const res = await fetch(url, {

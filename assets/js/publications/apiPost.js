@@ -98,7 +98,7 @@ function postDisplayInnerHTML(postDataJason) {
 function getPostsApi() {
   document.addEventListener("DOMContentLoaded", async () => {
     //get
-    const url = "http://127.0.0.1:8080/posts";
+    const url = "https://pering.onrender.com/posts";
     const data = await fetch(url);
     const postArray = await data.json();
     // console.log(dataxd);
@@ -125,10 +125,10 @@ formInPage.addEventListener("submit", async (event) => {
   );
 
   const headers = new Headers();
-  const url = "http://127.0.0.1:8080/posts";
+  const url = "https://pering.onrender.com/posts";
   headers.append("Content-Type", "application/json");
   headers.append("Accept", "application/json");
-  headers.append("Origin", "http://127.0.0.1:8080");
+  headers.append("Origin", "https://pering.onrender.com");
 
   const res = await fetch(url, {
     mode: "cors",

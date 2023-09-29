@@ -5,7 +5,7 @@ const techSkills = document.getElementById("tech")
 const projectsContainer = document.getElementById("projects")
 document.addEventListener('DOMContentLoaded', async () => {
     //get
-    const url = "http://127.0.0.1:8080/users/1"
+    const url = "https://pering.onrender.com/users/" + sessionId;
     const data = await fetch(url);
     const dataxd = await data.json();
 

@@ -33,54 +33,20 @@
                   <div class="card mask-custom" id="chat-selector">
                     <div class="card-body hideScroll"  >
                       <ul class="list-unstyled" id="chat-selector-list">
-                        <li class="p-2 border-bottom" style="border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important; border-top: 1px solid rgba(0, 0, 0, 0.3) !important">
+
+                        <li class="p-2 selectorCard" name="public-chat">
                           <div >
-                            <div>
-                              <p class="fw-bold" style="margin: auto; font-size: 20px; text-align: center ;">Chat Publico</p>
-                            </div>
+                            <p class="fw-bold" style="margin: auto; font-size: 20px; text-align: center ;">Ir a Chat Publico</p>
                           </div>
                         </li>
-
-                        <li class="p-2 border-bottom" style="border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important; border-top: 1px solid rgba(0, 0, 0, 0.3) !important">
-                          <div class="d-flex" style="align-items: center;">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp" alt="avatar"
-                              class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                            <div>
-                              <p class="fw-bold" style="margin: auto; font-size: 20px;">Patrona_Fan</p>
-                            </div>
-                          </div>
-                        </li>
-                        
-
-                        <li class="p-2 border-bottom" style="border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important; border-top: 1px solid rgba(0, 0, 0, 0.3) !important">
-                          <div class="d-flex" style="align-items: center;">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp" alt="avatar"
-                              class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                            <div>
-                              <p class="fw-bold" style="margin: auto; font-size: 20px;">Patrona_Fan</p>
-                            </div>
-                          </div>
-                        </li>
-                        
-
-                        <li class="p-2 border-bottom" style="border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important; border-top: 1px solid rgba(0, 0, 0, 0.3) !important">
-                          <div class="d-flex" style="align-items: center;">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp" alt="avatar"
-                              class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
-                            <div>
-                              <p class="fw-bold" style="margin: auto; font-size: 20px;">Patrona_Fan</p>
-                            </div>
-                          </div>
-                        </li>
-                        
-                        
+                                                
                       </ul>
           
                     </div>
                   </div>
                   <!-- chat selector  --------------------------------------------------- -->
                 </div>
-                <!-- ChatDisplay  --------------------------------------------------  -->
+                <!-- ChatDisplay  public  --------------------------------------------------  -->
                 <div class="col-md-6 col-lg-7 col-xl-7" id="chat-box">
                   <ul class="list-unstyled text-white" id="chat-display">
                    
@@ -88,13 +54,28 @@
                   <form class="input-group mb-0" id="input-chat">
                       <input id="message-text" type="text" class="form-control" placeholder="Type message"
                         aria-label="Recipient's username" aria-describedby="button-addon2" />
-                      <button class="btn btn-warning" type="submit" id="button-addon2" style="padding-top: .55rem;">
+                      <button class="btn btn-warning" type="submit"  style="padding-top: .55rem;">
                         Button
                       </button>
                     </form>
                 </div>
-                <!-- ChatDisplay  --------------------------------------------------  -->
-          
+                <!-- ChatDisplay public ------------------------------------------------------------ -->
+                
+                <!-- ChatDisplay  private  --------------------------------------------------  -->
+                <div class="col-md-6 col-lg-7 col-xl-7 hidden" id="chat-box-private">
+                  <ul class="list-unstyled text-white" id="chat-display-private" >
+                   
+                  </ul>
+                  <form class="input-group mb-0" id="input-chat-private">
+                      <input id="message-text-private" type="text" class="form-control" placeholder="Type message"
+                        aria-label="Recipient's username" aria-describedby="button-addon2" />
+                      <button class="btn btn-warning" type="submit"  style="padding-top: .55rem;">
+                        Button
+                      </button>
+                    </form>
+                </div>
+                <!-- ChatDisplay  public --------------------------------------------------  -->
+
               </div>
           
             </div>
@@ -113,112 +94,4 @@
     <script   src="../js/message.js"></script>
     
 </body>
-
 </html>
-
-<!-- <li class="d-flex justify-content-between mb-4">
-  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
-    class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-  <div class="card mask-custom message-incoming">
-    <div class="card-header d-flex justify-content-between message-header"
-      style="border-bottom: 1px solid rgba(255,255,255,.3);">
-      <p class="fw-bold mb-0">Brad Pitt</p>
-      <p class="text-dark small mb-0"> 12 mins ago</p>
-    </div>
-    <div class="message-body">
-      <p class="mb-0">
-        Hola 
-      </p>
-    </div>
-  </div>
-</li>
-<li class="d-flex justify-content-between mb-4">
-  <div class="card mask-custom w-100">
-    <div class="card-header d-flex justify-content-between p-3"
-      style="border-bottom: 1px solid rgba(255,255,255,.3);">
-      <p class="fw-bold mb-0">Lara Croft</p>
-      <p class="text-light small mb-0"><i class="far fa-clock"></i> 13 mins ago</p>
-    </div>
-    <div class="card-body">
-      <p class="mb-0">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-        laudantium.
-      </p>
-    </div>
-  </div>
-  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
-    class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
-</li>
-<li class="d-flex justify-content-between mb-4">
-  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
-    class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-  <div class="card mask-custom">
-    <div class="card-header d-flex justify-content-between p-3"
-      style="border-bottom: 1px solid rgba(255,255,255,.3);">
-      <p class="fw-bold mb-0">Brad Pitt</p>
-      <p class="text-light small mb-0"><i class="far fa-clock"></i> 10 mins ago</p>
-    </div>
-    <div class="card-body">
-      <p class="mb-0">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua.
-      </p>
-    </div>
-  </div>
-</li>
-<li class="d-flex justify-content-between mb-4">
-    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
-      class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-    <div class="card mask-custom">
-      <div class="card-header d-flex justify-content-between p-3"
-        style="border-bottom: 1px solid rgba(255,255,255,.3);">
-        <p class="fw-bold mb-0">Brad Pitt</p>
-        <p class="text-light small mb-0"><i class="far fa-clock"></i> 10 mins ago</p>
-      </div>
-      <div class="card-body">
-        <p class="mb-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua.
-        </p>
-      </div>
-    </div>
-  </li>
-  <li class="d-flex justify-content-between mb-4">
-    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
-      class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-    <div class="card mask-custom">
-      <div class="card-header d-flex justify-content-between p-3"
-        style="border-bottom: 1px solid rgba(255,255,255,.3);">
-        <p class="fw-bold mb-0">Brad Pitt</p>
-        <p class="text-light small mb-0"><i class="far fa-clock"></i> 10 mins ago</p>
-      </div>
-      <div class="card-body">
-        <p class="mb-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua.
-        </p>
-      </div>
-    </div>
-  </li>
-  <li class="d-flex justify-content-between mb-4">
-    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
-      class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-    <div class="card mask-custom">
-      <div class="card-header d-flex justify-content-between p-3"
-        style="border-bottom: 1px solid rgba(255,255,255,.3);">
-        <p class="fw-bold mb-0">Brad Pitt</p>
-        <p class="text-light small mb-0"><i class="far fa-clock"></i> 10 mins ago</p>
-      </div>
-      <div class="card-body">
-        <p class="mb-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua.
-        </p>
-      </div>
-    </div>
-  </li>
-
-                     <li class="mb-3">
-  
-</li>
- --> 

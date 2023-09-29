@@ -87,7 +87,7 @@ function postDisplayInnerHTML(postDataJason) {
   divRow.appendChild(divButtons);
 
   // Inserta el elemento divRow en el documento (en este ejemplo, dentro de un contenedor con id "contenedor")
-  const postSectionAtPage = document.getElementById("newPost");
+  const postSectionAtPage = document.getElementById("postNuevos");
   postSectionAtPage.appendChild(divRow);
 }
 
@@ -103,7 +103,7 @@ function getPostsApi(){
     const postArray = await data.json();
     // console.log(dataxd);
   
-    postArray.forEach((element) => {
+    postArray.reverse().forEach((element) => {
       postDisplayInnerHTML(element);
     });
   
@@ -116,8 +116,9 @@ function getPostsApi(){
 
 const formInPage = document.forms["formularioDeProyecto"];
 
-formInPage.addEventListener("submit", (event) => {
-  event.preventDefault();
+formInPage.addEventListener("submit", async (event) => {
+  // seccionDePublicaciones.postDisplayInnerHTML="";
+   event.preventDefault();
   const newPost = crearPublicacion(
     formInPage.elements["tituloProyecto"].value,
     formInPage.elements["descripcion"].value,
@@ -126,7 +127,7 @@ formInPage.addEventListener("submit", (event) => {
   );
     
   
-  async (newPost) => {
+ 
     const headers = new Headers();
     const url = "http://127.0.0.1:8080/posts";
     headers.append("Content-Type", "application/json");
@@ -141,13 +142,15 @@ formInPage.addEventListener("submit", (event) => {
       
     }
     );
+
+
     console.log(newPost);
 
     const result = await res.json();
-    
-  };
+    window.location.reload();
 
-  //getPostsApi();
+  
+  getPostsApi();
 });
 
 ////////////////////////POST FORM CAPTURE DATA   ENDING/////////////////////
@@ -174,3 +177,17 @@ function crearPublicacion(title, content, userId, hashtagId) {
 }
 
 // ///////////////////////////////fin de constructore4s de post nuevl
+
+
+
+// 
+const content = document.getElementById("postContent");
+
+document.addEventListener("DOMContentLoaded", async () => {
+  content.style.cursor = "pointer";
+  content.onclick = () => {
+  window.location = "project_page.html";
+
+  // AGREGAR ID DEL USUARIO
+};
+});

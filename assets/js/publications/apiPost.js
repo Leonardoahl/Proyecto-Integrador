@@ -22,4 +22,25 @@ const a = {
 
 
 
+// post post
+
+
+{
+        
+  "publicationdate": "2023-09-28T22:13:05.000+00:00",
+  "title": "mi primer post",
+  "content": "Estoy interesado en encontrar programadores recién egresados con gran interés en crecer profesionalmente y comenzar un camino como freelancer, principalmente con enfoque a fullstack en desarrollo web.",
+  "likes": 1,
+  "user": {
+      "id": 2
+ 
+  },
+  "hashtag": {
+      "id": 8
+      
+  }
+}
+
+
+
 

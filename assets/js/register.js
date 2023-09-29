@@ -6,8 +6,6 @@ if (sessionUser){
 
 console.log(sessionUser);
 
-const users = [];
-let i = 1;
 
 const registerForm = document.forms["registerForm"];
 
@@ -22,6 +20,7 @@ registerForm.addEventListener("submit", async (event) => {
     confirmedPassword: registerForm.elements["confirmedPassword"].value,
     email: registerForm.elements["email"].value,
   };
+
 
   const isNameValid = validateName(userData);
   const isLastNameValid = validateLastName(userData);
@@ -62,52 +61,12 @@ registerForm.addEventListener("submit", async (event) => {
 
       const result = await res.json();
       console.log(result);
-      validateRegistration(newUserPost);
+      showSuccessAlert();
     } catch (error) {
       console.error('Error registering user:', error);
     }
   }
 });
-
-
-function validateRegistration(userData) {
-  const existingData = localStorage.getItem("users");
-  
-    if (!existingData) {
-      const userDataJSON = {
-        id: i++,
-        name: userData.name,
-        lastName: userData.lastName,
-        user: userData.user,
-        password: userData.password,
-        email: userData.email,
-      };
-
-      const users = [userDataJSON];
-      localStorage.setItem("users", JSON.stringify(users));
-      registerForm.reset();
-      showSuccessAlert();
-    } else {
-      const existingUsers = JSON.parse(existingData);
-      // validación del correo, que no este repetido
-      const emailExists = existingUsers.some(user => user.email === userData.email);
-
-      if (validateExistingEmail(emailExists)) {
-        const newUser = {
-          id: existingUsers.length,
-          name: userData.name,
-          lastName: userData.lastName,
-          user: userData.user,
-          password: userData.password,
-          email: userData.email,
-        }
-        existingUsers.push(newUser);
-        localStorage.setItem("users", JSON.stringify(existingUsers));
-        registerForm.reset();
-        showSuccessAlert();
-      }
-    }
-  }
 
   function showSuccessAlert() {
     const successAlert = document.getElementById("successAlert");
@@ -121,22 +80,6 @@ function validateRegistration(userData) {
 
   }
 
-
-
-function validateExistingEmail(emailExists) {
-  if (!emailExists) {
-    isValid = true;
-    // Campo válido, se elimina la clase 'is-invalid'
-    const nameInput = document.getElementById("email");
-    nameInput.classList.remove("is-invalid");
-    return isValid;
-  } else {
-    console.log("No validó");
-    // Campo no válido, se adiciona la clase 'is-invalid'.
-    const nameInput = document.getElementById("email");
-    nameInput.classList.add("is-invalid");
-  }
-}
 
 function validateName({ name }) {
   console.log("entrando a validar nombre");

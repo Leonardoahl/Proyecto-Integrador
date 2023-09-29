@@ -30,6 +30,19 @@ searchInput.addEventListener("input", function () {
     item.toLowerCase().includes(searchText)
   );
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
   // Limpiar resultados anteriores
   searchResults.innerHTML = "";
   searchResultsDrop.replaceChildren("");

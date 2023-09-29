@@ -191,3 +191,48 @@ document.addEventListener("DOMContentLoaded", async () => {
   // AGREGAR ID DEL USUARIO
 };
 });
+
+
+//  funcion de agregar hashtags
+
+const elementosSeleccionados = [];
+const searchSelectionsDiv = document.getElementById("searchSelections");
+
+// Obtén todos los elementos con la clase "badge"
+const elementosBadge = document.querySelectorAll(".badge");
+
+// Agrega un manejador de clic a cada elemento "badge"
+elementosBadge.forEach((elemento) => {
+  elemento.addEventListener("click", () => {
+    const elementoID = elemento.id;
+
+    // Verifica si el elemento ya está en el array
+    const index = elementosSeleccionados.indexOf(elementoID);
+
+    if (index === -1) {
+      // Si no está en el array, agrégalo
+      elementosSeleccionados.push(elementoID);
+      elemento.classList.add("seleccionado"); // Opcional: aplica algún estilo visual
+    } else {
+      // Si ya está en el array, quítalo
+      elementosSeleccionados.splice(index, 1);
+      elemento.classList.remove("seleccionado"); // Opcional: quita el estilo visual
+    }
+
+    // Actualiza el contenido del div "searchSelections" con los elementos seleccionados
+    actualizarElementosSeleccionados();
+  });
+});
+
+function actualizarElementosSeleccionados() {
+  // Borra el contenido actual del div "searchSelections"
+  searchSelectionsDiv.innerHTML = "";
+
+  // Agrega dinámicamente los elementos seleccionados al div
+  elementosSeleccionados.forEach((elementoID) => {
+    const elementoSeleccionado = document.createElement("div");
+    elementoSeleccionado.textContent = elementoID;
+    searchSelectionsDiv.appendChild(elementoSeleccionado);
+  });
+}
+

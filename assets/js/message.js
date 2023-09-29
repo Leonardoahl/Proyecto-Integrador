@@ -228,11 +228,11 @@ const onMessageReceived = async (payload)=>{
 
     headerElement.appendChild(nameElement);
 
-    const timeElement = document.createElement('p');
+    /* const timeElement = document.createElement('p');
     timeElement.classList.add('text-dark');
     timeElement.classList.add('small');
     timeElement.classList.add('mb-0');
-    timeElement.innerText = "12 mins ago";  
+    timeElement.innerText = "12 mins ago";   */
 
     headerElement.appendChild(timeElement);
     cardElement.appendChild(headerElement);
@@ -309,11 +309,11 @@ const onPrivateMessageReceived = async(payload)=>{
 
     headerElement.appendChild(nameElement);
 
-    const timeElement = document.createElement('p');
+    /* const timeElement = document.createElement('p');
     timeElement.classList.add('text-dark');
     timeElement.classList.add('small');
     timeElement.classList.add('mb-0');
-    timeElement.innerText = "12 mins ago";  
+    timeElement.innerText = "12 mins ago";   */
 
     headerElement.appendChild(timeElement);
     cardElement.appendChild(headerElement);

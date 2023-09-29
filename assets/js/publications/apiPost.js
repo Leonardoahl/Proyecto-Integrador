@@ -12,7 +12,8 @@ function formatDate(dateString) {
   return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
-function postDisplayInnerHTML(postDataJason) {
+async function postDisplayInnerHTML(postDataJason) {
+  console.log(postDataJason);
   // Crea un nuevo elemento div con las clases y atributos necesarios
   const divRow = document.createElement("div");
   divRow.className = "row mt-1 justify-content-evenly";
@@ -54,15 +55,15 @@ function postDisplayInnerHTML(postDataJason) {
   postContent.id = "postContent";
   postContent.textContent = postDataJason.content;
 
-  const hashtag = document.createElement("span");
+  /* const hashtag = document.createElement("span");
   hashtag.className = "badge text-bg-primary";
-  hashtag.textContent = postDataJason.hashtag.name;
+  hashtag.textContent = postDataJason.hashtag.name; */
 
   divPostBody.appendChild(postId);
   divPostBody.appendChild(titlePost);
   divPostBody.appendChild(postDate);
   divPostBody.appendChild(postContent);
-  divPostBody.appendChild(hashtag);
+/*   divPostBody.appendChild(hashtag); */
 
   // Crea la tercera columna para los botones de likes y comentarios
   const divButtons = document.createElement("div");
@@ -87,7 +88,7 @@ function postDisplayInnerHTML(postDataJason) {
   divRow.appendChild(divButtons);
 
   // Inserta el elemento divRow en el documento (en este ejemplo, dentro de un contenedor con id "contenedor")
-  const postSectionAtPage = document.getElementById("postNuevos");
+  const postSectionAtPage = document.getElementById("postContent");
   postSectionAtPage.appendChild(divRow);
 }
 
@@ -116,6 +117,7 @@ const formInPage = document.forms["formularioDeProyecto"];
 
 formInPage.addEventListener("submit", async (event) => {
   // seccionDePublicaciones.postDisplayInnerHTML="";
+  console.log("xd");
   event.preventDefault();
   const newPost = crearPublicacion(
     formInPage.elements["tituloProyecto"].value,
@@ -161,10 +163,7 @@ function crearPublicacion(title, content, userId, hashtagId) {
     likes: 0, // Inicializamos los "likes" en 0
     user: {
       id: userId,
-    },
-    hashtag: {
-      id: hashtagId,
-    },
+    }
   };
 
   return publicacion;
@@ -176,12 +175,8 @@ function crearPublicacion(title, content, userId, hashtagId) {
 const content = document.getElementById("postContent");
 
 document.addEventListener("DOMContentLoaded", async () => {
-  content.style.cursor = "pointer";
-  content.onclick = () => {
-    window.location = "project_page.html";
-
-    // AGREGAR ID DEL USUARIO
-  };
+ // content.style.cursor = "pointer";
+  
 });
 
 /**

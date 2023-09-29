@@ -99,6 +99,7 @@ async function generateUser() {
     while(i<size) {
         const fila = document.createElement("div");
         fila.classList.add("row");
+        fila.classList.add("py-2");
 
         for(let j = 0; j<3 && i + j < size; j++){
             let user = users [i+j];
@@ -106,6 +107,7 @@ async function generateUser() {
             userElement.classList.add("col-4");
 
             const imgElement = document.createElement("img");
+            imgElement.classList.add("avatar")
             imgElement.src = user.image; 
             userElement.appendChild(imgElement);
 
@@ -138,9 +140,10 @@ function generateUserSolicitudes() {
             userElement.classList.add("col");
 
             const imgElement = document.createElement("img");
+
             imgElement.src = user.img; 
             userElement.appendChild(imgElement);
-
+            imgElement.classList.add("avatar")
             const btnElement = document.createElement("button");
             btnElement.classList.add("yellowButton");
             btnElement.innerText = user.name;

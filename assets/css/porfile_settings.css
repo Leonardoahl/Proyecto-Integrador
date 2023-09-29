@@ -5,7 +5,8 @@
 .avatar,
 .selectAvatar{
     border-radius: 50%;
-    height: 150px;  
+    height: 150px;
+    cursor: pointer;  
 }
 
 .selectAvatar{

@@ -32,9 +32,9 @@ export function loadFooter(){
       </div>
       <div
         class="socialMedia text-center align-items-center">
-        <a href="#" class="facebook" ; ><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram" ; ><i class="bi bi-instagram"></i></a>
-        <a href="#" class="github" ; ><i class="bi bi-github"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61552034635059" target="_blank" class="facebook" ; ><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/invites/contact/?i=1vum84r5bf7jf&utm_content=sf14q3c" target="_blank" class="instagram" ; ><i class="bi bi-instagram"></i></a>
+        <a href="https://github.com/Leonardoahl/Proyecto-Integrador" target="_blank" class="github" ; ><i class="bi bi-github"></i></a>
       </div>
     </div>  
 

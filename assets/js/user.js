@@ -4,7 +4,7 @@ let sessionUser = null;
 sessionUser = getCookie("user");
 
 if (sessionUser){
-    console.log("Hola");
+    console.log(responseData.id);
 }else{
     console.log("Adios");
 

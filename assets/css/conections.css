@@ -2,19 +2,19 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-img {
+/* border-radius imágenes de contacto */
+.avatar {
     width: 80px;
     height: 80px;
-}
-/* border-radius imágenes de contacto */
-img {
     border-radius: 50px;
 }
 
-div{
+
+
+/* div{
     margin-bottom: 15px;
     
-}
+} */
 
  .subtitle {
     font-size: 20px;

@@ -48,9 +48,9 @@ registerForm.addEventListener("submit", async (event) => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
-    headers.append('Origin','http://127.0.0.1:8080');
+    headers.append('Origin','http://127.0.0.1:8081');
 
-    const url = "http://127.0.0.1:8080/users/register";
+    const url = "http://127.0.0.1:8081/users/register";
 
     try {
       const res = await fetch(url, {

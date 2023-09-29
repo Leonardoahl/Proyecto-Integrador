@@ -18,9 +18,17 @@ const searchData = [
   "HTML",
   "CSS",
   "React",
-  "zaza",
-  "casda",
-  "asdasdv"
+  "Angular",
+  "Vue.js",
+  "Docker",
+  "Kubernetes",
+  "AWS",
+  "Azure",
+  "Git",
+  "Jenkis",
+  "Terraform",
+  "Spring Framework",
+  "Ruby on Rails"
 ];
 
 searchInput.addEventListener("input", function () {

@@ -65,10 +65,12 @@ function addPostSection(post) {
 
 
 
-const projects = document.getElementById("publications");
+
 
 
 // Create Post Handler
+
+const projects = document.getElementById("publications");
 const form = document.forms["formularioDeProyecto"];
 
 form.addEventListener("submit",(event) => {

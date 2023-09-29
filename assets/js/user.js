@@ -4,7 +4,7 @@ let sessionUser = null;
 sessionUser = getCookie("user");
 
 if (sessionUser){
-    console.log("Hola");
+    console.log(responseData.id);
 }else{
     console.log("Adios");
 
@@ -25,6 +25,7 @@ function getCookie(cname) {
     return "";
   }
   function setCookie(cname, cvalue, exdays) {
+    console.log("set cookie");
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires="+ d.toUTCString();

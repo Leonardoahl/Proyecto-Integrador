@@ -5,9 +5,9 @@
  */
 
 
-// if (sessionUser){
-//   window.location.href = "../pages/publications.html";
-// }
+if (sessionUser){
+  window.location.href = "../pages/publications.html";
+}
 
 const inputUser = document.getElementById("inputName");
 const inputPassword = document.getElementById("inputPassword");
@@ -66,10 +66,19 @@ const ALERTAS_MESSAGES={
   });
   const responseData = await data.json();
   console.log(responseData);
+  const id = responseData['id'];
 
   if (data.status === 200) {
     mostrarAlerta("exito de conexion");
-    setTimeout(() => { window.location.href = "publications.html" }, 2000);
+    console.log(responseData);
+    setCookie("user", id);
+    // if (responseData && responseData.id) {
+      
+      
+    // } else {
+    //   console.error("El objeto responseData no tiene la propiedad 'id' definida.");
+    // }
+    setTimeout(() => { window.location.href = "publications.html" }, 10000);
     seccionDeSpinner.innerHTML = `<div class="d-flex justify-content-center">
       <div class="spinner-grow text-success">
         <span class="sr-only">Loading...</span>

@@ -6,6 +6,17 @@
 console.log("xd");
 let urlAvatar = "";
 
+if (sessionUser){
+    window.location.href = "../pages/log_In.html";
+  }
+
+  let sessionId = getCookie("id");
+  let sessionUser = getCookie("user");
+  
+  console.log("Cookies:");
+  console.log("sessionId:", sessionId);
+  console.log("sessionUser:", sessionUser);
+
 const registerForm = document.forms["configurationForm"];
 const avatarsProfile = ["https://i.pinimg.com/564x/40/f4/5c/40f45c3184f7331d844c29d0e38649d0.jpg",
                         "https://i.pinimg.com/564x/8d/94/83/8d948388cbe771358a6ec1bc4cae238b.jpg",
@@ -59,7 +70,7 @@ registerForm.addEventListener("submit", async (event) => {
 
     console.log(updateUser);
 
-    const url="http://127.0.0.1:8080/users/update/3"
+    const url="http://127.0.0.1:8080/users/update/" + sessionId;
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
     headers.append('Origin','http://127.0.0.1:8080');

@@ -85,10 +85,18 @@ const inputChat = document.forms["input-chat"];
 const inputChatPrivate = document.forms["input-chat-private"];
 let stompClient = null;
 let username = "Leonardo";
+let receiver = null;
 /* let id = "1"; */
 console.log("hola" + sessionUser);
 
 
+
+const getImg = async (username)=>{
+    const response = await fetch("http://127.0.0.1:8080/users/username/Usuario7");
+    const result = await response.json();
+    console.log(result);
+    return result.profilepic;
+}
 
 
 const onConnected = ()=>{
@@ -108,15 +116,64 @@ const onError = ()=>{
     const alertElement = document.createElement('li');
     alertElement.classList.add('alert');
     alertElement.classList.add('alert-danger');
-    const textLi = "La conexión con el servidor a fallado";
+    const textLi = "La conexión con el servidor ha fallado";
     alertElement.innerText = textLi;
 
     chatDisplay.appendChild(alertElement);
 };
 
-const onMessageReceived = (payload)=>{
+const printSelectorCard = (message, img)=>{
+    const userElement = document.createElement('li');
+    userElement.classList.add('p-2');
+    userElement.classList.add('selectorCard');
+    userElement.setAttribute("name", message.sender);
+
+    const divElement = document.createElement('div');
+    divElement.classList.add('d-flex');
+    divElement.style ="align-items: center;";
+    
+    const imgElement = document.createElement('img');
+    imgElement.classList.add('rounded-circle');
+    imgElement.classList.add('align-self-center');
+    imgElement.classList.add('me-3');
+    imgElement.classList.add('shadwo-1-strong');
+    imgElement.width = 60;
+    imgElement.src = img;
+    
+    divElement.appendChild(imgElement);
+
+    const pElement = document.createElement('p');
+    pElement.classList.add('fw-bold');
+    pElement.style = "margin: auto; font-size: 20px;"
+    pElement.innerText = message.sender;
+
+    divElement.appendChild(pElement);
+
+    userElement.appendChild(divElement);
+
+    chatSelectorList.appendChild(userElement);
+
+}
+
+const deleteSelectorCard = (message)=>{
+    const elements = chatSelectorList.getElementsByTagName('li');
+    
+    
+    console.log(img);
+    for(let i = 0; i<elements.length; i++){
+        if(elements[i].textContent === message.sender){
+            elements[i].remove();
+        }
+    }
+}
+
+
+const onMessageReceived = async (payload)=>{
     const message = JSON.parse(payload.body);
-    if(message.type != "CHAT") return
+    const img = await getImg(message.sender);
+    if(message.type == "JOIN") printSelectorCard(message, img);
+    if(message.type == "LEAVE") deleteSelectorCard(message);
+    if(message.type != "CHAT") return;
     const messageElement = document.createElement('li');
     messageElement.classList.add("d-flex");
     messageElement.classList.add("justify-content-between");
@@ -129,7 +186,7 @@ const onMessageReceived = (payload)=>{
     imageElement.classList.add("me-3");
     imageElement.classList.add("shadow-1-strong");
     imageElement.width = "60";
-    imageElement.src = "https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp";
+    imageElement.src = img;
 
     if(message.sender != username){
         messageElement.appendChild(imageElement);
@@ -188,8 +245,9 @@ const onMessageReceived = (payload)=>{
     chatDisplay.scrollTo({top:chatDisplay.scrollHeight, behavior:'smooth'});
 };
 
-const onPrivateMessageReceived = (payload)=>{
+const onPrivateMessageReceived = async(payload)=>{
     const message = JSON.parse(payload.body);
+    const img = await getImg(message.sender);
     if(message.type != "CHAT") return
     const messageElement = document.createElement('li');
     messageElement.classList.add("d-flex");
@@ -203,7 +261,7 @@ const onPrivateMessageReceived = (payload)=>{
     imageElement.classList.add("me-3");
     imageElement.classList.add("shadow-1-strong");
     imageElement.width = "60";
-    imageElement.src = "https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp";
+    imageElement.src = img;
 
     if(message.sender != username){
         messageElement.appendChild(imageElement);
@@ -284,7 +342,7 @@ const sendPrivateMessage = (message)=>{
     if(message && stompClient){
         const chatMessage = {
             sender:username,
-            receiver: "jime",
+            receiver: receiver,
             content:message,
             type: 'CHAT'
         };
@@ -336,6 +394,16 @@ const handleSelector = (e)=>{
         chatBox.classList.add('hidden');
         chatBoxPrivate.classList.remove('hidden');
         activeChatView = 'private';
+        if(receiver){
+            if(receiver != itemName){
+                chatDisplayPrivate.innerHTML ="";
+                receiver = itemName;
+            }
+
+        }else{
+            receiver = itemName;
+        }
+        console.log(receiver);
         if(window.innerWidth < 766){
             console.log('hide');
             chatSelector.classList.add('hidden');
@@ -364,7 +432,10 @@ chatSelectorList.addEventListener("click", handleSelector);
 window.addEventListener('DOMContentLoaded', () => {
     try{
         
-        const socket = new SockJS('http://127.0.0.1:8080/ws');
+
+        //const url = "https://pering.onrender.com";;
+        const url = "http://127.0.0.1:8080";
+        const socket = new SockJS(url + '/ws');
         stompClient = Stomp.over(socket);
     
         stompClient.connect({username:username}, onConnected, onError);
@@ -373,9 +444,4 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const listItems = document.querySelectorAll('li');
-
-
-
-
-
 });

@@ -3,9 +3,10 @@ const username = document.getElementById("name")
 const softSkills = document.getElementById("soft")
 const techSkills = document.getElementById("tech")
 const projectsContainer = document.getElementById("projects")
+const image = document.getElementById("image")
 document.addEventListener('DOMContentLoaded', async () => {
     //get
-    const url = "http://127.0.0.1:8080/users/1"
+    const url = "https://pering.onrender.com/users/" + sessionId;
     const data = await fetch(url);
     const dataxd = await data.json();
 
@@ -24,6 +25,7 @@ const postsArray = [
 
 const printProfile = (user) => {
     console.log(user);
+    image.src = user.profilepic
     description.innerText = user.description;
     username.innerText = user.firstname + " @" + user.username;
 

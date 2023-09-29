@@ -5,13 +5,6 @@
 */
 console.log("xd");
 let urlAvatar = "";
-
-if (sessionUser){
-    window.location.href = "../pages/log_In.html";
-  }
-
-  let sessionId = getCookie("id");
-  let sessionUser = getCookie("user");
   
   console.log("Cookies:");
   console.log("sessionId:", sessionId);

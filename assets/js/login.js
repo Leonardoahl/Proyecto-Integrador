@@ -66,17 +66,19 @@ const ALERTAS_MESSAGES={
   });
   const responseData = await data.json();
   console.log(responseData);
+  const id = responseData['id'];
 
   if (data.status === 200) {
     mostrarAlerta("exito de conexion");
-    
-    if (responseData && responseData.id) {
+    console.log(responseData);
+    setCookie("user", id);
+    // if (responseData && responseData.id) {
       
-      setCookie("user", responseData.id.toString());
-    } else {
-      console.error("El objeto responseData no tiene la propiedad 'id' definida.");
-    }
-    setTimeout(() => { window.location.href = "publications.html" }, 2000);
+      
+    // } else {
+    //   console.error("El objeto responseData no tiene la propiedad 'id' definida.");
+    // }
+    setTimeout(() => { window.location.href = "publications.html" }, 10000);
     seccionDeSpinner.innerHTML = `<div class="d-flex justify-content-center">
       <div class="spinner-grow text-success">
         <span class="sr-only">Loading...</span>

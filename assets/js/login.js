@@ -78,7 +78,7 @@ const ALERTAS_MESSAGES={
     // } else {
     //   console.error("El objeto responseData no tiene la propiedad 'id' definida.");
     // }
-    setTimeout(() => { window.location.href = "publications.html" }, 10000);
+    setTimeout(() => { window.location.href = "publications.html" }, 3000);
     seccionDeSpinner.innerHTML = `<div class="d-flex justify-content-center">
       <div class="spinner-grow text-success">
         <span class="sr-only">Loading...</span>

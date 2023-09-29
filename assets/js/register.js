@@ -43,6 +43,7 @@ registerForm.addEventListener("submit", async (event) => {
       email: userData.email,
       password: userData.password,
       user: userData.user,
+      profilepic : "../img/imgProfile.png",
     }
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');

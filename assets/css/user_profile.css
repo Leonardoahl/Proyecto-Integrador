@@ -44,6 +44,7 @@ body {
 .profile-info p {
     margin: 0;
     color: #777;
+    font-size: 30px;
 }
 
 .connect-button {
@@ -62,9 +63,6 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     cursor: pointer; 
 } 
-
-     
-}
 
 .skills {
     margin-top: 20px;
@@ -150,17 +148,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease; 
   }
 
-  .connect-button:hover {
-    background-color: khaki; 
-    color: black;
-  }
-
-  .settings-button:hover {
-    background-color: #545b62; 
-    color: #fff;
-  }
-
-  .about-me {
+.about-me {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
@@ -216,6 +204,9 @@ body {
         justify-content: center;
         align-items: center;
     }
+    #projects p{
+        font-size: 18px;
+    }
 
     .profile-image {
         max-width: 200px;
@@ -263,15 +254,32 @@ body {
         align-items: center;  
         justify-content: center; 
     }
+    .about-me p{
+        font-size: 18px;
+    }
+    #projects p{
+        font-size: 13px;
+    }
+    #tech{
+        font-size: 18px;
+    }
+
+    #soft{
+        font-size: 18px;
+    }
 
     .profile-image {
         max-width: 30%; 
         margin-right: 20px;
     }
+    .profile-info p {
+        font-size: 25px;
+    }
 
     .profile-info {
         text-align: left; 
         margin-top: 0; 
+    
     }
 
     .connect-button {

@@ -37,7 +37,5 @@ export function loadFooter(){
         <a href="https://github.com/Leonardoahl/Proyecto-Integrador" target="_blank" class="github" ; ><i class="bi bi-github"></i></a>
       </div>
     </div>  
-
-    
     `;
 }

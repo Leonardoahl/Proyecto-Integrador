@@ -4,8 +4,7 @@
  *
  */
 
-const projects = document.getElementById("publications");
-const inputID = "formularioDeProyecto";
+
 
 
 
@@ -65,13 +64,14 @@ function addPostSection(post) {
 }
 
 
-const postManager = new PostsController();
+
+const projects = document.getElementById("publications");
+
 
 // Create Post Handler
-const form = document.getElementById(inputID);
+const form = document.forms["formularioDeProyecto"];
 
-form.addEventListener("submit", (event) => {
- console.log("boton apretado")
+form.addEventListener("submit",(event) => {
   event.preventDefault();
 
   // Get the textarea element by its id
@@ -79,25 +79,21 @@ form.addEventListener("submit", (event) => {
 
   // Retrieve the data from the textarea using the value property
   const textData = textarea.value;
-
+  
   // validamos que hayan hashtags en el post
   //if (validateHashtagsPost(textData)) {
   // Aquí puedes realizar otras acciones, como enviar el objeto a un servidor, etc.
   const newPost = {
-    id: postManager.getCurrentId() + 1,
-    name: "ana",
-    img: "../img/perryXd.png",
-    noLike: 0,
-    noComments: 0,
-    postContent: textData,
-    postImgs: ["/assets/img/placeholder.png", "/assets/img/placeholder.png"],
-    trend: "#PatronaSubemeElSueldo",
+    // id: postManager.getCurrentId() + 1,
+    title: form.elements["tituloProyecto"].value,
+    description: form.elements["descripcion"].value,
+    trend: "trend",
   };
-
-  postManager.addPost(newPost);
+  console.log(newPost)
   projects.innerHTML = addPostSection(postManager);
-  //}
-});
+  
+}
+);
 
 /**
  *
@@ -126,10 +122,10 @@ function validateHashtagsPost(data) {
 }
 
 
-const content = document.getElementById("postBody");
-content.style.cursor = "pointer";
-content.onclick = () => {
-  window.location = "project_page.html";
-};
+// const content = document.getElementById("postBody");
+// content.style.cursor = "pointer";
+// content.onclick = () => {
+//   window.location = "project_page.html";
+// };
 
 

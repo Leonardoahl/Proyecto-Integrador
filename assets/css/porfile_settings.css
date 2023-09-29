@@ -2,10 +2,15 @@
 @import "./navbar.css";
 @import "./styles.css";
 
-#avatar{
+.avatar,
+.selectAvatar{
     border-radius: 50%;
-    height: 35%;
-    width: 35%;
+    height: 150px;
+    cursor: pointer;  
+}
+
+.selectAvatar{
+    height: 100px;
 }
 
 #containerPrincipal{
@@ -14,12 +19,77 @@
 
 #element{
     padding-top: 5px;
-    border-top: dotted;
-    border-top-color: #FED766;
-    border-top-width: 2px;
 }
 
 #cancel{
     background-color: #6b1b1b!important;
     color: #ffff!important;
 }
+
+.btn.changeImage {
+    background-color: transparent;
+    margin-top: 2px;
+}
+
+.btn.changeImage:hover {
+    /* Cambiar el fondo del botón a gris */
+    background-color: #3f523f;
+}
+
+/* Cambia el color de texto de las opciones */
+#hardSkills option,
+#softSkills option {
+    color: #000000;
+}
+
+#description {
+    resize: none;
+}
+
+#optionsSofts,
+#optionsHards{
+    list-style:none;
+    padding-left: 0;
+    margin-left: 0;
+    width: auto;
+}
+
+#optionsSofts li,
+#optionsHards li{
+    background-color: rgba(83,67,49,0.8);
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#counter{
+    display: flex;
+    text-align: end;
+}
+
+/* Estilo por defecto para ocultar la "x" */
+.iconDelete {
+    opacity: 0;
+    transition: opacity 0.2s ease; /* Agregar transición suave */
+}
+
+/* Mostrar la "x" cuando se hace hover sobre el elemento li */
+li:hover .iconDelete {
+    opacity: 1;
+}
+
+.titleSkills{
+    display: flex;
+    justify-content: start;
+}
+
+@media (max-width: 750px){
+    .avatar{
+        height: 80px;
+    }
+
+    .selectAvatar{
+        height: 30px;
+    }
+}
+

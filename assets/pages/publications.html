@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/publications.css" />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,80 +36,158 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Quicksand:wght@300&display=swap"
       rel="stylesheet"
     />
-    <script defer src="../js/PostsController.js"></script>
-    <script defer src="../js/post.js"></script>
-    <title>Publicaciones</title>
+    <!-- <script defer src="../js/post.js"></script> // testin api post method-->
+    <script defer src="../js/publications/apiPost.js"></script>
+    <!-- testing get method -->
+    <script defer src="../js/publications/searchHashtags.js"></script>
+    <script defer src="../js/publications/trends.js"></script>
 
-    <script type="module" src="../js/navbar.js"></script>
-    <script type="module" src="../js/footer.js"></script>
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"
+    ></script>
+    <title>Publicaciones</title>
   </head>
 
   <body>
     <header id="navbar"></header>
     <main class="container" id="mainProjects">
-      <div class="row justify-content-center">
-        <div class="col-sm-4 col-md-2" >
-          <!-- Trending List -->
-          <div class="card" id="trending">
-            <div class="card-header text-center bg-success-subtle">Trending</div>
-            <ul class="list-group list-group-flush text-center">
-              <li class="list-group-item">#Python</li>
-              <li class="list-group-item">#Java</li>
-              <li class="list-group-item">#C</li>
-              <li class="list-group-item">#Kotlin</li>
-              <li class="list-group-item">#Android</li>
-            </ul>
+      <!--           ROW CON trendings y post creator -->
+      <div class="d-flex flex-row justify-content-between mt-1">
+        <!--                                                   LISTA DE TRENDINGS            -->
+
+        <div class="card d-inline-block col-3 bg-dark bg-gradient">
+          <div class="d-inline">
+            <div class="card-header bg-dark bg-gradient text-white">
+              Trending
+            </div>
+            <div class="d-flex flex-row bd-highlight mb-3"></div>
           </div>
         </div>
-          <!-- //////////////////  TRENDING END /////////////// -->
-        <div class="col-sm-9 col-lg-8">  
-        <section id="projects">
-          <h2 class="title" id="titleProjects">
-            Proyectos
-          </h2>
 
-          <!--post form structure -->
-          <form  id="myForm">
-            <div class="row ">
-              <label for="validationTextarea" class="text-center"
-                >Nuevo Post</label>
+        <!--                                                  FIN LISTA DE TRENDINGS                -->
+        <!--                                                  FORMULARIO DE PUBLICACION                 -->
+        <form
+          class="d-inline-block flex-fill rounded-3 ms-1 me-1"
+          id="formularioDeProyecto"
+        >
+          <div class="d-inline rounded-3 bg-dark bg-gradient">
+            <div class="fw-bold">Elige el nombre de tu proyecto</div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-outline text-white">
+              <input
+                type="text"
+                name="tituloProyecto"
+                class="form-control bg-dark text-light"
+                autocomplete="off"
+              />
+              <label class="form-label text-light" for="tituloProyecto"
+                >Como quieres llamarme?</label
+              >
             </div>
-            <!-- Agregue una columna que abarque el textarea y botones y lograr un fondo uniforme para todos esos elementos -->
-            <div class="col p-3" id="postCreator">
+          </div>
+
+          <div class="d-inline rounded-3 bg-dark bg-gradient">
+            <div class="fw-bold">Cuentanos mas acerca de tu proyecto</div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-outline text-white">
               <textarea
-                class="form-control mb-2"
-                id="projectDescription"
-                placeholder="Shared your thoughts"
-                required
-                minlength="10"
+                class="form-control bg-dark text-white"
+                aria-label="With textarea"
+                id="descripcion"
+                name="descripcion"
+                autocomplete="off"
               ></textarea>
-              <!-- use of new functions to manage buttons position (bootstrap 5 new functions) -->
-              <!-- d-grid es una funcion nueva para los btones  -->
-              <div class="d-grid d-md-flex justify-content-md-end">
-                <button class="yellowButton" type="submit">
-                  Enviar
-                </button>
-                <!-- <button class="btn btn-warning" type="button">other</button>  Se comenta hasta saber si ocuparemos o no el botón -->
-              </div>
+              <label class="form-label text-light" for="projectDescription"
+                >Decripcion</label
+              >
+              <!-- <div class="form-helper">Example helper</div> -->
             </div>
-          </form>
-          <!--post form end structure -->
+          </div>
+          <div class="d-inline-block text-light bg-white bg-opacity-25 rounded rounded-2 justify-content-start" id="searchSelections">
+         </div>
 
-         
-        </section>
-        </div>
+          <!-- linea de resultados de busqueda -->
+          <div
+            class="d-inline-block text-light bg-black bg-opacity-25 rounded rounded-2 justify-content-between"
+            id="searchResults"
+          ></div>
+              <!-- linea de resultados de busqueda -->
+
+          <div class="d-flex justify-content-between">
+            <!-------------------------------------------- DROPDOWN & SEARCH----------------------------->
+            <form class="form-inline">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Buscador de hashtags"
+                aria-label="Search"
+                id="searchInput"
+                autocomplete="off"
+              />
+            </form>
+
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary btn-sm dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="false"
+                aria-expanded="false"
+              >
+                Mas Categorias
+              </button>
+              <div class="dropdown-menu" role="menu" id="searchedOptions"></div>
+            </div>
+            <button class="btn btn-warning btn-sm" type="submit" id="send">
+              Enviar
+            </button>
+
+            <!-------------------------------------------DROPDOWN SEARCH ENDING-------------------------->
+          </div>
+        </form>
       </div>
 
-       <!-- Post display Section -->
-       <div class="row justify-content-sm-center bg-dark bg-opacity-50">
-        <div >
-          <section id="post">
-            
-          </section>
+      <!-- FIN ROW DE TRENDINGS Y POST -->
+
+      <!--                                  POST SECTION                        -->
+      <div
+        class="d-flex bg-dark bg-gradient mt-2 rounded-3 justify-content-between"
+      >
+        <p class="fw-bold" id="pubs">Ultimas publicaciones</p>
+        <div class="dropdown d-inline">
+          <button
+            class="btn btn-light dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Ordenar por:
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Reciente</a></li>
+            <li>
+              <a class="dropdown-item" href="#">Mas Likes</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Mas antiguo</a>
+            </li>
+          </ul>
         </div>
-        
-       </div>
-      
+      </div>
+      <!-- END OF POST SECTION -->
+
+      <!--                                        SHOW NEW POST PAGE  START-->
+      <div id="postNuevos"></div>
+
+      <!--                                        SHOW NEW POST PAGE  END-->
     </main>
     <footer class="foot" id="footer"></footer>
     <!-- Bootstrap script -->
@@ -104,10 +198,22 @@
       loadNavbar();
       loadFooter();
     </script>
-
+  <script src="../js/user.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
   </body>

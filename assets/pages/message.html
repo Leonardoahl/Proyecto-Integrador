@@ -20,44 +20,66 @@
 
 <body>
     <header id="navbar"></header>
-    <main>
+    <main >
+        <section >
+            <div class="container py-4" >
+              <div class="row" style="margin:0">
+                <div class="col-md-6 col-lg-5 col-xl-5 mb-4 mb-md-0">
+                  <h5 class="font-weight-bold mb-3 text-center text-white hidden .yellowButton" id="chats-display-btn">Chats</h5>
+                  <h5 class="font-weight-bold mb-3 text-center text-white" id="chats-text">Chats</h5>
+          
+                  <!-- chat selector ------------------------------------------ -->
 
-        <div id="username-page">
-            <div class="username-page-container">
-                <h1 class="title">Escribe tu usuario para entrar al chat publico</h1>
-                <form id="usernameForm" name="usernameForm">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Username" autocomplete="off" class="form-control" />
+                  <div class="card mask-custom" id="chat-selector">
+                    <div class="card-body hideScroll"  >
+                      <ul class="list-unstyled" id="chat-selector-list">
+
+                        <li class="p-2 selectorCard" name="public-chat">
+                          <div >
+                            <p class="fw-bold" style="margin: auto; font-size: 20px; text-align: center ;">Ir a Chat Publico</p>
+                          </div>
+                        </li>
+                                                
+                      </ul>
+          
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="accent username-submit">Comienza a chatear!</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        
-        
-        <div id="chat-page" class="hidden">
-            <div class="chat-container">
-                <div class="chat-header">
-                    <h2>Chat Publico</h2>
+                  </div>
+                  <!-- chat selector  --------------------------------------------------- -->
                 </div>
-                <div class="connecting">
-                    Connecting...
+                <!-- ChatDisplay  public  --------------------------------------------------  -->
+                <div class="col-md-6 col-lg-7 col-xl-7" id="chat-box">
+                  <ul class="list-unstyled text-white" id="chat-display">
+                   
+                  </ul>
+                  <form class="input-group mb-0" id="input-chat">
+                      <input id="message-text" type="text" class="form-control" placeholder="Type message"
+                        aria-label="Recipient's username" aria-describedby="button-addon2" />
+                      <button class="btn btn-warning" type="submit"  style="padding-top: .55rem;">
+                        Button
+                      </button>
+                    </form>
                 </div>
-                <ul id="messageArea">
-        
-                </ul>
-                <form id="messageForm" name="messageForm">
-                    <div class="form-group">
-                        <div class="input-group clearfix">
-                            <input type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control"/>
-                            <button type="submit" class="primary">Send</button>
-                        </div>
-                    </div>
-                </form>
+                <!-- ChatDisplay public ------------------------------------------------------------ -->
+                
+                <!-- ChatDisplay  private  --------------------------------------------------  -->
+                <div class="col-md-6 col-lg-7 col-xl-7 hidden" id="chat-box-private">
+                  <ul class="list-unstyled text-white" id="chat-display-private" >
+                   
+                  </ul>
+                  <form class="input-group mb-0" id="input-chat-private">
+                      <input id="message-text-private" type="text" class="form-control" placeholder="Type message"
+                        aria-label="Recipient's username" aria-describedby="button-addon2" />
+                      <button class="btn btn-warning" type="submit"  style="padding-top: .55rem;">
+                        Button
+                      </button>
+                    </form>
+                </div>
+                <!-- ChatDisplay  public --------------------------------------------------  -->
+
+              </div>
+          
             </div>
-        </div>
+          </section>
     </main>
     <footer class="foot" id="footer"></footer>
     <script type="module">
@@ -68,7 +90,8 @@
     </script>
    	<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="../js/user.js"></script>
     <script   src="../js/message.js"></script>
+    
 </body>
-
 </html>

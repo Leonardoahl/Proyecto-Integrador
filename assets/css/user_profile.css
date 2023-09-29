@@ -1,38 +1,294 @@
 @import "./footer.css";
 @import "./navbar.css";
 @import "./styles.css";
-/* *{border:2px solid red} */
+  /* *{border:2px solid red}  */ 
 
-.container{
-    width: 50%;
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    
 }
 
-.porfileImage{
-    height: 60%;
-    width: 60%;
+.profile-container .profile-info .col-md-6 .profile-image {
+    margin-right: 5px;
 }
 
-.title{
+.profile-container .profile-info .profile-image {
+    margin-bottom: -20px; /* Ajusta el valor según tus necesidades */
+}
+
+.profile-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* .profile-image {
+    max-width: 200px;
+    border-radius: 50%;
+} */
+
+.profile-image {
+    max-width: 100%; 
+    width: 40%; 
+    border-radius: 50%;
+}
+
+.profile-info {
+    text-align: left;
+}
+
+.profile-info p {
+    margin: 0;
+    color: #777;
+    font-size: 30px;
+}
+
+.connect-button {
+    margin-top: 10px;
+}
+
+.about-me {
+    margin-top: 20px;
+}
+
+.about-me p {
+    line-height: 1.5;
+}
+
+.about-me {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
+} 
+
+.skills {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.skills ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+.skills .technical-skills {
+    margin-top: 0;
+}
+
+.skills .technical-skills ul {
+    margin-top: 20px;
+}
+
+.skills .card ul li {
+    background-color: transparent; 
+}
+
+
+
+.skills .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.projects {
+    margin-top: 20px;
+    
+}
+
+.project-item {
+    display: flex;
+    margin-bottom: 20px;
+    color: white;
+    text-align: justify;
+}
+
+.project-item img {
+    max-width: 80px;
+    margin-right: 10px;
+   
+}
+
+.project-item p {
+    margin: 0;
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
+    margin-bottom: 20px; 
+}
+
+.project-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.connect-button {
+    background-color: #FED766;
+    color: #000; 
+    border-color: #FED766; 
+    font-size: 12px; 
+    padding: 5px 10px;
+   
+}
+
+.settings-button{
+    background-color: grey;
+    color: #000;
+    border-color: grey;
+    font-size: 12px; 
+    padding: 5px 10px;
+    
+}
+
+.btn {
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+  }
+
+.about-me {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.skills .card {
+    background-color: #333; 
+    padding: 20px; 
+    border: 1px solid #333; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 20px; 
+}
+
+
+.skills h4 {
+    color: #333; 
+}
+
+
+.skills ul {
+    list-style: none; 
+    padding: 0;
+}
+
+.skills ul li {
+    margin-bottom: 5px; 
+}
+
+.card {
+    background-color: #3331;  
+    padding: 20px; 
+    border: 1px solid #333; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 20px; 
+}
+
+.project-card {
+    background-color: #333; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 20px;
+    color: white; 
+}
+
+@media (min-width: 768px) {
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #projects p{
+        font-size: 18px;
+    }
+
+    .profile-image {
+        max-width: 200px;
+        border-radius: 50%;
+        margin-right: 20px; 
+    }
+
+    .profile-info {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .connect-button {
+        margin-top: 10px;
+    }
+}
+
+
+/* @media (max-width: 767px) {
+    .profile-container {
+        flex-direction: column; 
+        align-items: center;
+        
+    }
+
+    .profile-image {
+        max-width: 80%; 
+        margin-right: 0;
+        
+    }
+
+    .profile-info {
+        text-align: center;
+        margin-top: 20px;
+
+        }
+  }
+
+
+ */
+
+ @media (max-width: 767px) {
+    .profile-container {
+        flex-direction: row; 
+        align-items: center;  
+        justify-content: center; 
+    }
+    .about-me p{
+        font-size: 18px;
+    }
+    #projects p{
+        font-size: 13px;
+    }
+    #tech{
+        font-size: 18px;
+    }
+
+    #soft{
+        font-size: 18px;
+    }
+
+    .profile-image {
+        max-width: 30%; 
+        margin-right: 20px;
+    }
+    .profile-info p {
+        font-size: 25px;
+    }
+
+    .profile-info {
+        text-align: left; 
+        margin-top: 0; 
+    
+    }
+
+    .connect-button {
+        margin-top: 10px;
+    }
+
+    .skills h3,
+    .projects h3 {
     text-align: center;
-    margin-top: 5%;
+  }
 }
 
-.row{
-    justify-content: center;
-    align-items: center;
-}
-
-ul{
-    list-style-type: none;
-    text-align: center;
-}
-.li {
-    display: inline;
-    margin-right: 30px;
-}
-
-.aboutMe{
-    background-color:  rgba(83,67,49,0.5);
-    padding: 3%;
-    margin: 0 10% 3% 10% ;
-}

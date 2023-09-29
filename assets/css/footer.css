@@ -1,39 +1,85 @@
 footer
-/* ,nav */{
+
+/* ,nav */
+    {
     background-color: #657265;
     z-index: 1;
 }
 
-footer{
+footer {
     margin-top: auto;
 }
 
-.foot{
+.foot {
     width: 100%;
     background-color: #657265;
 }
-.foot .groupOne{
-    font-size: 12px;
+
+.foot .groupOne {
+    font-size: 14px;
     width: 100%;
     margin: auto;
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 5px 0px;
 }
 
-.foot .groupOne .socialMedia a{
+.box {
     display: inline-block;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    color: #fff;
-    background-color: #3e4b3e;
-    transition: all 300ms ease;
+    justify-content: start;
+    align-items: center;
+    padding-left: 30px;
 }
 
-@media screen and (max-width:700px){
-    .foot .groupOne{
+.foot .groupOne .socialMedia {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.foot .groupOne .socialMedia a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.facebook,
+.instagram,
+.github {
+    font-size: 20px;
+}
+
+.foot .groupOne .socialMedia a:hover {
+    background-color: #3e4b3e;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:700px) {
+    .foot .groupOne {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .box {
+        display: inline-block;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-left: 0px;
+    }
+
+    .foot .groupOne .socialMedia {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        padding-right: 0px;
+    }
+
+
 }

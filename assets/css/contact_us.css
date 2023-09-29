@@ -15,7 +15,6 @@ form{
 h1{
     margin-left: auto;
     margin-right: auto;
-    border-bottom: 2px dotted #FED766;
     width: auto;
     text-align: center;
     
@@ -30,5 +29,9 @@ h1{
 }
 .container{
     padding: 200px auto;
+}
+
+#feedback {
+    resize: none;
 }
 

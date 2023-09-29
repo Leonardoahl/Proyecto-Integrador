@@ -3,7 +3,7 @@ export function loadFooter(){
     footerElement.innerHTML = `
   
     <div class="groupOne">
-      <div class="box justify-content-center align-items-center mx-4">
+      <div class="box">
         <div class="row">
           <a href="../pages/about_us.html" class="link-light"
             >Sobre Nosotros</a
@@ -25,20 +25,17 @@ export function loadFooter(){
           >
         </div>
       </div>
-      <div class="box text-center">
+      <div class="box text-center" style="margin: auto;" >
         <small
           >&copy; 2023 <b>PERING</b> - Todos los Derechos Reservados.</small
         >
       </div>
       <div
-        class="socialMedia text-center justify-content-center align-items-center"
-      >
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="github"><i class="bi bi-github"></i></a>
+        class="socialMedia text-center align-items-center">
+        <a href="https://www.facebook.com/profile.php?id=61552034635059" target="_blank" class="facebook" ; ><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/peringnetworking/" target="_blank" class="instagram" ; ><i class="bi bi-instagram"></i></a>
+        <a href="https://github.com/Leonardoahl/Proyecto-Integrador" target="_blank" class="github" ; ><i class="bi bi-github"></i></a>
       </div>
     </div>  
-
-    
     `;
 }

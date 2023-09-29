@@ -22,3 +22,36 @@ nav{
     color: white;
 }
 
+nav     li:hover{
+    background-color: #3f523f;
+    border-radius: 10px;
+}
+
+i{
+    font-size: 18px;
+}
+
+
+@media (min-width: 767px) {
+    .navbar-nav .nav-link span{
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .navbar-logo img{
+        width: 80%;
+        height: auto;
+    }
+    .navbar-nav .nav-link .text-menu {
+        display: inline-block;
+        margin-left: auto;
+        padding-right: 10px!important;
+    }
+    
+    .navbar-nav .nav-link .bi {
+        display: none;
+    }
+
+}

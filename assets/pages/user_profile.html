@@ -12,98 +12,76 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&family=Quicksand:wght@300&display=swap"
         rel="stylesheet">
-    <title>Sobre Nosotros</title>
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="../css/user_profile.css">
     <script type="module" src="../js/navbar.js"></script>
     <script type="module" src="../js/footer.js"></script>
+
 </head>
 
 <body>
     <header id="navbar"></header>
     <main>
-        <div class="container">
-            <!-- aqui empieza codigo de perfil de usuario -->
-            <div>
-                <section>
-                    <div class="row"> <!-- fila que acumula imagen y usuario -->
-                        <div class="col-6 text-center">
-                            <img class="porfileImage" src="../img/perryXd.png">
+        <div class="profile-container">
+            <div class="profile-info">
+                <div class="row align-items-center text-center">
+                    <div class="row justify-content-center my-3">
+                    <div class="col-md-6">
+                        <img class="profile-image" src="../img/perryXd.png" alt="Imagen de perfil">
+                        <div class="d-grid justify-content-center">
+                            <a href="../pages/porfile_settings.html" class="btn changeImage">
+                                <i class="bi bi-gear"></i> 
+                            </a>
                         </div>
-                        <div class="col-6">
-                            <h4>Ed Cetina</h4>
-                            <p>@el_bateado</p>
-                            <button type="button" class="btn btn-outline-dark yellowButton"
-                                data-mdb-ripple-color="dark">
-                                Conexión </button>
-                        </div>
+                        <!-- <h4>Ed Cetina</h4> --> 
+                        <p id="name" style="color: gainsboro;"><strong>Ed Cetina</strong> @el_bateado </p>
+          <!--               <button type="button" class="btn btn-outline-dark connect-button"
+                            data-mdb-ripple-color="dark">Conexión</button>   --> 
                     </div>
-                   
-                    <div class="row py-4">
-                         <h3 class="title">Sobre mí</h3>
-                        <div>
-                            <p class="aboutMe">Profesionista amante de la naturaleza, nadar en cenotes, gozar de la gastronomía
-                                Mexicana.
-                                Amante 100% del backend, en proceso de entender por qué a la gente le gusta el frontend
-                            </p>
-                        </div>
-                        <div class="row">
-                            <div class="skills col-lg-3 col-sm-12">
-                                <h3 class="title">Habilidades</h3>
-                                <ul>
-                                    <li class="li">Proactivo</li>
-                                    <li class="li">Analítico</li>
-                                    <li class="li">Cooperativo</li>
-                                    <li class="li">Creativo</li>
-                                    <li class="li">Comunicativo</li>
-                                </ul>
-                                
+                </div>
+                    <!-- <div class="col-md-3 text-end mt-4">
+                        <a href="./porfile_settings.html" class="btn btn-outline-dark btn-sm settings-button" data-mdb-ripple-color="dark">
+                            <i class="bi bi-gear" style="color: black;"></i> Configuración
+                        </a>
+                    </div> -->
+                
+                </div>
+                <div class="about-me">
+                    <h3>Sobre mí</h3>
+                    <p id="description" style="color: white;"></p>
+                </div>
+                <div class="skills">
+                    <h3 class="text-white my-3">Habilidades </h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                            <h4 class="text-white">Blandas</h4>
+                            <ul id="soft">
+                            </ul>
                             </div>
-                            <div class="col-lg-9 col-sm-12">
-                                <h3>Proyectos</h3>
-                                <div class="row">
-                                    <div class="col-3">
-                                        <img src="../img/JS.png" alt="imagen JS" class="img-fluid">
-                                    </div>
-                                    <div class="col-9">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit blanditiis
-                                            excepturi harum architecto hic!</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-3">
-                                        <img src="../img/HTML.png" alt="imagen HTML" class="img-fluid">
-                                    </div>
-                                    <div class="col-9">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit blanditiis
-                                            excepturi harum architecto hic!</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-3">
-                                        <img src="../img/JS.png" alt="imagen JS" class="img-fluid">
-                                    </div>
-                                    <div class="col-9">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit blanditiis
-                                            excepturi harum architecto hic!</p>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                            <h4 class="text-white">Técnicas</h4>
+                            <ul id="tech">  
+                            </ul>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div id="projects" class="projects">
+                    <h3>Proyectos</h3>
+                </div>
             </div>
         </div>
-        </section>
-        </div>
-
-        </div>
     </main>
-    <!-- hasta aqui el codigo de userProfile ------------------------------------------------------------------------->
     <footer class="foot" id="footer"></footer>
     <script type="module">
         import{loadNavbar} from "../js/navbar.js";
         import{loadFooter} from "../js/footer.js";
         loadNavbar();
-        loadFooter();
+        loadFooter();    
     </script>
+    <script src="../js/user.js"></script>
+    <script src="../js/user_profile.js"></script>
 </body>
-
-</html>

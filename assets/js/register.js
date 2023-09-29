@@ -1,13 +1,16 @@
-console.log("xd");
+console.log("registro xd");
 
-const users = [];
-let i = 1;
+if (sessionUser){
+  window.location.href = "../pages/log_In.html";
+}
+
+console.log(sessionUser);
+
 
 const registerForm = document.forms["registerForm"];
-console.log(registerForm);
 
-registerForm.addEventListener("submit", (event) => {
-  event.preventDefault()
+registerForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
   const userData = {
     name: registerForm.elements["name"].value,
@@ -16,9 +19,9 @@ registerForm.addEventListener("submit", (event) => {
     password: registerForm.elements["password"].value,
     confirmedPassword: registerForm.elements["confirmedPassword"].value,
     email: registerForm.elements["email"].value,
-
   };
-  
+
+
   const isNameValid = validateName(userData);
   const isLastNameValid = validateLastName(userData);
   const isPasswordValid = validatePassword(userData);
@@ -32,76 +35,52 @@ registerForm.addEventListener("submit", (event) => {
     isConfirmedPasswordValid &&
     isEmailValid
   ) {
-  //console.log(userData);
-  validateRegistration(userData);
-  }
 
-});
+    const newUserPost = {
+      username: userData.user,
+      firstname: userData.name,
+      lastName: userData.lastName,
+      email: userData.email,
+      password: userData.password,
+      user: userData.user,
+      profilepic : "../img/imgProfile.png",
+    }
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Origin','https://pering.onrender.com');
 
+    const url = "https://pering.onrender.com/users/register";
 
-function validateRegistration(userData) {
-  const existingData = localStorage.getItem("users");
-  
-    if (!existingData) {
-      const userDataJSON = {
-        id: i++,
-        name: userData.name,
-        lastName: userData.lastName,
-        user: userData.user,
-        password: userData.password,
-        email: userData.email,
-      };
+    try {
+      const res = await fetch(url, {
+        mode: "cors",
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(newUserPost)
+      });
 
-      const users = [userDataJSON];
-      localStorage.setItem("users", JSON.stringify(users));
-      registerForm.reset();
+      const result = await res.json();
+      console.log(result);
       showSuccessAlert();
-    } else {
-      const existingUsers = JSON.parse(existingData);
-      // validación del correo, que no este repetido
-      const emailExists = existingUsers.some(user => user.email === userData.email);
-
-      if (validateExistingEmail(emailExists)) {
-        const newUser = {
-          id: existingUsers.length,
-          name: userData.name,
-          lastName: userData.lastName,
-          user: userData.user,
-          password: userData.password,
-          email: userData.email,
-        }
-        existingUsers.push(newUser);
-        localStorage.setItem("users", JSON.stringify(existingUsers));
-        registerForm.reset();
-        showSuccessAlert();
-      }
+    } catch (error) {
+      console.error('Error registering user:', error);
     }
   }
+});
 
   function showSuccessAlert() {
     const successAlert = document.getElementById("successAlert");
     successAlert.style.display = "block";
     setTimeout(() => {
     successAlert.style.display = "none";
-   }, 5000); // Ocultar la alerta después de 5 segundos
+    window.location.href = "../pages/log_In.html";//cambiar direccion al index en caso de que se mueva el login de lugar
+    
+   }, 3000); // Ocultar la alerta después de 3 segundos y redirigir a login
+
+
   }
 
-
-
-function validateExistingEmail(emailExists) {
-  if (!emailExists) {
-    isValid = true;
-    // Campo válido, se elimina la clase 'is-invalid'
-    const nameInput = document.getElementById("email");
-    nameInput.classList.remove("is-invalid");
-    return isValid;
-  } else {
-    console.log("No validó");
-    // Campo no válido, se adiciona la clase 'is-invalid'.
-    const nameInput = document.getElementById("email");
-    nameInput.classList.add("is-invalid");
-  }
-}
 
 function validateName({ name }) {
   console.log("entrando a validar nombre");

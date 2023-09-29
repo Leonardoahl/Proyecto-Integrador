@@ -48,9 +48,9 @@ registerForm.addEventListener("submit", async (event) => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
-    headers.append('Origin','http://127.0.0.1:8081');
+    headers.append('Origin','https://pering.onrender.com');
 
-    const url = "http://127.0.0.1:8081/users/register";
+    const url = "https://pering.onrender.com/users/register";
 
     try {
       const res = await fetch(url, {
@@ -76,7 +76,7 @@ registerForm.addEventListener("submit", async (event) => {
     successAlert.style.display = "none";
     window.location.href = "../pages/log_In.html";//cambiar direccion al index en caso de que se mueva el login de lugar
     
-   }, 3000); // Ocultar la alerta después de 3 segundos y redirigir a login
+   },0); // Ocultar la alerta después de 3 segundos y redirigir a login
 
 
   }

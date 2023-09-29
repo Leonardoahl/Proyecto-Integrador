@@ -22,13 +22,6 @@ export function loadNavbar(){
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="conections.html">
-                        <span class="badge bg-info"></span>
-                        <i class="bi bi-people-fill"></i>
-                        <span class="text-menu">Conexiones</span>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="message.html">
                         <span class="badge bg-info"></span>
                         <i class="bi bi-chat-square-text-fill"></i>

@@ -92,70 +92,64 @@ function postDisplayInnerHTML(postDataJason) {
 }
 
 /**
- * **************************FUNCION GET
+ * @function  getPostsApi()  
  */
 
-function getPostsApi(){
+function getPostsApi() {
   document.addEventListener("DOMContentLoaded", async () => {
     //get
-    const url = "http://127.0.0.1:8080/posts";
+    const url = "https://pering.onrender.com/posts";
     const data = await fetch(url);
     const postArray = await data.json();
     // console.log(dataxd);
-  
+
     postArray.reverse().forEach((element) => {
       postDisplayInnerHTML(element);
     });
-  
-   
   });
 }
 
-
-////////////////////////POST FORM CAPTURE DATA/////////////////////
-
+/**
+ * @function  Evento  capturamos  objeto para mandarlo en POST
+ */
 const formInPage = document.forms["formularioDeProyecto"];
 
 formInPage.addEventListener("submit", async (event) => {
   // seccionDePublicaciones.postDisplayInnerHTML="";
-   event.preventDefault();
+  event.preventDefault();
   const newPost = crearPublicacion(
     formInPage.elements["tituloProyecto"].value,
     formInPage.elements["descripcion"].value,
     1,
     1
   );
-    
-  
- 
-    const headers = new Headers();
-    const url = "http://127.0.0.1:8080/posts";
-    headers.append("Content-Type", "application/json");
-    headers.append("Accept", "application/json");
-    headers.append("Origin", "http://127.0.0.1:8080");
 
-    const res = await fetch(url, {
-      mode: "cors",
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(newPost),
-      
-    }
-    );
+  const headers = new Headers();
+  const url = "https://pering.onrender.com/posts";
+  headers.append("Content-Type", "application/json");
+  headers.append("Accept", "application/json");
+  headers.append("Origin", "https://pering.onrender.com");
 
+  const res = await fetch(url, {
+    mode: "cors",
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(newPost),
+  });
 
-    console.log(newPost);
+  console.log(newPost);
 
-    const result = await res.json();
-    window.location.reload();
+  const result = await res.json();
+  window.location.reload();
 
-  
   getPostsApi();
 });
 
-////////////////////////POST FORM CAPTURE DATA   ENDING/////////////////////
 
-///////////////////////////////////////// constructores de un post nuevo
+
+/**
+ * @function  crearPublicacion() Creamos objeto para mandarlo en POST
+ */
 
 function crearPublicacion(title, content, userId, hashtagId) {
   const currentDate = new Date().toISOString();
@@ -176,18 +170,62 @@ function crearPublicacion(title, content, userId, hashtagId) {
   return publicacion;
 }
 
-// ///////////////////////////////fin de constructore4s de post nuevl
-
-
-
-// 
+/**
+ * FUNCIONES DE REDIRECCION A PAGINA DE PROYECTOS
+ */
 const content = document.getElementById("postContent");
 
 document.addEventListener("DOMContentLoaded", async () => {
   content.style.cursor = "pointer";
   content.onclick = () => {
-  window.location = "project_page.html";
+    window.location = "project_page.html";
 
-  // AGREGAR ID DEL USUARIO
-};
+    // AGREGAR ID DEL USUARIO
+  };
 });
+
+/**
+ * Selecciona que tipo de mensaje y alerta sera mostrado y solo hay 3 casos
+ * @param {string} alerta que representara 3 casos posible donde el usuario sea invalido o password o todo sea correcto
+ * @returns {string} devulve el segmento de codigo que se selecciono para inyectar al HTML
+ */
+
+const elementosSeleccionados = [];
+const selectedItemsDiv = document.getElementById("searchSelections");
+
+// Obtén todos los elementos con la clase "badge"
+const elementosBadge = document.querySelectorAll(".badge");
+
+// Agrega un manejador de clic a cada elemento "badge"
+elementosBadge.forEach((elemento) => {
+  elemento.addEventListener("click", () => {
+    const elementoContenido = elemento.textContent;
+
+    // Verifica si el elemento ya está en el array
+    const index = elementosSeleccionados.indexOf(elementoContenido);
+
+    if (index === -1) {
+      // Si no está en el array, agrégalo
+      elementosSeleccionados.push(elementoContenido);
+    } else {
+      // Si ya está en el array, quítalo
+      elementosSeleccionados.splice(index, 1);
+    }
+
+    // Actualiza el contenido del div "selectedItems"
+    actualizarElementosSeleccionados();
+  });
+});
+
+function actualizarElementosSeleccionados() {
+  // Borra el contenido actual del div "selectedItems"
+  selectedItemsDiv.innerHTML = "";
+
+  // Agrega dinámicamente los elementos seleccionados en una fila
+  elementosSeleccionados.forEach((elementoContenido) => {
+    const elementoSeleccionado = document.createElement("div");
+    elementoSeleccionado.textContent = elementoContenido;
+    elementoSeleccionado.classList.add("badge"); // Aplica estilos de badge
+    selectedItemsDiv.appendChild(elementoSeleccionado);
+  });
+}

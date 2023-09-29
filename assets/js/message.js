@@ -84,15 +84,16 @@ chatDisplay.scrollTop = chatDisplay.scrollHeight;
 const inputChat = document.forms["input-chat"];
 const inputChatPrivate = document.forms["input-chat-private"];
 let stompClient = null;
-let username = "Leonardo";
+let username = sessionUser;
 let receiver = null;
 /* let id = "1"; */
-console.log("hola" + sessionUser);
+console.log("hola: " + sessionId);
+console.log("hola: " + sessionUser)
 
 
 
 const getImg = async (username)=>{
-    const response = await fetch("http://127.0.0.1:8080/users/username/Usuario7");
+    const response = await fetch("https://pering.onrender.com/users/username/" + sessionUser);
     const result = await response.json();
     console.log(result);
     return result.profilepic;
@@ -123,6 +124,8 @@ const onError = ()=>{
 };
 
 const printSelectorCard = (message, img)=>{
+
+    if(message.sender == username) return;
     const userElement = document.createElement('li');
     userElement.classList.add('p-2');
     userElement.classList.add('selectorCard');
@@ -157,14 +160,23 @@ const printSelectorCard = (message, img)=>{
 
 const deleteSelectorCard = (message)=>{
     const elements = chatSelectorList.getElementsByTagName('li');
-    
-    
-    console.log(img);
     for(let i = 0; i<elements.length; i++){
-        if(elements[i].textContent === message.sender){
+        if(elements[i].getAttribute('name') === message.sender){
             elements[i].remove();
         }
     }
+}
+
+const cardExist = (nameCard)=>{
+    const elements = chatSelectorList.getElementsByTagName('li');
+    for(let i = 0; i<elements.length; i++){
+        if(elements[i].getAttribute('name') === nameCard ){
+            console.log(true);
+            return true;
+        }
+    }
+    console.log(false);
+    return false;
 }
 
 
@@ -247,7 +259,13 @@ const onMessageReceived = async (payload)=>{
 
 const onPrivateMessageReceived = async(payload)=>{
     const message = JSON.parse(payload.body);
+    console.log(cardExist(message.sender));
+    
     const img = await getImg(message.sender);
+    if(!cardExist(message.sender)){
+        console.log("xd");
+        printSelectorCard(message, img);
+    }
     if(message.type != "CHAT") return
     const messageElement = document.createElement('li');
     messageElement.classList.add("d-flex");
@@ -369,7 +387,11 @@ const handlePrivateMessage = (e) =>{
 }
 
 const handleSelector = (e)=>{
+
+
     const target = e.target.tagName;
+
+    if(target == 'UL')return ; 
     let itemName;
     
     if(target === "P" || target === "IMG"){
@@ -386,9 +408,6 @@ const handleSelector = (e)=>{
 
     if(target === "LI") itemName = e.target.getAttribute('name');
 
-    if(itemName){
-        console.log(itemName);
-    }
 
     if(itemName !== "public-chat") {
         chatBox.classList.add('hidden');
@@ -434,7 +453,7 @@ window.addEventListener('DOMContentLoaded', () => {
         
 
         //const url = "https://pering.onrender.com";;
-        const url = "http://127.0.0.1:8080";
+        const url = "https://pering.onrender.com";
         const socket = new SockJS(url + '/ws');
         stompClient = Stomp.over(socket);
     
